@@ -61,7 +61,7 @@
       </ul>
     </div>
     <div class="navbar-end gap-2">
-      <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-primary btn-sm gap-2">
+      <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-primary btn-sm gap-2 btn-shimmer">
         <i class="fab fa-youtube"></i>
         <span class="hidden sm:inline">Subscribe</span>
       </a>
@@ -120,7 +120,7 @@
         </div>
 
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-primary btn-lg gap-2">
+          <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-primary btn-lg gap-2 btn-shimmer">
             <i class="fab fa-youtube text-xl"></i>
             Subscribe on YouTube
           </a>
@@ -141,7 +141,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20 bg-base-200">
+  <section id="about" class="py-20 bg-base-200 reveal">
     <div class="container mx-auto px-4">
       <h2 class="section-title">About <span class="text-primary">Me</span></h2>
 
@@ -188,7 +188,7 @@
   </section>
 
   <!-- Featured Videos Section -->
-  <section id="videos" class="py-20 bg-base-100">
+  <section id="videos" class="py-20 bg-base-100 reveal">
     <div class="container mx-auto px-4">
       <h2 class="section-title">Featured <span class="text-primary">Videos</span></h2>
       <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
@@ -269,7 +269,7 @@
   </section>
 
   <!-- Playlists Section -->
-  <section id="projects" class="py-20 bg-base-200">
+  <section id="projects" class="py-20 bg-base-200 reveal">
     <div class="container mx-auto px-4">
       <h2 class="section-title">Project <span class="text-primary">Playlists</span></h2>
       <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
@@ -327,7 +327,7 @@
   </section>
 
   <!-- Newsletter / Contact Section -->
-  <section id="contact" class="py-20 bg-base-100">
+  <section id="contact" class="py-20 bg-base-100 reveal">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
 
@@ -437,6 +437,21 @@
         }
       });
     });
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
   </script>
 
 </body>

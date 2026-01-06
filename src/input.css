@@ -75,3 +75,61 @@
 .stat:hover .stat-value {
   transform: scale(1.1);
 }
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient border on video cards */
+.video-card {
+  position: relative;
+  background: linear-gradient(var(--b2), var(--b2)) padding-box,
+              linear-gradient(135deg, transparent, transparent) border-box;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.video-card:hover {
+  background: linear-gradient(var(--b2), var(--b2)) padding-box,
+              linear-gradient(135deg, #5EEAD4, #2DD4BF, #5EEAD4) border-box;
+  box-shadow: 0 0 20px rgba(94, 234, 212, 0.3);
+}
+
+/* Shimmer effect on buttons */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
