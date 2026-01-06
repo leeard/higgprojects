@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .video-card {
+    @apply card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .video-card:hover .play-overlay {
+    @apply opacity-100;
+  }
+
+  .play-overlay {
+    @apply opacity-0 transition-opacity duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-center;
+  }
+
+  .social-btn {
+    @apply btn btn-circle btn-ghost hover:btn-primary hover:text-white transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply hover:text-primary transition-colors duration-200;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}

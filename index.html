@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="higgprojects">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HiggProjects | DIY, Maker & Creative Projects</title>
+  <meta name="description" content="Join HiggProjects for exciting DIY projects, maker tutorials, and creative builds. Subscribe for weekly content!">
+
+  <!-- Favicon - replace with your logo -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+
+  <!-- Tailwind/DaisyUI CSS -->
+  <link href="dist/output.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-base-100 text-base-content">
+
+  <!-- Navbar -->
+  <nav class="navbar bg-base-200/95 backdrop-blur-sm fixed top-0 z-50 shadow-lg">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-200 rounded-box w-52">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#videos" class="nav-link">Videos</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <a href="#home" class="btn btn-ghost text-xl font-bold">
+        <span class="text-primary">Higg</span>Projects
+      </a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2">
+        <li><a href="#home" class="nav-link font-medium">Home</a></li>
+        <li><a href="#about" class="nav-link font-medium">About</a></li>
+        <li><a href="#videos" class="nav-link font-medium">Videos</a></li>
+        <li><a href="#projects" class="nav-link font-medium">Projects</a></li>
+        <li><a href="#contact" class="nav-link font-medium">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-primary btn-sm gap-2">
+        <i class="fab fa-youtube"></i>
+        <span class="hidden sm:inline">Subscribe</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero min-h-screen relative overflow-hidden">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-base-300 via-base-100 to-base-200"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(94,234,212,0.12),transparent_50%)]"></div>
+
+    <div class="hero-content text-center relative z-10 py-20">
+      <div class="max-w-3xl">
+        <!-- Logo -->
+        <div class="avatar mb-8">
+          <div class="w-40 h-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-4">
+            <img src="images/logo.jpg" alt="Higg Projects Logo" class="rounded-full">
+          </div>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black mb-6">
+          <span class="gradient-text">Higg</span>Projects
+        </h1>
+
+        <p class="text-xl md:text-2xl text-base-content/80 mb-8 max-w-2xl mx-auto">
+          <span class="font-bold text-primary">Get It Done.</span> DIY tutorials, maker projects, and creative builds!
+        </p>
+
+        <!-- Stats -->
+        <div class="stats stats-vertical sm:stats-horizontal shadow-lg bg-base-200 mb-8">
+          <div class="stat">
+            <div class="stat-figure text-primary">
+              <i class="fab fa-youtube text-3xl"></i>
+            </div>
+            <div class="stat-title">Subscribers</div>
+            <div class="stat-value text-primary">1K+</div>
+          </div>
+          <div class="stat">
+            <div class="stat-figure text-accent">
+              <i class="fas fa-video text-3xl"></i>
+            </div>
+            <div class="stat-title">Videos</div>
+            <div class="stat-value text-accent">50+</div>
+          </div>
+          <div class="stat">
+            <div class="stat-figure text-success">
+              <i class="fas fa-tools text-3xl"></i>
+            </div>
+            <div class="stat-title">Projects</div>
+            <div class="stat-value text-success">30+</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-primary btn-lg gap-2">
+            <i class="fab fa-youtube text-xl"></i>
+            Subscribe on YouTube
+          </a>
+          <a href="#videos" class="btn btn-outline btn-lg gap-2">
+            <i class="fas fa-play"></i>
+            Watch Videos
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <a href="#about" class="text-base-content/50 hover:text-primary transition-colors">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-base-200">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">About <span class="text-primary">Me</span></h2>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <!-- Profile Photo -->
+        <div class="relative">
+          <div class="aspect-square rounded-2xl bg-base-300 overflow-hidden shadow-2xl">
+            <img src="https://www.gravatar.com/avatar/ba09e4305db32e5d791c29d8ccd2a36c?s=500"
+                 alt="HiggProjects"
+                 class="w-full h-full object-cover">
+          </div>
+          <!-- Decorative elements -->
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
+          <div class="absolute -top-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold">Hey, I'm the creator behind HiggProjects!</h3>
+          <p class="text-lg text-base-content/80 leading-relaxed">
+            I'm passionate about making, building, and creating. Whether it's woodworking, electronics, 3D printing, or just figuring out how things work - I love diving into new projects and sharing the journey with you.
+          </p>
+          <p class="text-lg text-base-content/80 leading-relaxed">
+            On my channel, you'll find tutorials, project builds, tips and tricks, and maybe a few fails along the way. Because let's be honest - that's how we learn!
+          </p>
+
+          <!-- Skills/Interests -->
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="badge badge-primary badge-lg">DIY</span>
+            <span class="badge badge-secondary badge-lg">Woodworking</span>
+            <span class="badge badge-accent badge-lg">Electronics</span>
+            <span class="badge badge-info badge-lg">3D Printing</span>
+            <span class="badge badge-success badge-lg">Tutorials</span>
+          </div>
+
+          <!-- Social links -->
+          <div class="flex gap-4 pt-4">
+            <a href="https://www.youtube.com/@higgprojects" target="_blank" class="social-btn text-2xl" title="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/higgprojects" target="_blank" class="social-btn text-2xl" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/higgprojects" target="_blank" class="social-btn text-2xl" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/higgprojects" target="_blank" class="social-btn text-2xl" title="Twitter/X">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Videos Section -->
+  <section id="videos" class="py-20 bg-base-100">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Latest <span class="text-primary">Videos</span></h2>
+      <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
+        Check out my latest projects and tutorials. New videos every week!
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+        <!-- Video Card 1 -->
+        <a href="https://youtube.com/watch?v=0LTwHzOjneE" target="_blank" class="video-card">
+          <figure class="relative">
+            <img src="https://img.youtube.com/vi/0LTwHzOjneE/hqdefault.jpg"
+                 alt="Bringing grandpa's Ford series 2N tractor home"
+                 class="w-full aspect-video object-cover bg-base-300"
+                 onerror="this.src='https://img.youtube.com/vi/0LTwHzOjneE/mqdefault.jpg'">
+            <div class="play-overlay absolute inset-0 bg-black/50 flex items-center justify-center">
+              <div class="btn btn-circle btn-primary btn-lg">
+                <i class="fas fa-play text-xl"></i>
+              </div>
+            </div>
+            <div class="absolute bottom-2 right-2 badge badge-neutral">40:07</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-lg">Bringing grandpa's Ford series 2N tractor home</h3>
+            <p class="text-base-content/70 text-sm">The journey of bringing a family heirloom tractor back where it belongs.</p>
+          </div>
+        </a>
+
+        <!-- Video Card 2 -->
+        <a href="https://youtube.com/watch?v=450t_J_KsoI" target="_blank" class="video-card">
+          <figure class="relative">
+            <img src="https://img.youtube.com/vi/450t_J_KsoI/maxresdefault.jpg"
+                 alt="We bought my great grandpa's tractor!"
+                 class="w-full aspect-video object-cover bg-base-300"
+                 onerror="this.src='https://img.youtube.com/vi/450t_J_KsoI/hqdefault.jpg'">
+            <div class="play-overlay absolute inset-0 bg-black/50 flex items-center justify-center">
+              <div class="btn btn-circle btn-primary btn-lg">
+                <i class="fas fa-play text-xl"></i>
+              </div>
+            </div>
+            <div class="absolute bottom-2 right-2 badge badge-neutral">3:31</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-lg">We bought my great grandpa's tractor!</h3>
+            <p class="text-base-content/70 text-sm">A special purchase bringing the family tractor back into our hands.</p>
+          </div>
+        </a>
+
+        <!-- Video Card 3 -->
+        <a href="https://youtube.com/watch?v=W-6QWf_ZUbs" target="_blank" class="video-card">
+          <figure class="relative">
+            <img src="https://img.youtube.com/vi/W-6QWf_ZUbs/maxresdefault.jpg"
+                 alt="Fixing the bent tail light bracket on the Ford 2N"
+                 class="w-full aspect-video object-cover bg-base-300"
+                 onerror="this.src='https://img.youtube.com/vi/W-6QWf_ZUbs/hqdefault.jpg'">
+            <div class="play-overlay absolute inset-0 bg-black/50 flex items-center justify-center">
+              <div class="btn btn-circle btn-primary btn-lg">
+                <i class="fas fa-play text-xl"></i>
+              </div>
+            </div>
+            <div class="absolute bottom-2 right-2 badge badge-neutral">3:45</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-lg">Fixing the bent tail light bracket on the Ford 2N</h3>
+            <p class="text-base-content/70 text-sm">A quick fix to straighten out the tail light bracket on the tractor.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="https://www.youtube.com/@higgprojects/videos" target="_blank" class="btn btn-outline btn-primary btn-lg gap-2">
+          <i class="fab fa-youtube"></i>
+          View All Videos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects/Categories Section -->
+  <section id="projects" class="py-20 bg-base-200">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Project <span class="text-primary">Categories</span></h2>
+      <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
+        Explore different types of projects I create
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+        <!-- Category 1 -->
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="card-body items-center text-center">
+            <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <i class="fas fa-hammer text-3xl text-primary"></i>
+            </div>
+            <h3 class="card-title">Woodworking</h3>
+            <p class="text-base-content/70">Custom builds, furniture, and wood crafts</p>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="card-body items-center text-center">
+            <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+              <i class="fas fa-microchip text-3xl text-accent"></i>
+            </div>
+            <h3 class="card-title">Electronics</h3>
+            <p class="text-base-content/70">Arduino, Raspberry Pi, and custom circuits</p>
+          </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="card-body items-center text-center">
+            <div class="w-20 h-20 rounded-full bg-info/20 flex items-center justify-center mb-4">
+              <i class="fas fa-cube text-3xl text-info"></i>
+            </div>
+            <h3 class="card-title">3D Printing</h3>
+            <p class="text-base-content/70">Printed parts, designs, and modifications</p>
+          </div>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="card-body items-center text-center">
+            <div class="w-20 h-20 rounded-full bg-success/20 flex items-center justify-center mb-4">
+              <i class="fas fa-lightbulb text-3xl text-success"></i>
+            </div>
+            <h3 class="card-title">Life Hacks</h3>
+            <p class="text-base-content/70">Tips, tricks, and clever solutions</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter / Contact Section -->
+  <section id="contact" class="py-20 bg-base-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+
+        <div class="card bg-gradient-to-br from-primary/10 to-accent/10 shadow-2xl">
+          <div class="card-body text-center py-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Let's <span class="text-primary">Connect!</span>
+            </h2>
+            <p class="text-lg text-base-content/80 mb-8 max-w-xl mx-auto">
+              Follow me on social media for behind-the-scenes content, project updates, and more!
+            </p>
+
+            <!-- Social Links -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+              <a href="https://www.youtube.com/@higgprojects" target="_blank"
+                 class="btn btn-lg gap-3 bg-red-600 hover:bg-red-700 text-white border-none">
+                <i class="fab fa-youtube text-2xl"></i>
+                YouTube
+              </a>
+              <a href="https://www.facebook.com/higgprojects" target="_blank"
+                 class="btn btn-lg gap-3 bg-blue-600 hover:bg-blue-700 text-white border-none">
+                <i class="fab fa-facebook text-2xl"></i>
+                Facebook
+              </a>
+              <a href="https://www.instagram.com/higgprojects" target="_blank"
+                 class="btn btn-lg gap-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-none">
+                <i class="fab fa-instagram text-2xl"></i>
+                Instagram
+              </a>
+            </div>
+
+            <!-- Contact info -->
+            <div class="divider">OR</div>
+
+            <p class="text-base-content/70 mb-4">For business inquiries:</p>
+            <a href="mailto:higgprojects@gmail.com" class="btn btn-outline btn-primary gap-2">
+              <i class="fas fa-envelope"></i>
+              higgprojects@gmail.com
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+    <aside>
+      <p class="text-2xl font-bold">
+        <span class="text-primary">Higg</span>Projects
+      </p>
+      <p class="text-base-content/70">Get It Done.</p>
+    </aside>
+    <nav>
+      <div class="grid grid-flow-col gap-6">
+        <a href="https://www.youtube.com/@higgprojects" target="_blank" class="social-btn text-2xl" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com/higgprojects" target="_blank" class="social-btn text-2xl" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/higgprojects" target="_blank" class="social-btn text-2xl" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/higgprojects" target="_blank" class="social-btn text-2xl" title="Twitter/X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </nav>
+    <aside>
+      <p class="text-base-content/50">&copy; 2025 HiggProjects. All rights reserved.</p>
+    </aside>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#home" class="btn btn-circle btn-primary fixed bottom-6 right-6 shadow-lg opacity-0 translate-y-10 transition-all duration-300" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Back to top button visibility
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.remove('opacity-0', 'translate-y-10');
+        backToTop.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        backToTop.classList.add('opacity-0', 'translate-y-10');
+        backToTop.classList.remove('opacity-100', 'translate-y-0');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navHeight = document.querySelector('nav').offsetHeight;
+          const targetPosition = target.offsetTop - navHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
