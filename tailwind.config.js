@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['"Bebas Neue"', 'system-ui', 'sans-serif'],
       },
     },
   },

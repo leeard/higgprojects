@@ -70,9 +70,10 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero min-h-screen relative overflow-hidden">
-    <!-- Background gradient -->
-    <div class="absolute inset-0 bg-gradient-to-br from-base-300 via-base-100 to-base-200"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(94,234,212,0.12),transparent_50%)]"></div>
+    <!-- Background image -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('images/shopsunset.jpg');"></div>
+    <!-- Dark overlay for text readability -->
+    <div class="absolute inset-0 bg-black/50"></div>
 
     <div class="hero-content text-center relative z-10 py-20">
       <div class="max-w-3xl">
@@ -83,14 +84,14 @@
           </div>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-black mb-6">
-          <span class="gradient-text">Higg</span>Projects
+        <h1 class="text-6xl md:text-8xl mb-6 font-display tracking-wider text-primary drop-shadow-lg hero-title">
+          HIGG PROJECTS
         </h1>
 
-        <p class="text-xl md:text-2xl text-base-content/80 mb-4 max-w-2xl mx-auto">
+        <p class="text-xl md:text-2xl text-white/90 mb-4 max-w-2xl mx-auto drop-shadow-md">
           Something broken? <span class="font-bold text-primary">If I can fix it, you can too.</span> Let's get it done!
         </p>
-        <p class="text-sm text-warning/80 mb-8 font-medium">
+        <p class="text-sm text-yellow-300/90 mb-8 font-medium drop-shadow-md">
           <i class="fas fa-exclamation-triangle mr-2"></i>WARNING: I may be an idiot. Follow my advice at your own risk.
         </p>
 
