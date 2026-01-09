@@ -99,8 +99,8 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero min-h-screen relative overflow-hidden">
-    <!-- Background image -->
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('images/shopsunset.jpg');"></div>
+    <!-- Background image with parallax -->
+    <div id="heroBackground" class="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110" style="background-image: url('images/shopsunset.jpg');"></div>
     <!-- Dark overlay for text readability -->
     <div class="absolute inset-0 bg-black/50"></div>
 
@@ -601,8 +601,21 @@
   </a>
 
   <script>
+    // Parallax hero background
+    var heroBackground = document.getElementById('heroBackground');
+    var heroSection = document.getElementById('home');
+
+    window.addEventListener('scroll', function() {
+      var scrolled = window.pageYOffset;
+      var heroHeight = heroSection.offsetHeight;
+
+      if (scrolled < heroHeight) {
+        heroBackground.style.transform = 'scale(1.1) translateY(' + (scrolled * 0.4) + 'px)';
+      }
+    });
+
     // Back to top button visibility
-    const backToTop = document.getElementById('backToTop');
+    var backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 500) {
         backToTop.classList.remove('opacity-0', 'translate-y-10');
