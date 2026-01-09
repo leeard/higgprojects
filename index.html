@@ -135,21 +135,21 @@
               <i class="fab fa-youtube text-3xl"></i>
             </div>
             <div class="stat-title">Subscribers</div>
-            <div class="stat-value text-primary">7.4K</div>
+            <div class="stat-value text-primary counter" data-target="7400" data-suffix="+" data-format="k">0</div>
           </div>
           <div class="stat">
             <div class="stat-figure text-primary">
               <i class="fas fa-video text-3xl"></i>
             </div>
             <div class="stat-title">Videos</div>
-            <div class="stat-value text-primary">100+</div>
+            <div class="stat-value text-primary counter" data-target="100" data-suffix="+">0</div>
           </div>
           <div class="stat">
             <div class="stat-figure text-primary">
               <i class="fas fa-tools text-3xl"></i>
             </div>
             <div class="stat-title">Playlists</div>
-            <div class="stat-value text-primary">9</div>
+            <div class="stat-value text-primary counter" data-target="9">0</div>
           </div>
         </div>
 
@@ -631,6 +631,56 @@
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // Animated counters
+    const counters = document.querySelectorAll('.counter');
+    let countersAnimated = false;
+
+    function animateCounter(counter) {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const suffix = counter.getAttribute('data-suffix') || '';
+      const format = counter.getAttribute('data-format');
+      const duration = 1500;
+      const steps = 60;
+      const stepTime = duration / steps;
+      let current = 0;
+      const increment = target / steps;
+
+      function updateCounter() {
+        current += increment;
+        if (current < target) {
+          let displayValue = Math.floor(current);
+          if (format === 'k') {
+            displayValue = (current / 1000).toFixed(1) + 'K';
+          }
+          counter.textContent = displayValue + suffix;
+          setTimeout(updateCounter, stepTime);
+        } else {
+          let finalValue = target;
+          if (format === 'k') {
+            finalValue = (target / 1000).toFixed(1) + 'K';
+          }
+          counter.textContent = finalValue + suffix;
+        }
+      }
+      updateCounter();
+    }
+
+    const statsSection = document.querySelector('.stats');
+    const counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !countersAnimated) {
+          countersAnimated = true;
+          counters.forEach(function(counter) {
+            animateCounter(counter);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (statsSection) {
+      counterObserver.observe(statsSection);
+    }
 
     // Theme toggle
     const themeDark = document.getElementById('themeDark');
