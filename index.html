@@ -100,7 +100,7 @@
   <!-- Hero Section -->
   <section id="home" class="hero min-h-screen relative overflow-hidden">
     <!-- Background image with parallax -->
-    <div id="heroBackground" class="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110" style="background-image: url('images/shopsunset.jpg');"></div>
+    <div id="heroBackground" class="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110" style="background-image: url('images/shopsunset.jpg'); will-change: transform; -webkit-backface-visibility: hidden;"></div>
     <!-- Dark overlay for text readability -->
     <div class="absolute inset-0 bg-black/50"></div>
 
@@ -601,18 +601,28 @@
   </a>
 
   <script>
-    // Parallax hero background
+    // Parallax hero background (optimized for iOS/iPad)
     var heroBackground = document.getElementById('heroBackground');
     var heroSection = document.getElementById('home');
+    var ticking = false;
 
-    window.addEventListener('scroll', function() {
-      var scrolled = window.pageYOffset;
+    function updateParallax() {
+      var scrolled = window.pageYOffset || document.documentElement.scrollTop;
       var heroHeight = heroSection.offsetHeight;
 
       if (scrolled < heroHeight) {
-        heroBackground.style.transform = 'scale(1.1) translateY(' + (scrolled * 0.4) + 'px)';
+        var translateY = Math.round(scrolled * 0.4);
+        heroBackground.style.transform = 'scale(1.1) translate3d(0, ' + translateY + 'px, 0)';
       }
-    });
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
 
     // Back to top button visibility
     var backToTop = document.getElementById('backToTop');
