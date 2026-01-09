@@ -238,7 +238,7 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
         <!-- Video Card 1 -->
-        <a href="https://youtube.com/watch?v=0LTwHzOjneE" target="_blank" class="video-card">
+        <a href="#" data-video="0LTwHzOjneE" class="video-card video-lightbox">
           <figure class="relative">
             <img src="https://img.youtube.com/vi/0LTwHzOjneE/hqdefault.jpg"
                  alt="Bringing grandpa's Ford series 2N tractor home"
@@ -258,7 +258,7 @@
         </a>
 
         <!-- Video Card 2 -->
-        <a href="https://youtube.com/watch?v=450t_J_KsoI" target="_blank" class="video-card">
+        <a href="#" data-video="450t_J_KsoI" class="video-card video-lightbox">
           <figure class="relative">
             <img src="https://img.youtube.com/vi/450t_J_KsoI/maxresdefault.jpg"
                  alt="We bought my great grandpa's tractor!"
@@ -278,7 +278,7 @@
         </a>
 
         <!-- Video Card 3 -->
-        <a href="https://youtube.com/watch?v=W-6QWf_ZUbs" target="_blank" class="video-card">
+        <a href="#" data-video="W-6QWf_ZUbs" class="video-card video-lightbox">
           <figure class="relative">
             <img src="https://img.youtube.com/vi/W-6QWf_ZUbs/maxresdefault.jpg"
                  alt="Fixing the bent tail light bracket on the Ford 2N"
@@ -583,6 +583,16 @@
     </aside>
   </footer>
 
+  <!-- Video Lightbox Modal -->
+  <div id="videoLightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm">
+    <button id="closeLightbox" class="absolute top-4 right-4 btn btn-circle btn-ghost text-white text-2xl hover:bg-white/20">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="w-full max-w-5xl mx-4 aspect-video">
+      <iframe id="videoFrame" class="w-full h-full rounded-lg" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
   <!-- Back to top button -->
   <a href="#home" class="btn btn-circle btn-primary fixed bottom-6 right-6 shadow-lg opacity-0 translate-y-10 transition-all duration-300" id="backToTop">
     <i class="fas fa-arrow-up"></i>
@@ -704,6 +714,44 @@
     themeLight.addEventListener('click', function(e) {
       e.preventDefault();
       setTheme('higgprojects-light');
+    });
+
+    // Video Lightbox
+    var videoLightbox = document.getElementById('videoLightbox');
+    var videoFrame = document.getElementById('videoFrame');
+    var closeLightbox = document.getElementById('closeLightbox');
+    var videoLinks = document.querySelectorAll('.video-lightbox');
+
+    videoLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var videoId = this.getAttribute('data-video');
+        videoFrame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+        videoLightbox.classList.remove('hidden');
+        videoLightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeVideoLightbox() {
+      videoLightbox.classList.add('hidden');
+      videoLightbox.classList.remove('flex');
+      videoFrame.src = '';
+      document.body.style.overflow = '';
+    }
+
+    closeLightbox.addEventListener('click', closeVideoLightbox);
+
+    videoLightbox.addEventListener('click', function(e) {
+      if (e.target === videoLightbox) {
+        closeVideoLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !videoLightbox.classList.contains('hidden')) {
+        closeVideoLightbox();
+      }
     });
   </script>
 
