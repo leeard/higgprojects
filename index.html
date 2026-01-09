@@ -235,7 +235,7 @@
         Check out some of my favorite projects and tutorials!
       </p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto stagger-children">
 
         <!-- Video Card 1 -->
         <a href="#" data-video="0LTwHzOjneE" class="video-card video-lightbox">
@@ -316,7 +316,7 @@
         Quick tips, behind-the-scenes, and project highlights
       </p>
 
-      <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory max-w-6xl mx-auto justify-center flex-wrap">
+      <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory max-w-6xl mx-auto justify-center flex-wrap stagger-children">
 
         <!-- Short 1 -->
         <a href="https://www.youtube.com/shorts/FMXFi4wgpQk" target="_blank" class="short-card snap-center flex-shrink-0">
@@ -427,7 +427,7 @@
         Explore my video series and project collections
       </p>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto stagger-children">
 
         <!-- Playlist 1 - Ford 2N Tractor -->
         <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzF2BfVNSK4FZwfs-oP3RnWj" target="_blank" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
@@ -630,9 +630,11 @@
     });
 
     // Scroll reveal animation
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    var revealElements = document.querySelectorAll('.reveal');
+    var staggerElements = document.querySelectorAll('.stagger-children');
+
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
         }
@@ -642,7 +644,8 @@
       rootMargin: '0px 0px -50px 0px'
     });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(function(el) { revealObserver.observe(el); });
+    staggerElements.forEach(function(el) { revealObserver.observe(el); });
 
     // Animated counters
     const counters = document.querySelectorAll('.counter');
