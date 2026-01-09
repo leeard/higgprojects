@@ -86,8 +86,8 @@
           <i class="fas fa-chevron-down text-xs"></i>
         </div>
         <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-200 rounded-box w-36 mt-2">
-          <li><button id="themeDark" class="flex gap-2"><i class="fas fa-moon"></i> Dark</button></li>
-          <li><button id="themeLight" class="flex gap-2"><i class="fas fa-sun"></i> Light</button></li>
+          <li><a href="#" id="themeDark"><i class="fas fa-moon"></i> Dark</a></li>
+          <li><a href="#" id="themeLight"><i class="fas fa-sun"></i> Light</a></li>
         </ul>
       </div>
       <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-sm gap-2 bg-red-600 hover:bg-red-700 text-white border-none">
@@ -646,11 +646,13 @@
       document.activeElement.blur();
     }
 
-    themeDark.addEventListener('click', function() {
+    themeDark.addEventListener('click', function(e) {
+      e.preventDefault();
       setTheme('higgprojects');
     });
 
-    themeLight.addEventListener('click', function() {
+    themeLight.addEventListener('click', function(e) {
+      e.preventDefault();
       setTheme('higgprojects-light');
     });
   </script>
