@@ -27,6 +27,24 @@
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Set theme before page renders to prevent flash -->
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'higgprojects');
+  </script>
+
+  <style>
+    /* Smooth theme transition */
+    html {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    html.theme-transitioning,
+    html.theme-transitioning *,
+    html.theme-transitioning *::before,
+    html.theme-transitioning *::after {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+    }
+  </style>
 </head>
 <body class="bg-base-100 text-base-content bg-noise">
 
@@ -61,6 +79,10 @@
       </ul>
     </div>
     <div class="navbar-end gap-2">
+      <button id="themeToggle" class="btn btn-sm btn-ghost btn-circle" title="Toggle theme">
+        <i class="fas fa-sun text-lg hidden" id="sunIcon"></i>
+        <i class="fas fa-moon text-lg" id="moonIcon"></i>
+      </button>
       <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-sm gap-2 bg-red-600 hover:bg-red-700 text-white border-none">
         <i class="fab fa-youtube"></i>
         <span class="hidden sm:inline">Subscribe</span>
@@ -602,6 +624,39 @@
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const html = document.documentElement;
+
+    // Check for saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'higgprojects';
+    html.setAttribute('data-theme', savedTheme);
+    updateIcons(savedTheme);
+
+    function updateIcons(theme) {
+      if (theme === 'higgprojects-light') {
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+      } else {
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'higgprojects' ? 'higgprojects-light' : 'higgprojects';
+
+      html.classList.add('theme-transitioning');
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateIcons(newTheme);
+
+      setTimeout(() => html.classList.remove('theme-transitioning'), 300);
+    });
   </script>
 
 </body>

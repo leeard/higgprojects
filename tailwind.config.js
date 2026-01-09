@@ -26,8 +26,21 @@ module.exports = {
           "error": "#F87171",
         },
       },
-      "dark",
-      "light",
+      {
+        "higgprojects-light": {
+          "primary": "#14B8A6",
+          "secondary": "#0D9488",
+          "accent": "#0F766E",
+          "neutral": "#1f2937",
+          "base-100": "#ffffff",
+          "base-200": "#f3f4f6",
+          "base-300": "#e5e7eb",
+          "info": "#0891B2",
+          "success": "#059669",
+          "warning": "#D97706",
+          "error": "#DC2626",
+        },
+      },
     ],
   },
 }
