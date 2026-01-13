@@ -316,98 +316,8 @@
         Quick tips, behind-the-scenes, and project highlights
       </p>
 
-      <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory max-w-6xl mx-auto justify-center flex-wrap stagger-children">
-
-        <!-- Short 1 -->
-        <a href="https://www.youtube.com/shorts/FMXFi4wgpQk" target="_blank" class="short-card snap-center flex-shrink-0">
-          <div class="relative w-44 aspect-[9/16] rounded-xl overflow-hidden bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-            <img src="https://img.youtube.com/vi/FMXFi4wgpQk/maxresdefault.jpg"
-                 alt="YouTube Short"
-                 class="w-full h-full object-cover"
-                 onerror="this.src='https://img.youtube.com/vi/FMXFi4wgpQk/hqdefault.jpg'">
-            <div class="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-              <div class="btn btn-circle btn-primary">
-                <i class="fas fa-play"></i>
-              </div>
-            </div>
-            <div class="absolute bottom-2 right-2 bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">
-              <i class="fas fa-bolt mr-1"></i>SHORT
-            </div>
-          </div>
-        </a>
-
-        <!-- Short 2 -->
-        <a href="https://www.youtube.com/shorts/4Ri_tNrhp-g" target="_blank" class="short-card snap-center flex-shrink-0">
-          <div class="relative w-44 aspect-[9/16] rounded-xl overflow-hidden bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-            <img src="https://img.youtube.com/vi/4Ri_tNrhp-g/maxresdefault.jpg"
-                 alt="YouTube Short"
-                 class="w-full h-full object-cover"
-                 onerror="this.src='https://img.youtube.com/vi/4Ri_tNrhp-g/hqdefault.jpg'">
-            <div class="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-              <div class="btn btn-circle btn-primary">
-                <i class="fas fa-play"></i>
-              </div>
-            </div>
-            <div class="absolute bottom-2 right-2 bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">
-              <i class="fas fa-bolt mr-1"></i>SHORT
-            </div>
-          </div>
-        </a>
-
-        <!-- Short 3 -->
-        <a href="https://www.youtube.com/shorts/I7RnuTShie4" target="_blank" class="short-card snap-center flex-shrink-0">
-          <div class="relative w-44 aspect-[9/16] rounded-xl overflow-hidden bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-            <img src="https://img.youtube.com/vi/I7RnuTShie4/maxresdefault.jpg"
-                 alt="YouTube Short"
-                 class="w-full h-full object-cover"
-                 onerror="this.src='https://img.youtube.com/vi/I7RnuTShie4/hqdefault.jpg'">
-            <div class="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-              <div class="btn btn-circle btn-primary">
-                <i class="fas fa-play"></i>
-              </div>
-            </div>
-            <div class="absolute bottom-2 right-2 bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">
-              <i class="fas fa-bolt mr-1"></i>SHORT
-            </div>
-          </div>
-        </a>
-
-        <!-- Short 4 -->
-        <a href="https://www.youtube.com/shorts/zQNZMZEBTOU" target="_blank" class="short-card snap-center flex-shrink-0">
-          <div class="relative w-44 aspect-[9/16] rounded-xl overflow-hidden bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-            <img src="https://img.youtube.com/vi/zQNZMZEBTOU/maxresdefault.jpg"
-                 alt="YouTube Short"
-                 class="w-full h-full object-cover"
-                 onerror="this.src='https://img.youtube.com/vi/zQNZMZEBTOU/hqdefault.jpg'">
-            <div class="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-              <div class="btn btn-circle btn-primary">
-                <i class="fas fa-play"></i>
-              </div>
-            </div>
-            <div class="absolute bottom-2 right-2 bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">
-              <i class="fas fa-bolt mr-1"></i>SHORT
-            </div>
-          </div>
-        </a>
-
-        <!-- Short 5 -->
-        <a href="https://www.youtube.com/shorts/XU42lrnPxrw" target="_blank" class="short-card snap-center flex-shrink-0">
-          <div class="relative w-44 aspect-[9/16] rounded-xl overflow-hidden bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-            <img src="https://img.youtube.com/vi/XU42lrnPxrw/maxresdefault.jpg"
-                 alt="YouTube Short"
-                 class="w-full h-full object-cover"
-                 onerror="this.src='https://img.youtube.com/vi/XU42lrnPxrw/hqdefault.jpg'">
-            <div class="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-              <div class="btn btn-circle btn-primary">
-                <i class="fas fa-play"></i>
-              </div>
-            </div>
-            <div class="absolute bottom-2 right-2 bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">
-              <i class="fas fa-bolt mr-1"></i>SHORT
-            </div>
-          </div>
-        </a>
-
+      <div id="shorts-container" class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory max-w-6xl mx-auto justify-center flex-wrap stagger-children">
+        <!-- Shorts loaded dynamically from shorts.json -->
       </div>
 
       <div class="text-center mt-8">
@@ -601,6 +511,32 @@
   </a>
 
   <script>
+    // Load and render shorts from JSON
+    fetch('shorts.json')
+      .then(response => response.json())
+      .then(shorts => {
+        const container = document.getElementById('shorts-container');
+        container.innerHTML = shorts.map(short => `
+          <a href="https://www.youtube.com/shorts/${short.id}" target="_blank" class="short-card snap-center flex-shrink-0">
+            <div class="relative w-44 aspect-[9/16] rounded-xl overflow-hidden bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <img src="https://img.youtube.com/vi/${short.id}/maxresdefault.jpg"
+                   alt="${short.title}"
+                   class="w-full h-full object-cover"
+                   onerror="this.src='https://img.youtube.com/vi/${short.id}/hqdefault.jpg'">
+              <div class="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div class="btn btn-circle btn-primary">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="absolute bottom-2 right-2 bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">
+                <i class="fas fa-bolt mr-1"></i>SHORT
+              </div>
+            </div>
+          </a>
+        `).join('');
+      })
+      .catch(err => console.error('Failed to load shorts:', err));
+
     // Parallax hero background (optimized for iOS/iPad)
     var heroBackground = document.getElementById('heroBackground');
     var heroSection = document.getElementById('home');

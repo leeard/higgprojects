@@ -1,0 +1,51 @@
+name: Fetch YouTube Shorts
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC (midnight MDT)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch-shorts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch latest shorts from YouTube
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          CHANNEL_ID: UC88w6T7O_jV_G5eSUWBhVVw
+        run: |
+          # Fetch recent videos from channel (shorts are videos under 60 seconds)
+          response=$(curl -s "https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=20&type=video")
+
+          # Extract video IDs
+          video_ids=$(echo "$response" | jq -r '.items[].id.videoId' | tr '\n' ',' | sed 's/,$//')
+
+          # Get video details including duration
+          details=$(curl -s "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${video_ids}&part=contentDetails,snippet")
+
+          # Filter for shorts (duration <= 60 seconds) and format as JSON
+          echo "$details" | jq '[.items[] |
+            select(.contentDetails.duration | test("^PT([0-5]?[0-9]S|1M)$")) |
+            {
+              id: .id,
+              title: .snippet.title,
+              thumbnail: .snippet.thumbnails.high.url,
+              publishedAt: .snippet.publishedAt
+            }
+          ] | .[0:6]' > shorts.json
+
+          # Show what we got
+          echo "Fetched shorts:"
+          cat shorts.json
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add shorts.json
+          git diff --quiet --staged || (git commit -m "Update shorts data" && git push)
