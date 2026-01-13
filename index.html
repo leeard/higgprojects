@@ -235,42 +235,42 @@
         </a>
 
         <!-- Video Card 2 -->
-        <a href="#" data-video="450t_J_KsoI" class="video-card video-lightbox">
+        <a href="#" data-video="qa3fVjtNyCY" class="video-card video-lightbox">
           <figure class="relative">
-            <img src="https://img.youtube.com/vi/450t_J_KsoI/maxresdefault.jpg"
-                 alt="We bought my great grandpa's tractor!"
+            <img src="https://img.youtube.com/vi/qa3fVjtNyCY/maxresdefault.jpg"
+                 alt="Video"
                  class="w-full aspect-video object-cover bg-base-300"
-                 onerror="this.src='https://img.youtube.com/vi/450t_J_KsoI/hqdefault.jpg'">
+                 onerror="this.src='https://img.youtube.com/vi/qa3fVjtNyCY/hqdefault.jpg'">
             <div class="play-overlay absolute inset-0 bg-black/50 flex items-center justify-center">
               <div class="btn btn-circle btn-primary btn-lg">
                 <i class="fas fa-play text-xl"></i>
               </div>
             </div>
-            <div class="absolute bottom-2 right-2 bg-black/80 text-white px-2 py-1 rounded text-sm font-mono font-bold"><i class="fas fa-play text-xs mr-1"></i>3:31</div>
+            <div class="absolute bottom-2 right-2 bg-black/80 text-white px-2 py-1 rounded text-sm font-mono font-bold"><i class="fas fa-play text-xs mr-1"></i></div>
           </figure>
           <div class="card-body">
-            <h3 class="card-title text-lg">We bought my great grandpa's tractor!</h3>
-            <p class="text-base-content/70 text-sm">A special purchase bringing the family tractor back into our hands.</p>
+            <h3 class="card-title text-lg">Video Title</h3>
+            <p class="text-base-content/70 text-sm">Video description.</p>
           </div>
         </a>
 
         <!-- Video Card 3 -->
-        <a href="#" data-video="W-6QWf_ZUbs" class="video-card video-lightbox">
+        <a href="#" data-video="GDKEo4ovsck" class="video-card video-lightbox">
           <figure class="relative">
-            <img src="https://img.youtube.com/vi/W-6QWf_ZUbs/maxresdefault.jpg"
-                 alt="Fixing the bent tail light bracket on the Ford 2N"
+            <img src="https://img.youtube.com/vi/GDKEo4ovsck/maxresdefault.jpg"
+                 alt="Video"
                  class="w-full aspect-video object-cover bg-base-300"
-                 onerror="this.src='https://img.youtube.com/vi/W-6QWf_ZUbs/hqdefault.jpg'">
+                 onerror="this.src='https://img.youtube.com/vi/GDKEo4ovsck/hqdefault.jpg'">
             <div class="play-overlay absolute inset-0 bg-black/50 flex items-center justify-center">
               <div class="btn btn-circle btn-primary btn-lg">
                 <i class="fas fa-play text-xl"></i>
               </div>
             </div>
-            <div class="absolute bottom-2 right-2 bg-black/80 text-white px-2 py-1 rounded text-sm font-mono font-bold"><i class="fas fa-play text-xs mr-1"></i>3:45</div>
+            <div class="absolute bottom-2 right-2 bg-black/80 text-white px-2 py-1 rounded text-sm font-mono font-bold"><i class="fas fa-play text-xs mr-1"></i></div>
           </figure>
           <div class="card-body">
-            <h3 class="card-title text-lg">Fixing the bent tail light bracket on the Ford 2N</h3>
-            <p class="text-base-content/70 text-sm">A quick fix to straighten out the tail light bracket on the tractor.</p>
+            <h3 class="card-title text-lg">Video Title</h3>
+            <p class="text-base-content/70 text-sm">Video description.</p>
           </div>
         </a>
 
@@ -667,7 +667,7 @@
       link.addEventListener('click', function(e) {
         e.preventDefault();
         var videoId = this.getAttribute('data-video');
-        videoFrame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+        videoFrame.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&playsinline=1&rel=0';
         videoLightbox.classList.remove('hidden');
         videoLightbox.classList.add('flex');
         document.body.style.overflow = 'hidden';
