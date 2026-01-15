@@ -63,6 +63,7 @@
           <li><a href="#videos" class="nav-link">Videos</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#sticker" class="nav-link text-primary font-bold"><i class="fas fa-gift mr-1"></i>Free Sticker</a></li>
         </ul>
       </div>
       <a href="#home" class="btn btn-ghost text-xl font-oswald text-primary">
@@ -79,6 +80,10 @@
       </ul>
     </div>
     <div class="navbar-end gap-2">
+      <a href="#sticker" class="btn btn-sm btn-primary gap-1 animate-pulse">
+        <i class="fas fa-gift"></i>
+        <span class="hidden sm:inline">Free Sticker</span>
+      </a>
       <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-sm btn-ghost gap-1">
           <i class="fas fa-circle-half-stroke"></i>
@@ -86,8 +91,8 @@
           <i class="fas fa-chevron-down text-xs"></i>
         </div>
         <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-200 rounded-box w-36 mt-2">
-          <li><a href="#" id="themeDark"><i class="fas fa-moon"></i> Dark</a></li>
-          <li><a href="#" id="themeLight"><i class="fas fa-sun"></i> Light</a></li>
+          <li><button type="button" id="themeDark" class="w-full text-left"><i class="fas fa-moon"></i> Dark</button></li>
+          <li><button type="button" id="themeLight" class="w-full text-left"><i class="fas fa-sun"></i> Light</button></li>
         </ul>
       </div>
     </div>
@@ -125,7 +130,7 @@
         </div>
 
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://www.youtube.com/@higgprojects" target="_blank" class="btn btn-lg gap-2 bg-red-600 hover:bg-red-700 text-white border-none">
+          <a href="https://www.youtube.com/@higgprojects" target="_blank" rel="noopener noreferrer" class="btn btn-lg gap-2 bg-red-600 hover:bg-red-700 text-white border-none">
             <i class="fab fa-youtube text-xl"></i>
             Subscribe on YouTube
           </a>
@@ -273,7 +278,7 @@
       </div>
 
       <div class="text-center mt-12">
-        <a href="https://www.youtube.com/@higgprojects/videos" target="_blank" class="btn btn-outline btn-primary btn-lg gap-2">
+        <a href="https://www.youtube.com/@higgprojects/videos" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary btn-lg gap-2">
           <i class="fab fa-youtube"></i>
           View All Videos
         </a>
@@ -294,7 +299,7 @@
       </div>
 
       <div class="text-center mt-8">
-        <a href="https://www.youtube.com/@higgprojects/shorts" target="_blank" class="btn btn-outline btn-primary gap-2">
+        <a href="https://www.youtube.com/@higgprojects/shorts" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary gap-2">
           <i class="fab fa-youtube"></i>
           View All Shorts
         </a>
@@ -313,7 +318,7 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto stagger-children">
 
         <!-- Playlist 1 - Ford 2N Tractor -->
-        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzF2BfVNSK4FZwfs-oP3RnWj" target="_blank" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzF2BfVNSK4FZwfs-oP3RnWj" target="_blank" rel="noopener noreferrer" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
           <div class="card-body items-center text-center">
             <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-4">
               <i class="fas fa-tractor text-3xl text-primary"></i>
@@ -324,7 +329,7 @@
         </a>
 
         <!-- Playlist 2 - 3D Printing -->
-        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzEW_F-3iyGQKXnrIBF1wzF-" target="_blank" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzEW_F-3iyGQKXnrIBF1wzF-" target="_blank" rel="noopener noreferrer" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
           <div class="card-body items-center text-center">
             <div class="w-20 h-20 rounded-full bg-info/20 flex items-center justify-center mb-4">
               <i class="fas fa-cube text-3xl text-info"></i>
@@ -335,7 +340,7 @@
         </a>
 
         <!-- Playlist 3 - Higg Reviews -->
-        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzG0ocgJjUyjhSKsvQliZGiJ" target="_blank" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzG0ocgJjUyjhSKsvQliZGiJ" target="_blank" rel="noopener noreferrer" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
           <div class="card-body items-center text-center">
             <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mb-4">
               <i class="fas fa-star text-3xl text-accent"></i>
@@ -346,7 +351,7 @@
         </a>
 
         <!-- Playlist 4 - Craftsman Mower -->
-        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzFJhYtjjDXv6w6PxnRttVvg" target="_blank" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzFJhYtjjDXv6w6PxnRttVvg" target="_blank" rel="noopener noreferrer" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
           <div class="card-body items-center text-center">
             <div class="w-20 h-20 rounded-full bg-success/20 flex items-center justify-center mb-4">
               <i class="fas fa-wrench text-3xl text-success"></i>
@@ -376,27 +381,27 @@
 
             <!-- Social Links -->
             <div class="flex flex-wrap justify-center gap-4 mb-8">
-              <a href="https://www.youtube.com/@higgprojects" target="_blank"
+              <a href="https://www.youtube.com/@higgprojects" target="_blank" rel="noopener noreferrer"
                  class="btn btn-lg gap-3 bg-red-600 hover:bg-red-700 text-white border-none">
                 <i class="fab fa-youtube text-2xl"></i>
                 YouTube
               </a>
-              <a href="https://www.facebook.com/higgprojects" target="_blank"
+              <a href="https://www.facebook.com/higgprojects" target="_blank" rel="noopener noreferrer"
                  class="btn btn-lg gap-3 bg-blue-600 hover:bg-blue-700 text-white border-none">
                 <i class="fab fa-facebook text-2xl"></i>
                 Facebook
               </a>
-              <a href="https://www.instagram.com/higgprojects" target="_blank"
+              <a href="https://www.instagram.com/higgprojects" target="_blank" rel="noopener noreferrer"
                  class="btn btn-lg gap-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-none">
                 <i class="fab fa-instagram text-2xl"></i>
                 Instagram
               </a>
-              <a href="https://x.com/higgprojects" target="_blank"
+              <a href="https://x.com/higgprojects" target="_blank" rel="noopener noreferrer"
                  class="btn btn-lg gap-3 bg-black hover:bg-gray-900 text-white border-none">
                 <i class="fab fa-x-twitter text-2xl"></i>
                 X
               </a>
-              <a href="https://www.tiktok.com/@higg.projects" target="_blank"
+              <a href="https://www.tiktok.com/@higg.projects" target="_blank" rel="noopener noreferrer"
                  class="btn btn-lg gap-3 bg-black hover:bg-gray-900 text-white border-none">
                 <i class="fab fa-tiktok text-2xl"></i>
                 TikTok
@@ -409,7 +414,7 @@
             <p class="text-base-content/70 mb-4 max-w-md mx-auto">
               Check out the tools, gear, and products I use and recommend in my projects!
             </p>
-            <a href="https://www.amazon.com/shop/higgprojects" target="_blank"
+            <a href="https://www.amazon.com/shop/higgprojects" target="_blank" rel="noopener noreferrer"
                class="btn btn-lg gap-3 bg-[#FF9900] hover:bg-[#e88b00] text-black font-bold border-none">
               <i class="fab fa-amazon text-2xl"></i>
               My Storefront
@@ -430,6 +435,82 @@
     </div>
   </section>
 
+  <!-- Free Sticker Section -->
+  <section id="sticker" class="py-20 bg-base-200 reveal">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+
+        <!-- Sticker Image -->
+        <div class="mb-8">
+          <div class="inline-block relative">
+            <img src="images/logo.jpg" alt="HiggProjects Sticker"
+                 class="w-40 h-40 rounded-full shadow-2xl ring-4 ring-base-100">
+            <div class="absolute -bottom-2 -right-2 bg-primary text-primary-content text-xs font-bold px-2 py-1 rounded-full">
+              4" circle
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Want a Free <span class="text-primary">Sticker</span>?
+        </h2>
+        <p class="text-base-content/70 mb-2">
+          Drop your address below and I'll mail you one!
+        </p>
+        <p class="text-sm text-base-content/50 mb-8">
+          <i class="fas fa-box-open mr-1"></i> While supplies last &bull; US addresses only
+        </p>
+
+        <!-- Sticker Request Form -->
+        <form action="https://formsubmit.co/higgprojects@gmail.com" method="POST" class="space-y-4">
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject" value="Free Sticker Request!">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <input type="text" name="name" placeholder="Your Name" required
+                   class="input input-bordered w-full">
+            <input type="email" name="email" placeholder="Email" required
+                   class="input input-bordered w-full">
+          </div>
+
+          <input type="text" name="address" placeholder="Street Address" required
+                 class="input input-bordered w-full">
+
+          <div class="grid sm:grid-cols-3 gap-4">
+            <input type="text" name="city" placeholder="City" required
+                   class="input input-bordered w-full">
+            <select name="state" required class="select select-bordered w-full bg-base-100 text-base-content">
+              <option value="" disabled selected>State</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option><option>DC</option>
+            </select>
+            <input type="text" name="zip" placeholder="ZIP" required pattern="[0-9]{5}"
+                   class="input input-bordered w-full">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg gap-2 mt-4">
+            <i class="fas fa-paper-plane"></i>
+            Send Me a Sticker!
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer footer-center p-10 bg-base-200 text-base-content">
     <aside>
@@ -440,22 +521,22 @@
     </aside>
     <nav>
       <div class="grid grid-flow-col gap-6">
-        <a href="https://www.youtube.com/@higgprojects" target="_blank" class="social-btn text-2xl" title="YouTube">
+        <a href="https://www.youtube.com/@higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="YouTube">
           <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://www.facebook.com/higgprojects" target="_blank" class="social-btn text-2xl" title="Facebook">
+        <a href="https://www.facebook.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Facebook">
           <i class="fab fa-facebook"></i>
         </a>
-        <a href="https://www.instagram.com/higgprojects" target="_blank" class="social-btn text-2xl" title="Instagram">
+        <a href="https://www.instagram.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://x.com/higgprojects" target="_blank" class="social-btn text-2xl" title="X">
+        <a href="https://x.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="X">
           <i class="fab fa-x-twitter"></i>
         </a>
-        <a href="https://www.tiktok.com/@higg.projects" target="_blank" class="social-btn text-2xl" title="TikTok">
+        <a href="https://www.tiktok.com/@higg.projects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="TikTok">
           <i class="fab fa-tiktok"></i>
         </a>
-        <a href="https://www.amazon.com/shop/higgprojects" target="_blank" class="social-btn text-2xl" title="Amazon Storefront">
+        <a href="https://www.amazon.com/shop/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Amazon Storefront">
           <i class="fab fa-amazon"></i>
         </a>
       </div>
@@ -473,7 +554,7 @@
         <i class="fas fa-times"></i>
       </button>
       <div class="aspect-video">
-        <iframe id="videoFrame" class="w-full h-full rounded-lg" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="videoFrame" class="w-full h-full rounded-lg border-0" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -490,7 +571,7 @@
       .then(shorts => {
         const container = document.getElementById('shorts-container');
         container.innerHTML = shorts.map(short => `
-          <a href="https://www.youtube.com/shorts/${short.id}" target="_blank" class="short-card snap-center flex-shrink-0">
+          <a href="https://www.youtube.com/shorts/${short.id}" target="_blank" rel="noopener noreferrer" class="short-card snap-center flex-shrink-0">
             <div class="relative w-44 aspect-[9/16] rounded-xl overflow-hidden bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <img src="https://img.youtube.com/vi/${short.id}/maxresdefault.jpg"
                    alt="${short.title}"
@@ -643,13 +724,11 @@
       document.activeElement.blur();
     }
 
-    themeDark.addEventListener('click', function(e) {
-      e.preventDefault();
+    themeDark.addEventListener('click', function() {
       setTheme('higgprojects');
     });
 
-    themeLight.addEventListener('click', function(e) {
-      e.preventDefault();
+    themeLight.addEventListener('click', function() {
       setTheme('higgprojects-light');
     });
 

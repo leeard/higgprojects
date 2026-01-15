@@ -166,3 +166,11 @@
   -webkit-text-stroke: 2px #5EEAD4;
   paint-order: stroke fill;
 }
+
+/* Match select placeholder to input placeholder */
+[data-theme="higgprojects-light"] select.select:has(option[disabled]:checked) {
+  @apply text-base-content/50;
+}
+[data-theme="higgprojects"] select.select:has(option[disabled]:checked) {
+  @apply text-base-content/75;
+}
