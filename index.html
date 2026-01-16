@@ -566,9 +566,10 @@
 
   <script>
     // Load and render shorts from JSON
-    fetch('shorts.json')
+    fetch('youtube.json')
       .then(response => response.json())
-      .then(shorts => {
+      .then(data => {
+        const shorts = data.shorts || data; // Support both new and old format
         const container = document.getElementById('shorts-container');
         container.innerHTML = shorts.map(short => `
           <a href="https://www.youtube.com/shorts/${short.id}" target="_blank" rel="noopener noreferrer" class="short-card snap-center flex-shrink-0">
