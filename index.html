@@ -183,21 +183,21 @@
                 <i class="fab fa-youtube text-3xl"></i>
               </div>
               <div class="stat-title">Subscribers</div>
-              <div class="stat-value text-primary counter" data-target="7400" data-suffix="+" data-format="k">0</div>
+              <div id="stat-subscribers" class="stat-value text-primary counter" data-target="7400" data-suffix="+" data-format="k">0</div>
             </div>
             <div class="stat">
               <div class="stat-figure text-primary">
                 <i class="fas fa-video text-3xl"></i>
               </div>
               <div class="stat-title">Videos</div>
-              <div class="stat-value text-primary counter" data-target="100" data-suffix="+">0</div>
+              <div id="stat-videos" class="stat-value text-primary counter" data-target="100" data-suffix="+">0</div>
             </div>
             <div class="stat">
               <div class="stat-figure text-primary">
                 <i class="fas fa-tools text-3xl"></i>
               </div>
               <div class="stat-title">Playlists</div>
-              <div class="stat-value text-primary counter" data-target="9">0</div>
+              <div id="stat-playlists" class="stat-value text-primary counter" data-target="9">0</div>
             </div>
           </div>
         </div>
@@ -565,11 +565,22 @@
   </a>
 
   <script>
-    // Load and render shorts from JSON
+    // Load YouTube data (shorts and stats)
     fetch('youtube.json')
       .then(response => response.json())
       .then(data => {
-        const shorts = data.shorts || data; // Support both new and old format
+        // Update stats counters
+        if (data.stats) {
+          const subEl = document.getElementById('stat-subscribers');
+          const vidEl = document.getElementById('stat-videos');
+          const playEl = document.getElementById('stat-playlists');
+          if (subEl && data.stats.subscriberCount) subEl.dataset.target = data.stats.subscriberCount;
+          if (vidEl && data.stats.videoCount) vidEl.dataset.target = data.stats.videoCount;
+          if (playEl && data.stats.playlistCount) playEl.dataset.target = data.stats.playlistCount;
+        }
+
+        // Render shorts
+        const shorts = data.shorts || data;
         const container = document.getElementById('shorts-container');
         container.innerHTML = shorts.map(short => `
           <a href="https://www.youtube.com/shorts/${short.id}" target="_blank" rel="noopener noreferrer" class="short-card snap-center flex-shrink-0">
@@ -590,7 +601,7 @@
           </a>
         `).join('');
       })
-      .catch(err => console.error('Failed to load shorts:', err));
+      .catch(err => console.error('Failed to load YouTube data:', err));
 
     // Parallax hero background (optimized for iOS/iPad)
     var heroBackground = document.getElementById('heroBackground');
