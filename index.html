@@ -458,7 +458,7 @@
         </p>
 
         <!-- Sticker Request Form -->
-        <form action="https://formsubmit.co/higgprojects@gmail.com" method="POST" class="space-y-4">
+        <form id="stickerForm" action="https://formsubmit.co/ajax/higgprojects@gmail.com" method="POST" class="space-y-4">
           <!-- FormSubmit config -->
           <input type="hidden" name="_subject" value="Free Sticker Request!">
           <input type="hidden" name="_captcha" value="false">
@@ -502,6 +502,17 @@
             Send Me a Sticker!
           </button>
         </form>
+
+        <!-- Success Message (hidden by default) -->
+        <div id="stickerSuccess" class="hidden">
+          <div class="alert alert-success shadow-lg">
+            <i class="fas fa-check-circle text-2xl"></i>
+            <div>
+              <h3 class="font-bold">Sticker Request Received!</h3>
+              <p>Thanks! Your sticker is on the way. Keep an eye on your mailbox!</p>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -776,6 +787,37 @@
       if (e.key === 'Escape' && !videoLightbox.classList.contains('hidden')) {
         closeVideoLightbox();
       }
+    });
+
+    // Sticker form AJAX submission
+    var stickerForm = document.getElementById('stickerForm');
+    var stickerSuccess = document.getElementById('stickerSuccess');
+
+    stickerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var submitBtn = stickerForm.querySelector('button[type="submit"]');
+      var originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="loading loading-spinner"></span> Sending...';
+      submitBtn.disabled = true;
+
+      fetch(stickerForm.action, {
+        method: 'POST',
+        body: new FormData(stickerForm),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response) {
+        if (response.ok) {
+          stickerForm.classList.add('hidden');
+          stickerSuccess.classList.remove('hidden');
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(function(error) {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        alert('Oops! Something went wrong. Please try again.');
+      });
     });
   </script>
 
