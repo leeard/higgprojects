@@ -211,3 +211,17 @@
 .sticker-image:hover img {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
+
+/* Toast animation */
+#toast {
+  animation: toastFadeIn 0.3s ease-out;
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
