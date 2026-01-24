@@ -131,19 +131,94 @@
             Subscribe on YouTube
           </a>
         </div>
+
+        <!-- Social proof teaser -->
+        <a href="#featured-tip" class="inline-flex items-center gap-2 mt-6 text-white/80 hover:text-white transition-colors group">
+          <span class="text-sm">19K+ viewers fixed their "dead" drill battery with this tip</span>
+          <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+        </a>
       </div>
     </div>
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <a href="#about" class="text-base-content/50 hover:text-primary transition-colors">
+      <a href="#featured-tip" class="text-base-content/50 hover:text-primary transition-colors">
         <i class="fas fa-chevron-down text-2xl"></i>
       </a>
     </div>
   </section>
 
+  <!-- Featured Tip Section -->
+  <section id="featured-tip" class="py-20 bg-base-200 reveal">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="section-title">This 60-Second Tip Has <span class="text-primary">Saved Hundreds</span></h2>
+        <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
+          Your "dead" drill battery probably isn't dead. Chargers just give up on batteries that drain too low. Here's the fix.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <!-- Video -->
+          <a href="https://www.youtube.com/shorts/ZJBbARK9niU" target="_blank" rel="noopener noreferrer" class="block relative group">
+            <div class="aspect-[9/16] max-w-[280px] mx-auto rounded-2xl overflow-hidden shadow-2xl bg-base-300">
+              <img src="https://img.youtube.com/vi/ZJBbARK9niU/maxresdefault.jpg"
+                   alt="How to fix a drill battery that won't charge"
+                   class="w-full h-full object-cover"
+                   onerror="this.src='https://img.youtube.com/vi/ZJBbARK9niU/hqdefault.jpg'">
+              <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all flex items-center justify-center">
+                <div class="btn btn-circle btn-primary btn-lg">
+                  <i class="fas fa-play text-xl"></i>
+                </div>
+              </div>
+              <div class="absolute bottom-3 right-3 bg-red-600 text-white px-2 py-1 rounded text-sm font-bold">
+                <i class="fas fa-bolt mr-1"></i>SHORT
+              </div>
+            </div>
+            <p class="text-center mt-4 text-base-content/70 text-sm">
+              <i class="fas fa-eye mr-1"></i> 19K+ views
+            </p>
+          </a>
+
+          <!-- Testimonials -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold mb-6">What viewers are saying:</h3>
+
+            <div class="card bg-base-100 shadow">
+              <div class="card-body py-4 px-5">
+                <p class="italic text-base-content/80">"Thank you it worked like a charm"</p>
+                <p class="text-sm text-primary font-medium mt-1">@Mike-fi5ob</p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100 shadow">
+              <div class="card-body py-4 px-5">
+                <p class="italic text-base-content/80">"This worked with my dead battery that wasn't charging. It only needed a few seconds."</p>
+                <p class="text-sm text-primary font-medium mt-1">@M16A2evans</p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100 shadow">
+              <div class="card-body py-4 px-5">
+                <p class="italic text-base-content/80">"Thanks man this was a life saver much appreciated"</p>
+                <p class="text-sm text-primary font-medium mt-1">@hakimnaushad2318</p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100 shadow">
+              <div class="card-body py-4 px-5">
+                <p class="italic text-base-content/80">"Thank you brother. I tried it and it worked. Now my battery is charging like normal!"</p>
+                <p class="text-sm text-primary font-medium mt-1">@johnnymo9518</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
-  <section id="about" class="py-20 bg-base-200 reveal">
+  <section id="about" class="py-20 bg-base-100 reveal">
     <div class="container mx-auto px-4">
       <h2 class="section-title">About <span class="text-primary">Me</span></h2>
 
@@ -163,7 +238,7 @@
         <div class="space-y-6">
           <h3 class="text-2xl font-bold">Hey, I'm Lee!</h3>
           <p class="text-lg text-base-content/80 leading-relaxed">
-            Something broken? Let's fix it. I fix tractors, riding mowers, 3D printers, and whatever else breaks. Sometimes it works, sometimes it doesn't - but we always learn something along the way.
+            Something broken? Let's fix it. I'm not a professional anything - I just fix whatever breaks and make videos along the way. Sometimes it works, sometimes it doesn't, but we always learn something.
           </p>
           <p class="text-lg text-base-content/80 leading-relaxed">
             You might also see my son Luke in some videos - he helps out and does his own projects too. It's a family affair!
@@ -202,7 +277,7 @@
   </section>
 
   <!-- Featured Videos Section -->
-  <section id="videos" class="py-20 bg-base-100 reveal">
+  <section id="videos" class="py-20 bg-base-200 reveal">
     <div class="container mx-auto px-4">
       <h2 class="section-title">Featured <span class="text-primary">Videos</span></h2>
       <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
