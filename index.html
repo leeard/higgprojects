@@ -645,6 +645,38 @@
   </div>
 
   <script>
+    // Mobile menu toggle fix for Safari
+    (function() {
+      const menuBtn = document.querySelector('.dropdown > [tabindex="0"]');
+      const dropdown = menuBtn.closest('.dropdown');
+      let menuOpen = false;
+
+      menuBtn.addEventListener('click', function(e) {
+        if (menuOpen) {
+          e.preventDefault();
+          e.stopPropagation();
+          this.blur();
+          menuOpen = false;
+        } else {
+          menuOpen = true;
+        }
+      });
+
+      // Close menu when clicking outside or on a link
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          menuOpen = false;
+        }
+      });
+
+      document.querySelectorAll('.dropdown-content a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.activeElement.blur();
+          menuOpen = false;
+        });
+      });
+    })();
+
     // Load YouTube data (shorts and stats)
     fetch('youtube.json')
       .then(response => response.json())
