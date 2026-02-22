@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "nIyDlaYcPhI",
+      "title": "Now that’s a quick trigger finger!",
+      "thumbnail": "https://i.ytimg.com/vi/nIyDlaYcPhI/hqdefault.jpg",
+      "publishedAt": "2026-02-22T00:29:28Z"
+    },
+    {
       "id": "OFwvh5laz9M",
       "title": "Nailed it!",
       "thumbnail": "https://i.ytimg.com/vi/OFwvh5laz9M/hqdefault.jpg",
@@ -29,19 +35,13 @@
       "title": "Floppy McFlopperson",
       "thumbnail": "https://i.ytimg.com/vi/4UNllrEaC8o/hqdefault.jpg",
       "publishedAt": "2026-01-23T04:05:01Z"
-    },
-    {
-      "id": "OQW_ir_3JMs",
-      "title": "Crazy fidget cube",
-      "thumbnail": "https://i.ytimg.com/vi/OQW_ir_3JMs/hqdefault.jpg",
-      "publishedAt": "2026-01-16T06:06:02Z"
     }
   ],
   "stats": {
     "subscriberCount": "7400",
-    "videoCount": "460",
-    "viewCount": "667658",
+    "videoCount": "461",
+    "viewCount": "668047",
     "playlistCount": "9",
-    "updatedAt": "2026-02-21T06:16:53Z"
+    "updatedAt": "2026-02-22T06:19:53Z"
   }
 }
