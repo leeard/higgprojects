@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "ORY_F_wb8Mg",
+      "title": "Evan firing the AR for the first time",
+      "thumbnail": "https://i.ytimg.com/vi/ORY_F_wb8Mg/hqdefault.jpg",
+      "publishedAt": "2026-02-23T07:34:30Z"
+    },
+    {
       "id": "nIyDlaYcPhI",
       "title": "Now that’s a quick trigger finger!",
       "thumbnail": "https://i.ytimg.com/vi/nIyDlaYcPhI/hqdefault.jpg",
@@ -29,19 +35,13 @@
       "title": "A exhaust pipe WAS HARMED in the making of this video",
       "thumbnail": "https://i.ytimg.com/vi/sqTg6beHYHs/hqdefault.jpg",
       "publishedAt": "2026-01-26T04:51:10Z"
-    },
-    {
-      "id": "4UNllrEaC8o",
-      "title": "Floppy McFlopperson",
-      "thumbnail": "https://i.ytimg.com/vi/4UNllrEaC8o/hqdefault.jpg",
-      "publishedAt": "2026-01-23T04:05:01Z"
     }
   ],
   "stats": {
-    "subscriberCount": "7400",
-    "videoCount": "461",
-    "viewCount": "668498",
+    "subscriberCount": "7410",
+    "videoCount": "462",
+    "viewCount": "668870",
     "playlistCount": "9",
-    "updatedAt": "2026-02-23T06:30:05Z"
+    "updatedAt": "2026-02-24T06:26:33Z"
   }
 }
