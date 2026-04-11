@@ -1,6 +1,24 @@
 {
   "shorts": [
     {
+      "id": "Hy80vCwDECI",
+      "title": "Is that a crack??",
+      "thumbnail": "https://i.ytimg.com/vi/Hy80vCwDECI/hqdefault.jpg",
+      "publishedAt": "2026-04-11T05:10:22Z"
+    },
+    {
+      "id": "FGXj9l8yP_M",
+      "title": "Can anyone identify this old vice I’m restoring?",
+      "thumbnail": "https://i.ytimg.com/vi/FGXj9l8yP_M/hqdefault.jpg",
+      "publishedAt": "2026-04-11T04:50:55Z"
+    },
+    {
+      "id": "IzJgBsrRnqk",
+      "title": "Miracle antifreeze leak fix",
+      "thumbnail": "https://i.ytimg.com/vi/IzJgBsrRnqk/hqdefault.jpg",
+      "publishedAt": "2026-04-11T00:29:23Z"
+    },
+    {
       "id": "TeUhqjkLJxY",
       "title": "Easy way to attach an anvil",
       "thumbnail": "https://i.ytimg.com/vi/TeUhqjkLJxY/hqdefault.jpg",
@@ -17,31 +35,13 @@
       "title": "Luke dialed on a nice little weld",
       "thumbnail": "https://i.ytimg.com/vi/FUxudCBXYEk/hqdefault.jpg",
       "publishedAt": "2026-04-05T08:49:22Z"
-    },
-    {
-      "id": "uOktJnY01vc",
-      "title": "Check out this 3d printed stormtrooper we made! #3dprinted #starwars",
-      "thumbnail": "https://i.ytimg.com/vi/uOktJnY01vc/hqdefault.jpg",
-      "publishedAt": "2026-03-12T00:18:06Z"
-    },
-    {
-      "id": "ORY_F_wb8Mg",
-      "title": "Evan firing the AR for the first time",
-      "thumbnail": "https://i.ytimg.com/vi/ORY_F_wb8Mg/hqdefault.jpg",
-      "publishedAt": "2026-02-23T07:34:30Z"
-    },
-    {
-      "id": "nIyDlaYcPhI",
-      "title": "Now that’s a quick trigger finger!",
-      "thumbnail": "https://i.ytimg.com/vi/nIyDlaYcPhI/hqdefault.jpg",
-      "publishedAt": "2026-02-22T00:29:28Z"
     }
   ],
   "stats": {
     "subscriberCount": "9310",
-    "videoCount": "471",
-    "viewCount": "731881",
+    "videoCount": "474",
+    "viewCount": "733754",
     "playlistCount": "9",
-    "updatedAt": "2026-04-10T06:43:03Z"
+    "updatedAt": "2026-04-11T06:27:48Z"
   }
 }
