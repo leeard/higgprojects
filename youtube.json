@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "F597uRqtPu0",
+      "title": "What a nice looking lawn mow",
+      "thumbnail": "https://i.ytimg.com/vi/F597uRqtPu0/hqdefault.jpg",
+      "publishedAt": "2026-04-14T01:23:27Z"
+    },
+    {
       "id": "Hy80vCwDECI",
       "title": "Is that a crack??",
       "thumbnail": "https://i.ytimg.com/vi/Hy80vCwDECI/hqdefault.jpg",
@@ -29,19 +35,13 @@
       "title": "Happy Easter!   Higg egg hunt!",
       "thumbnail": "https://i.ytimg.com/vi/H0UqotXHxfY/hqdefault.jpg",
       "publishedAt": "2026-04-05T20:15:15Z"
-    },
-    {
-      "id": "FUxudCBXYEk",
-      "title": "Luke dialed on a nice little weld",
-      "thumbnail": "https://i.ytimg.com/vi/FUxudCBXYEk/hqdefault.jpg",
-      "publishedAt": "2026-04-05T08:49:22Z"
     }
   ],
   "stats": {
     "subscriberCount": "9310",
-    "videoCount": "474",
-    "viewCount": "739244",
+    "videoCount": "475",
+    "viewCount": "740698",
     "playlistCount": "9",
-    "updatedAt": "2026-04-13T06:51:22Z"
+    "updatedAt": "2026-04-14T06:43:18Z"
   }
 }
