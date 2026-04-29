@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="higgprojects">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | HiggProjects</title>
+  <meta name="description" content="Tractor restorations, 3D printing, repairs, and shop builds — browse real HiggProjects work independently of YouTube.">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="Projects | HiggProjects">
+  <meta property="og:description" content="Tractor restorations, 3D printing, repairs, and shop builds — browse real HiggProjects work independently of YouTube.">
+  <meta property="og:image" content="https://higgprojects.com/images/logo.jpg">
+  <meta property="og:url" content="https://higgprojects.com/projects.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Projects | HiggProjects">
+  <meta name="twitter:description" content="Tractor restorations, 3D printing, repairs, and shop builds.">
+  <meta name="twitter:image" content="https://higgprojects.com/images/logo.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+
+  <!-- Tailwind/DaisyUI CSS -->
+  <link href="dist/output.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Set theme before page renders to prevent flash -->
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'higgprojects');
+  </script>
+
+  <style>
+    /* Smooth theme transition */
+    html {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    html.theme-transitioning,
+    html.theme-transitioning *,
+    html.theme-transitioning *::before,
+    html.theme-transitioning *::after {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+    }
+  </style>
+</head>
+<body class="bg-base-100 text-base-content bg-noise">
+
+  <!-- Navbar -->
+  <nav class="navbar bg-base-200/95 backdrop-blur-sm fixed top-0 z-50 shadow-lg">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-200 rounded-box w-52">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#videos" class="nav-link">Videos</a></li>
+          <li><a href="projects.html" class="nav-link" aria-current="page">Projects</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="index.html#sticker" class="nav-link text-primary font-bold"><i class="fas fa-gift mr-1"></i>Free Sticker</a></li>
+        </ul>
+      </div>
+      <a href="index.html#home" class="btn btn-ghost text-xl font-oswald text-primary">
+        HIGG&nbsp;&nbsp;PROJECTS
+      </a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2">
+        <li><a href="index.html#home" class="nav-link font-medium">Home</a></li>
+        <li><a href="index.html#about" class="nav-link font-medium">About</a></li>
+        <li><a href="index.html#videos" class="nav-link font-medium">Videos</a></li>
+        <li><a href="projects.html" class="nav-link font-medium" aria-current="page">Projects</a></li>
+        <li><a href="index.html#contact" class="nav-link font-medium">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="index.html#sticker" class="btn btn-sm btn-primary gap-1">
+        <i class="fas fa-gift"></i>
+        <span class="hidden sm:inline">Free Sticker</span>
+      </a>
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-sm btn-ghost gap-1">
+          <i class="fas fa-circle-half-stroke"></i>
+          <span class="hidden sm:inline text-xs">Theme</span>
+          <i class="fas fa-chevron-down text-xs"></i>
+        </div>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-200 rounded-box w-36 mt-2">
+          <li><button type="button" id="themeDark" class="w-full text-left"><i class="fas fa-moon"></i> Dark</button></li>
+          <li><button type="button" id="themeLight" class="w-full text-left"><i class="fas fa-sun"></i> Light</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-12 bg-base-100">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Real <span class="text-primary">Projects</span></h2>
+      <p class="text-center text-base-content/70 mb-4 max-w-2xl mx-auto">
+        Tractor restorations, 3D printing, repairs, and shop builds. Each project links out to the video series and detail notes — no YouTube account required to browse.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="pb-20 bg-base-100 reveal">
+    <div class="container mx-auto px-4">
+      <div id="projects-grid"
+           class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto stagger-children">
+        <!-- Cards rendered from projects.json -->
+        <div class="card bg-base-200 shadow-xl animate-pulse" aria-hidden="true">
+          <div class="aspect-video bg-base-300"></div>
+          <div class="card-body">
+            <div class="h-5 bg-base-300 rounded w-3/4 mb-2"></div>
+            <div class="h-4 bg-base-300 rounded w-full"></div>
+            <div class="h-4 bg-base-300 rounded w-5/6"></div>
+          </div>
+        </div>
+        <div class="card bg-base-200 shadow-xl animate-pulse" aria-hidden="true">
+          <div class="aspect-video bg-base-300"></div>
+          <div class="card-body">
+            <div class="h-5 bg-base-300 rounded w-3/4 mb-2"></div>
+            <div class="h-4 bg-base-300 rounded w-full"></div>
+            <div class="h-4 bg-base-300 rounded w-5/6"></div>
+          </div>
+        </div>
+        <div class="card bg-base-200 shadow-xl animate-pulse" aria-hidden="true">
+          <div class="aspect-video bg-base-300"></div>
+          <div class="card-body">
+            <div class="h-5 bg-base-300 rounded w-3/4 mb-2"></div>
+            <div class="h-4 bg-base-300 rounded w-full"></div>
+            <div class="h-4 bg-base-300 rounded w-5/6"></div>
+          </div>
+        </div>
+      </div>
+
+      <p id="projects-error" class="hidden text-center text-base-content/70 mt-12">
+        Couldn't load projects right now. Catch the full list on the
+        <a href="https://www.youtube.com/@higgprojects/playlists" target="_blank" rel="noopener noreferrer" class="link link-primary">YouTube channel</a>.
+      </p>
+
+      <noscript>
+        <p class="text-center text-base-content/70 mt-12">
+          This page loads project cards with JavaScript. While that's off, browse the
+          <a href="https://www.youtube.com/@higgprojects/playlists" target="_blank" rel="noopener noreferrer" class="link link-primary">YouTube playlists</a>
+          directly.
+        </p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+    <aside>
+      <p class="text-2xl font-oswald">
+        HIGG&nbsp;&nbsp;PROJECTS
+      </p>
+      <p class="text-base-content/70">Get It Done.</p>
+    </aside>
+    <nav>
+      <div class="grid grid-flow-col gap-6">
+        <a href="https://www.youtube.com/@higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.tiktok.com/@higg.projects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.amazon.com/shop/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Amazon Storefront">
+          <i class="fab fa-amazon"></i>
+        </a>
+      </div>
+    </nav>
+    <aside class="flex flex-col items-center gap-2">
+      <p class="text-base-content/50">&copy; 2026 HiggProjects. All rights reserved.</p>
+    </aside>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#top" class="btn btn-circle btn-primary fixed bottom-6 right-6 shadow-lg opacity-0 translate-y-10 transition-all duration-300" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Mobile menu toggle fix for Safari
+    (function() {
+      const menuBtn = document.querySelector('.dropdown > [tabindex="0"]');
+      if (!menuBtn) return;
+      const dropdown = menuBtn.closest('.dropdown');
+      let menuOpen = false;
+
+      menuBtn.addEventListener('click', function(e) {
+        if (menuOpen) {
+          e.preventDefault();
+          e.stopPropagation();
+          this.blur();
+          menuOpen = false;
+        } else {
+          menuOpen = true;
+        }
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          menuOpen = false;
+        }
+      });
+
+      document.querySelectorAll('.dropdown-content a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.activeElement.blur();
+          menuOpen = false;
+        });
+      });
+    })();
+
+    // Theme toggle
+    (function() {
+      const themeDark = document.getElementById('themeDark');
+      const themeLight = document.getElementById('themeLight');
+      const html = document.documentElement;
+
+      function setTheme(theme) {
+        html.classList.add('theme-transitioning');
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        setTimeout(function() { html.classList.remove('theme-transitioning'); }, 300);
+        document.activeElement.blur();
+      }
+
+      themeDark.addEventListener('click', function() { setTheme('higgprojects'); });
+      themeLight.addEventListener('click', function() { setTheme('higgprojects-light'); });
+    })();
+
+    // Back to top button visibility
+    (function() {
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+          backToTop.classList.remove('opacity-0', 'translate-y-10');
+          backToTop.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          backToTop.classList.add('opacity-0', 'translate-y-10');
+          backToTop.classList.remove('opacity-100', 'translate-y-0');
+        }
+      });
+
+      backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // Smooth scroll for in-page anchor links (cross-page links use normal browser jump)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href.length < 2) return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const navHeight = document.querySelector('nav').offsetHeight;
+          const targetPosition = target.offsetTop - navHeight;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Scroll reveal animation
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.stagger-children').forEach(el => revealObserver.observe(el));
+
+    // Render project cards from projects.json
+    (function() {
+      const grid = document.getElementById('projects-grid');
+      const errorEl = document.getElementById('projects-error');
+
+      function escapeHtml(s) {
+        return String(s == null ? '' : s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function categoryMeta(categories, id) {
+        return categories.find(c => c.id === id) || { id: id, label: id, icon: 'fa-tag' };
+      }
+
+      function thumbFallback(heroImage, videoId) {
+        if (videoId && /youtube\.com\/vi\//.test(heroImage)) {
+          return `https://img.youtube.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`;
+        }
+        return '';
+      }
+
+      function renderCard(project, categories) {
+        const cat = categoryMeta(categories, project.category);
+        const slug = escapeHtml(project.slug);
+        const title = escapeHtml(project.title);
+        const summary = escapeHtml(project.summary);
+        const heroImage = escapeHtml(project.heroImage);
+        const heroAlt = escapeHtml(project.heroAlt || project.title);
+        const fallback = thumbFallback(project.heroImage, project.videoId);
+        const onerror = fallback
+          ? ` onerror="this.onerror=null;this.src='${escapeHtml(fallback)}'"`
+          : '';
+        const catLabel = escapeHtml(cat.label);
+        const catIcon = escapeHtml(cat.icon);
+        const catId = escapeHtml(cat.id);
+
+        return `
+          <a href="projects.html#${slug}"
+             data-category="${catId}"
+             class="project-card card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100">
+            <figure class="relative">
+              <img src="${heroImage}"
+                   alt="${heroAlt}"
+                   loading="lazy"
+                   class="w-full aspect-video object-cover bg-base-300"${onerror}>
+              <span class="absolute top-3 left-3 badge badge-primary gap-1 shadow">
+                <i class="fas ${catIcon}"></i>${catLabel}
+              </span>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-lg leading-snug">${title}</h3>
+              <p class="text-base-content/70 text-sm">${summary}</p>
+              <div class="card-actions justify-end mt-2">
+                <span class="text-primary text-sm font-medium">
+                  View project <i class="fas fa-arrow-right ml-1"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+        `;
+      }
+
+      fetch('projects.json')
+        .then(r => {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(data => {
+          const categories = Array.isArray(data.categories) ? data.categories : [];
+          const projects = Array.isArray(data.projects) ? data.projects : [];
+
+          if (projects.length === 0) {
+            grid.innerHTML = '';
+            errorEl.textContent = 'No projects published yet — check back soon.';
+            errorEl.classList.remove('hidden');
+            return;
+          }
+
+          // Optional newest-first sort if publishedAt is present.
+          projects.sort((a, b) => {
+            if (a.publishedAt && b.publishedAt) {
+              return b.publishedAt.localeCompare(a.publishedAt);
+            }
+            return 0;
+          });
+
+          // Reset stagger state, swap in the real cards, then re-trigger
+          // the stagger animation on the next frame so each card eases in.
+          grid.classList.remove('active');
+          grid.innerHTML = projects.map(p => renderCard(p, categories)).join('');
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => grid.classList.add('active'));
+          });
+        })
+        .catch(err => {
+          console.error('Failed to load projects.json:', err);
+          grid.innerHTML = '';
+          errorEl.classList.remove('hidden');
+        });
+    })();
+  </script>
+
+</body>
+</html>
