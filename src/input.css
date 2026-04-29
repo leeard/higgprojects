@@ -50,6 +50,34 @@
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
+
+  /* Typography for project detail body HTML (authored in projects.json
+     as raw <p>/<ul>/<li>/<h3> — Tailwind preflight strips the defaults,
+     so we restore them here). */
+  .project-body p {
+    @apply mb-4;
+  }
+  .project-body p:last-child {
+    @apply mb-0;
+  }
+  .project-body h3 {
+    @apply text-xl md:text-2xl font-bold mt-8 mb-3 text-base-content;
+  }
+  .project-body ul {
+    @apply list-disc pl-6 mb-4 space-y-2;
+  }
+  .project-body ol {
+    @apply list-decimal pl-6 mb-4 space-y-2;
+  }
+  .project-body li {
+    @apply leading-relaxed;
+  }
+  .project-body a {
+    @apply text-primary hover:underline;
+  }
+  .project-body strong {
+    @apply font-semibold text-base-content;
+  }
 }
 
 @layer utilities {

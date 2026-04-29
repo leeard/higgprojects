@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="higgprojects">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | HiggProjects</title>
+  <meta name="description" content="Tractor restorations, 3D printing, repairs, and shop builds — browse real HiggProjects work independently of YouTube.">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="Projects | HiggProjects">
+  <meta property="og:description" content="Tractor restorations, 3D printing, repairs, and shop builds — browse real HiggProjects work independently of YouTube.">
+  <meta property="og:image" content="https://higgprojects.com/images/logo.jpg">
+  <meta property="og:url" content="https://higgprojects.com/projects.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Projects | HiggProjects">
+  <meta name="twitter:description" content="Tractor restorations, 3D printing, repairs, and shop builds.">
+  <meta name="twitter:image" content="https://higgprojects.com/images/logo.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+
+  <!-- Tailwind/DaisyUI CSS -->
+  <link href="dist/output.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Set theme before page renders to prevent flash -->
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'higgprojects');
+  </script>
+
+  <style>
+    /* Smooth theme transition */
+    html {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    html.theme-transitioning,
+    html.theme-transitioning *,
+    html.theme-transitioning *::before,
+    html.theme-transitioning *::after {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+    }
+
+    /* Keep detail-panel headings clear of the fixed navbar when the page
+       is opened directly at #slug or scrolled via a back-link. */
+    .project-detail {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Restore semantic typography inside the authored detail-body HTML.
+       Tailwind's preflight strips list markers, heading sizes, and
+       paragraph margins; these rules put them back. Mirrored as @apply
+       component classes in src/input.css for future builds. */
+    .project-body p { margin-bottom: 1rem; }
+    .project-body p:last-child { margin-bottom: 0; }
+    .project-body h3 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    @media (min-width: 768px) {
+      .project-body h3 { font-size: 1.5rem; line-height: 2rem; }
+    }
+    .project-body ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .project-body ol {
+      list-style: decimal;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .project-body li { margin-bottom: 0.5rem; line-height: 1.625; }
+    .project-body strong { font-weight: 600; }
+
+    /* Stopgap utilities: a few Tailwind classes used only on this page
+       aren't yet in the committed dist/output.css (next `npm run build`
+       will pick them up). Inline so the layout, focus rings, and badge
+       color render correctly until then. */
+    .projects-page-header { padding-top: 8rem; padding-bottom: 3rem; }
+    .projects-grid-section { padding-bottom: 5rem; }
+    .project-detail-hero { margin-bottom: 2.5rem; }
+    .project-detail-playlist { margin-top: 2.5rem; }
+    .project-card-title { line-height: 1.375; }
+    .project-card:focus-visible,
+    .project-detail .video-lightbox:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px hsl(var(--b1)), 0 0 0 4px hsl(var(--p));
+    }
+    .badge.badge-primary {
+      background-color: hsl(var(--p));
+      color: hsl(var(--pc));
+      border-color: hsl(var(--p));
+    }
+  </style>
+</head>
+<body class="bg-base-100 text-base-content bg-noise">
+
+  <!-- Navbar -->
+  <nav class="navbar bg-base-200/95 backdrop-blur-sm fixed top-0 z-50 shadow-lg">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-200 rounded-box w-52">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#videos" class="nav-link">Videos</a></li>
+          <li><a href="projects.html" class="nav-link text-primary font-bold" aria-current="page">Projects</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="index.html#sticker" class="nav-link text-primary font-bold"><i class="fas fa-gift mr-1"></i>Free Sticker</a></li>
+        </ul>
+      </div>
+      <a href="index.html#home" class="btn btn-ghost text-xl font-oswald text-primary">
+        HIGG&nbsp;&nbsp;PROJECTS
+      </a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2">
+        <li><a href="index.html#home" class="nav-link font-medium">Home</a></li>
+        <li><a href="index.html#about" class="nav-link font-medium">About</a></li>
+        <li><a href="index.html#videos" class="nav-link font-medium">Videos</a></li>
+        <li><a href="projects.html" class="nav-link text-primary font-bold" aria-current="page">Projects</a></li>
+        <li><a href="index.html#contact" class="nav-link font-medium">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="index.html#sticker" class="btn btn-sm btn-primary gap-1">
+        <i class="fas fa-gift"></i>
+        <span class="hidden sm:inline">Free Sticker</span>
+      </a>
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-sm btn-ghost gap-1">
+          <i class="fas fa-circle-half-stroke"></i>
+          <span class="hidden sm:inline text-xs">Theme</span>
+          <i class="fas fa-chevron-down text-xs"></i>
+        </div>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-200 rounded-box w-36 mt-2">
+          <li><button type="button" id="themeDark" class="w-full text-left"><i class="fas fa-moon"></i> Dark</button></li>
+          <li><button type="button" id="themeLight" class="w-full text-left"><i class="fas fa-sun"></i> Light</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="projects-page-header pt-32 pb-12 bg-base-100">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Real <span class="text-primary">Projects</span></h2>
+      <p class="text-center text-base-content/70 mb-4 max-w-2xl mx-auto">
+        Tractor restorations, 3D printing, repairs, and shop builds. Each project links out to the video series and detail notes — no YouTube account required to browse.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-grid-section pb-20 bg-base-100 reveal">
+    <div class="container mx-auto px-4">
+      <div id="projects-filter"
+           class="hidden flex-wrap items-center justify-center gap-2 mb-8 max-w-6xl mx-auto"
+           role="group" aria-label="Filter projects by category">
+        <!-- Filter chips rendered from projects.json categories -->
+      </div>
+
+      <p id="projects-empty" class="hidden text-center text-base-content/70 mb-8">
+        No projects in this category yet.
+      </p>
+
+      <div id="projects-grid"
+           class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto stagger-children">
+        <!-- Cards rendered from projects.json -->
+        <div class="card bg-base-200 shadow-xl animate-pulse" aria-hidden="true">
+          <div class="aspect-video bg-base-300"></div>
+          <div class="card-body">
+            <div class="h-5 bg-base-300 rounded w-3/4 mb-2"></div>
+            <div class="h-4 bg-base-300 rounded w-full"></div>
+            <div class="h-4 bg-base-300 rounded w-5/6"></div>
+          </div>
+        </div>
+        <div class="card bg-base-200 shadow-xl animate-pulse" aria-hidden="true">
+          <div class="aspect-video bg-base-300"></div>
+          <div class="card-body">
+            <div class="h-5 bg-base-300 rounded w-3/4 mb-2"></div>
+            <div class="h-4 bg-base-300 rounded w-full"></div>
+            <div class="h-4 bg-base-300 rounded w-5/6"></div>
+          </div>
+        </div>
+        <div class="card bg-base-200 shadow-xl animate-pulse" aria-hidden="true">
+          <div class="aspect-video bg-base-300"></div>
+          <div class="card-body">
+            <div class="h-5 bg-base-300 rounded w-3/4 mb-2"></div>
+            <div class="h-4 bg-base-300 rounded w-full"></div>
+            <div class="h-4 bg-base-300 rounded w-5/6"></div>
+          </div>
+        </div>
+      </div>
+
+      <p id="projects-error" class="hidden text-center text-base-content/70 mt-12">
+        Couldn't load projects right now. Catch the full list on the
+        <a href="https://www.youtube.com/@higgprojects/playlists" target="_blank" rel="noopener noreferrer" class="link link-primary">YouTube channel</a>.
+      </p>
+
+      <noscript>
+        <p class="text-center text-base-content/70 mt-12">
+          This page loads project cards with JavaScript. While that's off, browse the
+          <a href="https://www.youtube.com/@higgprojects/playlists" target="_blank" rel="noopener noreferrer" class="link link-primary">YouTube playlists</a>
+          directly.
+        </p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- Project Detail Panels (rendered from projects.json) -->
+  <div id="project-details"></div>
+
+  <!-- Footer -->
+  <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+    <aside>
+      <p class="text-2xl font-oswald">
+        HIGG&nbsp;&nbsp;PROJECTS
+      </p>
+      <p class="text-base-content/70">Get It Done.</p>
+    </aside>
+    <nav>
+      <div class="grid grid-flow-col gap-6">
+        <a href="https://www.youtube.com/@higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.tiktok.com/@higg.projects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.amazon.com/shop/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Amazon Storefront">
+          <i class="fab fa-amazon"></i>
+        </a>
+      </div>
+    </nav>
+    <aside class="flex flex-col items-center gap-2">
+      <p class="text-base-content/50">&copy; 2026 HiggProjects. All rights reserved.</p>
+    </aside>
+  </footer>
+
+  <!-- Video Lightbox Modal -->
+  <div id="videoLightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="relative w-full max-w-5xl mx-4">
+      <button id="closeLightbox" class="absolute -top-12 right-0 btn btn-circle btn-ghost text-white text-2xl hover:bg-white/20" aria-label="Close video">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="aspect-video">
+        <iframe id="videoFrame" class="w-full h-full rounded-lg border-0" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top button -->
+  <a href="#top" class="btn btn-circle btn-primary fixed bottom-6 right-6 shadow-lg opacity-0 translate-y-10 transition-all duration-300" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Mobile menu toggle fix for Safari
+    (function() {
+      const menuBtn = document.querySelector('.dropdown > [tabindex="0"]');
+      if (!menuBtn) return;
+      const dropdown = menuBtn.closest('.dropdown');
+      let menuOpen = false;
+
+      menuBtn.addEventListener('click', function(e) {
+        if (menuOpen) {
+          e.preventDefault();
+          e.stopPropagation();
+          this.blur();
+          menuOpen = false;
+        } else {
+          menuOpen = true;
+        }
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          menuOpen = false;
+        }
+      });
+
+      document.querySelectorAll('.dropdown-content a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.activeElement.blur();
+          menuOpen = false;
+        });
+      });
+    })();
+
+    // Theme toggle
+    (function() {
+      const themeDark = document.getElementById('themeDark');
+      const themeLight = document.getElementById('themeLight');
+      const html = document.documentElement;
+
+      function setTheme(theme) {
+        html.classList.add('theme-transitioning');
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        setTimeout(function() { html.classList.remove('theme-transitioning'); }, 300);
+        document.activeElement.blur();
+      }
+
+      themeDark.addEventListener('click', function() { setTheme('higgprojects'); });
+      themeLight.addEventListener('click', function() { setTheme('higgprojects-light'); });
+    })();
+
+    // Back to top button visibility
+    (function() {
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+          backToTop.classList.remove('opacity-0', 'translate-y-10');
+          backToTop.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          backToTop.classList.add('opacity-0', 'translate-y-10');
+          backToTop.classList.remove('opacity-100', 'translate-y-0');
+        }
+      });
+
+      backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // Smooth scroll for in-page anchor links — uses event delegation so
+    // dynamically-rendered links (project cards, "back to projects" links
+    // inside detail panels) work the same as static ones. Cross-page
+    // links (e.g. index.html#about) start with letters, not "#", and
+    // fall through to normal browser navigation.
+    document.addEventListener('click', function(e) {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (!anchor) return;
+      // .video-lightbox anchors use href="#..." but are handled by the
+      // lightbox click handler below — don't double-process them.
+      if (anchor.classList.contains('video-lightbox')) return;
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#' || href.length < 2) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const navHeight = document.querySelector('nav').offsetHeight;
+      const targetPosition = target.offsetTop - navHeight;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      history.replaceState(null, '', href);
+    });
+
+    // Video lightbox — same modal pattern as index.html. Event-delegated
+    // because .video-lightbox triggers are rendered dynamically inside
+    // the project detail panels.
+    (function() {
+      const lightbox = document.getElementById('videoLightbox');
+      const frame = document.getElementById('videoFrame');
+      const closeBtn = document.getElementById('closeLightbox');
+      if (!lightbox || !frame || !closeBtn) return;
+
+      function open(videoId) {
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&playsinline=1&rel=0';
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        frame.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', function(e) {
+        const trigger = e.target.closest('.video-lightbox');
+        if (!trigger) return;
+        const videoId = trigger.getAttribute('data-video');
+        if (!videoId) return;
+        e.preventDefault();
+        open(videoId);
+      });
+
+      closeBtn.addEventListener('click', close);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) close();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) close();
+      });
+    })();
+
+    // Scroll reveal animation. The observer is shared between the static
+    // sections at page load and the project detail panels rendered later
+    // — `revealObserver` is referenced from the project-render code below.
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.stagger-children').forEach(el => revealObserver.observe(el));
+
+    // Render project cards + detail panels from projects.json
+    (function() {
+      const grid = document.getElementById('projects-grid');
+      const errorEl = document.getElementById('projects-error');
+      const emptyEl = document.getElementById('projects-empty');
+      const filterEl = document.getElementById('projects-filter');
+      const detailsEl = document.getElementById('project-details');
+      let activeFilter = 'all';
+
+      function escapeHtml(s) {
+        return String(s == null ? '' : s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function categoryMeta(categories, id) {
+        return categories.find(c => c.id === id) || { id: id, label: id, icon: 'fa-tag' };
+      }
+
+      function thumbFallback(heroImage, videoId) {
+        if (videoId && /youtube\.com\/vi\//.test(heroImage)) {
+          return `https://img.youtube.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`;
+        }
+        return '';
+      }
+
+      function renderDetail(project, categories, index) {
+        const cat = categoryMeta(categories, project.category);
+        const slug = escapeHtml(project.slug);
+        const title = escapeHtml(project.title);
+        const summary = escapeHtml(project.summary);
+        const heroImage = escapeHtml(project.heroImage);
+        const heroAlt = escapeHtml(project.heroAlt || project.title);
+        const fallback = thumbFallback(project.heroImage, project.videoId);
+        const onerror = fallback
+          ? ` onerror="this.onerror=null;this.src='${escapeHtml(fallback)}'"`
+          : '';
+        const catLabel = escapeHtml(cat.label);
+        const catIcon = escapeHtml(cat.icon);
+        // Alternate section background so adjacent detail panels are visually distinct.
+        const bg = (index % 2 === 0) ? 'bg-base-200' : 'bg-base-100';
+
+        let heroBlock;
+        if (project.videoId) {
+          const videoId = escapeHtml(project.videoId);
+          heroBlock = `
+            <a href="#${slug}" data-video="${videoId}"
+               aria-label="Play video: ${title}"
+               class="video-lightbox project-detail-hero block relative group rounded-2xl overflow-hidden shadow-2xl mb-10 bg-base-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100">
+              <div class="aspect-video">
+                <img src="${heroImage}" alt="${heroAlt}" loading="lazy"
+                     class="w-full h-full object-cover"${onerror}>
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all flex items-center justify-center">
+                  <div class="btn btn-circle btn-primary btn-lg shadow-xl">
+                    <i class="fas fa-play text-xl"></i>
+                  </div>
+                </div>
+                <div class="absolute bottom-3 right-3 bg-red-600 text-white px-2 py-1 rounded text-xs font-bold flex items-center gap-1">
+                  <i class="fab fa-youtube"></i>Play
+                </div>
+              </div>
+            </a>
+          `;
+        } else {
+          heroBlock = `
+            <figure class="project-detail-hero aspect-video rounded-2xl overflow-hidden shadow-2xl mb-10 bg-base-300">
+              <img src="${heroImage}" alt="${heroAlt}" loading="lazy"
+                   class="w-full h-full object-cover"${onerror}>
+            </figure>
+          `;
+        }
+
+        let playlistBlock = '';
+        if (project.playlistId) {
+          const playlistId = escapeHtml(project.playlistId);
+          const ctaLabel = project.videoId
+            ? 'See the full series on YouTube'
+            : 'Watch the playlist on YouTube';
+          playlistBlock = `
+            <div class="project-detail-playlist mt-10 flex flex-wrap gap-3">
+              <a href="https://www.youtube.com/playlist?list=${playlistId}"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-outline btn-primary gap-2">
+                <i class="fab fa-youtube"></i>
+                ${ctaLabel}
+              </a>
+            </div>
+          `;
+        }
+
+        // body is a trusted authored HTML string (see PROJECTS_CONTENT.md).
+        const body = project.body || '';
+
+        return `
+          <section id="${slug}"
+                   class="project-detail py-16 md:py-20 ${bg} reveal scroll-mt-24">
+            <div class="container mx-auto px-4">
+              <div class="max-w-4xl mx-auto">
+                <a href="#projects-grid"
+                   class="inline-flex items-center gap-2 text-base-content/70 hover:text-primary text-sm font-medium mb-6 transition-colors">
+                  <i class="fas fa-arrow-left"></i>
+                  <span>All projects</span>
+                </a>
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                  <span class="badge badge-primary gap-1">
+                    <i class="fas ${catIcon}"></i>${catLabel}
+                  </span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">${title}</h2>
+                <p class="text-lg text-base-content/80 leading-relaxed mb-8">${summary}</p>
+                ${heroBlock}
+                <div class="project-body text-base-content/80 leading-relaxed">
+                  ${body}
+                </div>
+                ${playlistBlock}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderFilter(categories, projects) {
+        if (!filterEl) return;
+        // Only show chips for categories that have at least one project,
+        // plus the "all" chip. Keeps the bar from advertising empty buckets.
+        const used = new Set(projects.map(p => p.category));
+        const visible = categories.filter(c => c.id === 'all' || used.has(c.id));
+        if (visible.length <= 1) return; // no point showing a single "All" chip
+
+        filterEl.innerHTML = visible.map(c => {
+          const id = escapeHtml(c.id);
+          const label = escapeHtml(c.label);
+          const icon = escapeHtml(c.icon);
+          const isActive = c.id === activeFilter;
+          const cls = isActive
+            ? 'btn btn-sm btn-primary gap-1'
+            : 'btn btn-sm btn-outline btn-primary gap-1';
+          return `<button type="button" class="${cls}" data-filter="${id}" aria-pressed="${isActive}">
+            <i class="fas ${icon}" aria-hidden="true"></i>${label}
+          </button>`;
+        }).join('');
+
+        filterEl.classList.remove('hidden');
+        filterEl.classList.add('flex');
+
+        filterEl.addEventListener('click', function(e) {
+          const btn = e.target.closest('[data-filter]');
+          if (!btn) return;
+          applyFilter(btn.getAttribute('data-filter'));
+        });
+      }
+
+      function applyFilter(category) {
+        activeFilter = category;
+
+        if (filterEl) {
+          filterEl.querySelectorAll('[data-filter]').forEach(btn => {
+            const isActive = btn.getAttribute('data-filter') === category;
+            btn.setAttribute('aria-pressed', String(isActive));
+            btn.classList.toggle('btn-outline', !isActive);
+          });
+        }
+
+        let visibleCount = 0;
+        grid.querySelectorAll('.project-card').forEach(card => {
+          const cat = card.getAttribute('data-category');
+          const show = category === 'all' || cat === category;
+          card.classList.toggle('hidden', !show);
+          if (show) visibleCount++;
+        });
+
+        if (emptyEl) {
+          emptyEl.classList.toggle('hidden', visibleCount > 0);
+        }
+      }
+
+      function renderCard(project, categories) {
+        const cat = categoryMeta(categories, project.category);
+        const slug = escapeHtml(project.slug);
+        const title = escapeHtml(project.title);
+        const summary = escapeHtml(project.summary);
+        const heroImage = escapeHtml(project.heroImage);
+        const heroAlt = escapeHtml(project.heroAlt || project.title);
+        const fallback = thumbFallback(project.heroImage, project.videoId);
+        const onerror = fallback
+          ? ` onerror="this.onerror=null;this.src='${escapeHtml(fallback)}'"`
+          : '';
+        const catLabel = escapeHtml(cat.label);
+        const catIcon = escapeHtml(cat.icon);
+        const catId = escapeHtml(cat.id);
+
+        return `
+          <a href="projects.html#${slug}"
+             data-category="${catId}"
+             class="project-card card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100">
+            <figure class="relative">
+              <img src="${heroImage}"
+                   alt="${heroAlt}"
+                   loading="lazy"
+                   class="w-full aspect-video object-cover bg-base-300"${onerror}>
+              <span class="absolute top-3 left-3 badge badge-primary gap-1 shadow">
+                <i class="fas ${catIcon}"></i>${catLabel}
+              </span>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title project-card-title text-lg leading-snug">${title}</h3>
+              <p class="text-base-content/70 text-sm">${summary}</p>
+              <div class="card-actions justify-end mt-2">
+                <span class="text-primary text-sm font-medium">
+                  View project <i class="fas fa-arrow-right ml-1"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+        `;
+      }
+
+      fetch('projects.json')
+        .then(r => {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(data => {
+          const categories = Array.isArray(data.categories) ? data.categories : [];
+          const projects = Array.isArray(data.projects) ? data.projects : [];
+
+          if (projects.length === 0) {
+            grid.innerHTML = '';
+            errorEl.textContent = 'No projects published yet — check back soon.';
+            errorEl.classList.remove('hidden');
+            return;
+          }
+
+          // Optional newest-first sort if publishedAt is present.
+          projects.sort((a, b) => {
+            if (a.publishedAt && b.publishedAt) {
+              return b.publishedAt.localeCompare(a.publishedAt);
+            }
+            return 0;
+          });
+
+          // Reset stagger state, swap in the real cards, then re-trigger
+          // the stagger animation on the next frame so each card eases in.
+          grid.classList.remove('active');
+          grid.innerHTML = projects.map(p => renderCard(p, categories)).join('');
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => grid.classList.add('active'));
+          });
+
+          renderFilter(categories, projects);
+
+          // Render the per-project detail panels below the grid and
+          // observe each new .reveal section so it fades in on scroll.
+          if (detailsEl) {
+            detailsEl.innerHTML = projects
+              .map((p, i) => renderDetail(p, categories, i))
+              .join('');
+            detailsEl.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+            // If the page loaded with a hash pointing at a now-rendered
+            // detail panel, scroll it into view (browser's initial jump
+            // happened before the panels existed).
+            if (window.location.hash) {
+              const target = document.querySelector(window.location.hash);
+              if (target && target.classList.contains('project-detail')) {
+                requestAnimationFrame(() => {
+                  const navHeight = document.querySelector('nav').offsetHeight;
+                  window.scrollTo({
+                    top: target.offsetTop - navHeight,
+                    behavior: 'smooth'
+                  });
+                });
+              }
+            }
+          }
+        })
+        .catch(err => {
+          console.error('Failed to load projects.json:', err);
+          grid.innerHTML = '';
+          errorEl.classList.remove('hidden');
+        });
+    })();
+  </script>
+
+</body>
+</html>

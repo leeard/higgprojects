@@ -1,0 +1,63 @@
+{
+  "categories": [
+    { "id": "all",         "label": "All",         "icon": "fa-th" },
+    { "id": "tractor",     "label": "Tractors",    "icon": "fa-tractor" },
+    { "id": "3d-printing", "label": "3D Printing", "icon": "fa-cube" },
+    { "id": "repair",      "label": "Repairs",     "icon": "fa-wrench" },
+    { "id": "review",      "label": "Reviews",     "icon": "fa-star" },
+    { "id": "shop",        "label": "Shop",        "icon": "fa-warehouse" }
+  ],
+  "projects": [
+    {
+      "slug": "ford-2n-restoration",
+      "title": "Ford 2N Tractor Restoration",
+      "summary": "Bringing my great-grandpa's Ford 2N back to life — hauling it home, tearing it down, and restoring a piece of family history.",
+      "category": "tractor",
+      "heroImage": "https://img.youtube.com/vi/0LTwHzOjneE/maxresdefault.jpg",
+      "heroAlt": "Ford 2N tractor on a trailer the day we brought it home",
+      "videoId": "0LTwHzOjneE",
+      "playlistId": "PLKAsT-fsdrzF2BfVNSK4FZwfs-oP3RnWj",
+      "body": "<p>This one's personal. The Ford 2N belonged to my great-grandpa, and getting it running again is a long-running project on the channel — pickup day, teardown, and every fix in between.</p><h3>Notes</h3><ul><li>The pickup video (embedded above) covers the trailer load-out and the first walk-around once it was home.</li><li>The full series follows the restoration step by step — engine, electrical, sheet metal, paint.</li></ul><h3>Tips</h3><ul><li>Old 6-volt systems can fool you. Check grounds before you replace anything expensive.</li><li>If you're hauling an old tractor, chain it down at four points, not two. Ask me how I know.</li></ul><p>Watch the full restoration playlist for the rest of the journey.</p>"
+    },
+    {
+      "slug": "3d-printing-for-beginners",
+      "title": "3D Printing for Beginners",
+      "summary": "Everything I wish I'd known when I started: picking a printer, first prints, slicer settings, and the mistakes that taught me the most.",
+      "category": "3d-printing",
+      "heroImage": "images/shopsunset.jpg",
+      "heroAlt": "HiggProjects shop where the 3D printers live",
+      "playlistId": "PLKAsT-fsdrzEW_F-3iyGQKXnrIBF1wzF-",
+      "body": "<p>3D printing has a steep first hour and a flat curve after that. This series walks through the absolute basics so a brand-new printer doesn't end up in the closet.</p><h3>What's covered</h3><ul><li>Unboxing and first calibration.</li><li>Slicer walkthrough — what every setting actually does.</li><li>Bed adhesion: when to use glue, when to use tape, when to clean the plate.</li><li>Reading a failed print so you know what to change next time.</li></ul><h3>Gotchas</h3><ul><li>Don't chase exotic filaments before you can reliably print PLA.</li><li>The cheapest printer isn't always the cheapest printer once you count failed prints.</li></ul><p>Watch the playlist below for the full beginner series.</p>"
+    },
+    {
+      "slug": "craftsman-riding-mower",
+      "title": "Craftsman Riding Mower",
+      "summary": "Fixing up my dad's old Craftsman riding mower — diagnosing what's broken, swapping parts, and getting it cutting grass again.",
+      "category": "repair",
+      "heroImage": "images/shopsunset.jpg",
+      "heroAlt": "The shop where the Craftsman mower repair series happens",
+      "playlistId": "PLKAsT-fsdrzFJhYtjjDXv6w6PxnRttVvg",
+      "body": "<p>An old riding mower is a great teacher. There's nothing on it that can't be fixed by a determined person with a socket set and the internet.</p><h3>What's in the series</h3><ul><li>Initial diagnosis — what runs, what doesn't, what's just dirty.</li><li>Carburetor cleanup and small-engine basics.</li><li>Belt and deck work — the stuff most people pay a shop for.</li></ul><h3>Tips</h3><ul><li>Old fuel is the #1 culprit. Drain it before you replace anything.</li><li>Take pictures before you take anything apart. Future-you will thank past-you.</li></ul><p>Full repair playlist linked below.</p>"
+    },
+    {
+      "slug": "air-compressor-propane-tank-mod",
+      "title": "Boost Your Air Compressor",
+      "summary": "Adding an old propane tank as an extra reservoir to a small air compressor — more capacity, longer runs, no need to buy a bigger unit.",
+      "category": "shop",
+      "heroImage": "https://img.youtube.com/vi/qa3fVjtNyCY/maxresdefault.jpg",
+      "heroAlt": "Small air compressor plumbed into an old propane tank for extra capacity",
+      "videoId": "qa3fVjtNyCY",
+      "body": "<p>If your shop compressor runs constantly, the problem isn't always the compressor — sometimes it's just the tank size. A repurposed propane tank gives you a much bigger reservoir on the cheap.</p><h3>How it works</h3><ul><li>Purge the propane tank thoroughly. This is non-negotiable.</li><li>Plumb the compressor's output into the tank with appropriate fittings and a check valve.</li><li>Tee off your air line from the larger combined volume.</li></ul><h3>Gotchas</h3><ul><li>Pressure rating matters. Verify the propane tank's working pressure before you trust it with shop air.</li><li>Drain water from the bottom regularly — bigger tank means more condensation collects in it.</li></ul><p>Full walk-through in the embedded video.</p>"
+    },
+    {
+      "slug": "shed-relocation-with-4-wheeler",
+      "title": "Move a Shed With a 4-Wheeler",
+      "summary": "Relocating a shed across the property with nothing but a 4-wheeler, some pipes, and stubbornness. Spoiler: it works better than you'd think.",
+      "category": "shop",
+      "heroImage": "https://img.youtube.com/vi/GDKEo4ovsck/maxresdefault.jpg",
+      "heroAlt": "Shed being rolled across the yard on pipes pulled by a 4-wheeler",
+      "videoId": "GDKEo4ovsck",
+      "body": "<p>Renting a shed mover is expensive. Borrowing some pipe and using the 4-wheeler you already have is not. Here's how the move actually went.</p><h3>The setup</h3><ul><li>Lift one corner at a time and slide pipe rollers underneath.</li><li>Strap to the 4-wheeler with a slow, steady pull — no jerks.</li><li>Spotter at the back, leapfrogging pipes from the back to the front as the shed rolls forward.</li></ul><h3>Lessons learned</h3><ul><li>Level matters more than power. A small slope downhill does most of the work for you.</li><li>Pipe diameter — go bigger than you think. Small pipes dig into the ground under load.</li></ul><p>The full move (and the moments where I thought I'd made a terrible mistake) is in the video.</p>"
+    }
+  ]
+}
