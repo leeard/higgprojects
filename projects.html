@@ -44,6 +44,41 @@
     html.theme-transitioning *::after {
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
     }
+
+    /* Keep detail-panel headings clear of the fixed navbar when the page
+       is opened directly at #slug or scrolled via a back-link. */
+    .project-detail {
+      scroll-margin-top: 6rem;
+    }
+
+    /* Restore semantic typography inside the authored detail-body HTML.
+       Tailwind's preflight strips list markers, heading sizes, and
+       paragraph margins; these rules put them back. Mirrored as @apply
+       component classes in src/input.css for future builds. */
+    .project-body p { margin-bottom: 1rem; }
+    .project-body p:last-child { margin-bottom: 0; }
+    .project-body h3 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    @media (min-width: 768px) {
+      .project-body h3 { font-size: 1.5rem; line-height: 2rem; }
+    }
+    .project-body ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .project-body ol {
+      list-style: decimal;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .project-body li { margin-bottom: 0.5rem; line-height: 1.625; }
+    .project-body strong { font-weight: 600; }
   </style>
 </head>
 <body class="bg-base-100 text-base-content bg-noise">
@@ -155,6 +190,9 @@
     </div>
   </section>
 
+  <!-- Project Detail Panels (rendered from projects.json) -->
+  <div id="project-details"></div>
+
   <!-- Footer -->
   <footer class="footer footer-center p-10 bg-base-200 text-base-content">
     <aside>
@@ -189,6 +227,18 @@
       <p class="text-base-content/50">&copy; 2026 HiggProjects. All rights reserved.</p>
     </aside>
   </footer>
+
+  <!-- Video Lightbox Modal -->
+  <div id="videoLightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="relative w-full max-w-5xl mx-4">
+      <button id="closeLightbox" class="absolute -top-12 right-0 btn btn-circle btn-ghost text-white text-2xl hover:bg-white/20" aria-label="Close video">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="aspect-video">
+        <iframe id="videoFrame" class="w-full h-full rounded-lg border-0" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- Back to top button -->
   <a href="#top" class="btn btn-circle btn-primary fixed bottom-6 right-6 shadow-lg opacity-0 translate-y-10 transition-all duration-300" id="backToTop" aria-label="Back to top">
@@ -265,22 +315,72 @@
       });
     })();
 
-    // Smooth scroll for in-page anchor links (cross-page links use normal browser jump)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#' || href.length < 2) return;
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          const navHeight = document.querySelector('nav').offsetHeight;
-          const targetPosition = target.offsetTop - navHeight;
-          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        }
-      });
+    // Smooth scroll for in-page anchor links — uses event delegation so
+    // dynamically-rendered links (project cards, "back to projects" links
+    // inside detail panels) work the same as static ones. Cross-page
+    // links (e.g. index.html#about) start with letters, not "#", and
+    // fall through to normal browser navigation.
+    document.addEventListener('click', function(e) {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (!anchor) return;
+      // .video-lightbox anchors use href="#..." but are handled by the
+      // lightbox click handler below — don't double-process them.
+      if (anchor.classList.contains('video-lightbox')) return;
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#' || href.length < 2) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const navHeight = document.querySelector('nav').offsetHeight;
+      const targetPosition = target.offsetTop - navHeight;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      history.replaceState(null, '', href);
     });
 
-    // Scroll reveal animation
+    // Video lightbox — same modal pattern as index.html. Event-delegated
+    // because .video-lightbox triggers are rendered dynamically inside
+    // the project detail panels.
+    (function() {
+      const lightbox = document.getElementById('videoLightbox');
+      const frame = document.getElementById('videoFrame');
+      const closeBtn = document.getElementById('closeLightbox');
+      if (!lightbox || !frame || !closeBtn) return;
+
+      function open(videoId) {
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&playsinline=1&rel=0';
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        frame.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', function(e) {
+        const trigger = e.target.closest('.video-lightbox');
+        if (!trigger) return;
+        const videoId = trigger.getAttribute('data-video');
+        if (!videoId) return;
+        e.preventDefault();
+        open(videoId);
+      });
+
+      closeBtn.addEventListener('click', close);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) close();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) close();
+      });
+    })();
+
+    // Scroll reveal animation. The observer is shared between the static
+    // sections at page load and the project detail panels rendered later
+    // — `revealObserver` is referenced from the project-render code below.
     const revealObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -292,10 +392,11 @@
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     document.querySelectorAll('.stagger-children').forEach(el => revealObserver.observe(el));
 
-    // Render project cards from projects.json
+    // Render project cards + detail panels from projects.json
     (function() {
       const grid = document.getElementById('projects-grid');
       const errorEl = document.getElementById('projects-error');
+      const detailsEl = document.getElementById('project-details');
 
       function escapeHtml(s) {
         return String(s == null ? '' : s)
@@ -315,6 +416,101 @@
           return `https://img.youtube.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`;
         }
         return '';
+      }
+
+      function renderDetail(project, categories, index) {
+        const cat = categoryMeta(categories, project.category);
+        const slug = escapeHtml(project.slug);
+        const title = escapeHtml(project.title);
+        const summary = escapeHtml(project.summary);
+        const heroImage = escapeHtml(project.heroImage);
+        const heroAlt = escapeHtml(project.heroAlt || project.title);
+        const fallback = thumbFallback(project.heroImage, project.videoId);
+        const onerror = fallback
+          ? ` onerror="this.onerror=null;this.src='${escapeHtml(fallback)}'"`
+          : '';
+        const catLabel = escapeHtml(cat.label);
+        const catIcon = escapeHtml(cat.icon);
+        // Alternate section background so adjacent detail panels are visually distinct.
+        const bg = (index % 2 === 0) ? 'bg-base-200' : 'bg-base-100';
+
+        let heroBlock;
+        if (project.videoId) {
+          const videoId = escapeHtml(project.videoId);
+          heroBlock = `
+            <a href="#${slug}" data-video="${videoId}"
+               aria-label="Play video: ${title}"
+               class="video-lightbox block relative group rounded-2xl overflow-hidden shadow-2xl mb-10 bg-base-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100">
+              <div class="aspect-video">
+                <img src="${heroImage}" alt="${heroAlt}" loading="lazy"
+                     class="w-full h-full object-cover"${onerror}>
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all flex items-center justify-center">
+                  <div class="btn btn-circle btn-primary btn-lg shadow-xl">
+                    <i class="fas fa-play text-xl"></i>
+                  </div>
+                </div>
+                <div class="absolute bottom-3 right-3 bg-red-600 text-white px-2 py-1 rounded text-xs font-bold flex items-center gap-1">
+                  <i class="fab fa-youtube"></i>Play
+                </div>
+              </div>
+            </a>
+          `;
+        } else {
+          heroBlock = `
+            <figure class="aspect-video rounded-2xl overflow-hidden shadow-2xl mb-10 bg-base-300">
+              <img src="${heroImage}" alt="${heroAlt}" loading="lazy"
+                   class="w-full h-full object-cover"${onerror}>
+            </figure>
+          `;
+        }
+
+        let playlistBlock = '';
+        if (project.playlistId) {
+          const playlistId = escapeHtml(project.playlistId);
+          const ctaLabel = project.videoId
+            ? 'See the full series on YouTube'
+            : 'Watch the playlist on YouTube';
+          playlistBlock = `
+            <div class="mt-10 flex flex-wrap gap-3">
+              <a href="https://www.youtube.com/playlist?list=${playlistId}"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-outline btn-primary gap-2">
+                <i class="fab fa-youtube"></i>
+                ${ctaLabel}
+              </a>
+            </div>
+          `;
+        }
+
+        // body is a trusted authored HTML string (see PROJECTS_CONTENT.md).
+        const body = project.body || '';
+
+        return `
+          <section id="${slug}"
+                   class="project-detail py-16 md:py-20 ${bg} reveal scroll-mt-24">
+            <div class="container mx-auto px-4">
+              <div class="max-w-4xl mx-auto">
+                <a href="#projects-grid"
+                   class="inline-flex items-center gap-2 text-base-content/70 hover:text-primary text-sm font-medium mb-6 transition-colors">
+                  <i class="fas fa-arrow-left"></i>
+                  <span>All projects</span>
+                </a>
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                  <span class="badge badge-primary gap-1">
+                    <i class="fas ${catIcon}"></i>${catLabel}
+                  </span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">${title}</h2>
+                <p class="text-lg text-base-content/80 leading-relaxed mb-8">${summary}</p>
+                ${heroBlock}
+                <div class="project-body text-base-content/80 leading-relaxed">
+                  ${body}
+                </div>
+                ${playlistBlock}
+              </div>
+            </div>
+          </section>
+        `;
       }
 
       function renderCard(project, categories) {
@@ -389,6 +585,31 @@
           requestAnimationFrame(() => {
             requestAnimationFrame(() => grid.classList.add('active'));
           });
+
+          // Render the per-project detail panels below the grid and
+          // observe each new .reveal section so it fades in on scroll.
+          if (detailsEl) {
+            detailsEl.innerHTML = projects
+              .map((p, i) => renderDetail(p, categories, i))
+              .join('');
+            detailsEl.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+            // If the page loaded with a hash pointing at a now-rendered
+            // detail panel, scroll it into view (browser's initial jump
+            // happened before the panels existed).
+            if (window.location.hash) {
+              const target = document.querySelector(window.location.hash);
+              if (target && target.classList.contains('project-detail')) {
+                requestAnimationFrame(() => {
+                  const navHeight = document.querySelector('nav').offsetHeight;
+                  window.scrollTo({
+                    top: target.offsetTop - navHeight,
+                    behavior: 'smooth'
+                  });
+                });
+              }
+            }
+          }
         })
         .catch(err => {
           console.error('Failed to load projects.json:', err);
