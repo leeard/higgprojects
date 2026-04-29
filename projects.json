@@ -1,0 +1,11 @@
+{
+  "categories": [
+    { "id": "all",         "label": "All",         "icon": "fa-th" },
+    { "id": "tractor",     "label": "Tractors",    "icon": "fa-tractor" },
+    { "id": "3d-printing", "label": "3D Printing", "icon": "fa-cube" },
+    { "id": "repair",      "label": "Repairs",     "icon": "fa-wrench" },
+    { "id": "review",      "label": "Reviews",     "icon": "fa-star" },
+    { "id": "shop",        "label": "Shop",        "icon": "fa-warehouse" }
+  ],
+  "projects": []
+}
