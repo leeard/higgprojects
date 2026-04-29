@@ -79,6 +79,26 @@
     }
     .project-body li { margin-bottom: 0.5rem; line-height: 1.625; }
     .project-body strong { font-weight: 600; }
+
+    /* Stopgap utilities: a few Tailwind classes used only on this page
+       aren't yet in the committed dist/output.css (next `npm run build`
+       will pick them up). Inline so the layout, focus rings, and badge
+       color render correctly until then. */
+    .projects-page-header { padding-top: 8rem; padding-bottom: 3rem; }
+    .projects-grid-section { padding-bottom: 5rem; }
+    .project-detail-hero { margin-bottom: 2.5rem; }
+    .project-detail-playlist { margin-top: 2.5rem; }
+    .project-card-title { line-height: 1.375; }
+    .project-card:focus-visible,
+    .project-detail .video-lightbox:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px hsl(var(--b1)), 0 0 0 4px hsl(var(--p));
+    }
+    .badge.badge-primary {
+      background-color: hsl(var(--p));
+      color: hsl(var(--pc));
+      border-color: hsl(var(--p));
+    }
   </style>
 </head>
 <body class="bg-base-100 text-base-content bg-noise">
@@ -134,7 +154,7 @@
   </nav>
 
   <!-- Page Header -->
-  <section class="pt-32 pb-12 bg-base-100">
+  <section class="projects-page-header pt-32 pb-12 bg-base-100">
     <div class="container mx-auto px-4">
       <h2 class="section-title">Real <span class="text-primary">Projects</span></h2>
       <p class="text-center text-base-content/70 mb-4 max-w-2xl mx-auto">
@@ -144,7 +164,7 @@
   </section>
 
   <!-- Projects Grid -->
-  <section class="pb-20 bg-base-100 reveal">
+  <section class="projects-grid-section pb-20 bg-base-100 reveal">
     <div class="container mx-auto px-4">
       <div id="projects-filter"
            class="hidden flex-wrap items-center justify-center gap-2 mb-8 max-w-6xl mx-auto"
@@ -453,7 +473,7 @@
           heroBlock = `
             <a href="#${slug}" data-video="${videoId}"
                aria-label="Play video: ${title}"
-               class="video-lightbox block relative group rounded-2xl overflow-hidden shadow-2xl mb-10 bg-base-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100">
+               class="video-lightbox project-detail-hero block relative group rounded-2xl overflow-hidden shadow-2xl mb-10 bg-base-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100">
               <div class="aspect-video">
                 <img src="${heroImage}" alt="${heroAlt}" loading="lazy"
                      class="w-full h-full object-cover"${onerror}>
@@ -470,7 +490,7 @@
           `;
         } else {
           heroBlock = `
-            <figure class="aspect-video rounded-2xl overflow-hidden shadow-2xl mb-10 bg-base-300">
+            <figure class="project-detail-hero aspect-video rounded-2xl overflow-hidden shadow-2xl mb-10 bg-base-300">
               <img src="${heroImage}" alt="${heroAlt}" loading="lazy"
                    class="w-full h-full object-cover"${onerror}>
             </figure>
@@ -484,7 +504,7 @@
             ? 'See the full series on YouTube'
             : 'Watch the playlist on YouTube';
           playlistBlock = `
-            <div class="mt-10 flex flex-wrap gap-3">
+            <div class="project-detail-playlist mt-10 flex flex-wrap gap-3">
               <a href="https://www.youtube.com/playlist?list=${playlistId}"
                  target="_blank" rel="noopener noreferrer"
                  class="btn btn-outline btn-primary gap-2">
@@ -610,7 +630,7 @@
               </span>
             </figure>
             <div class="card-body">
-              <h3 class="card-title text-lg leading-snug">${title}</h3>
+              <h3 class="card-title project-card-title text-lg leading-snug">${title}</h3>
               <p class="text-base-content/70 text-sm">${summary}</p>
               <div class="card-actions justify-end mt-2">
                 <span class="text-primary text-sm font-medium">
