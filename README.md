@@ -69,5 +69,5 @@ npm run watch
 ---
 
 <p align="center">
-  <b>WARNING: I may be an idiot. Follow my advice at your own risk.</b>
+  <b>WARNING: I may be a butthead. Follow my advice at your own risk.</b>
 </p>
