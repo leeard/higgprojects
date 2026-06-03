@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "LNsANO6yshc",
+      "title": "Now that’s a happy dog",
+      "thumbnail": "https://i.ytimg.com/vi/LNsANO6yshc/hqdefault.jpg",
+      "publishedAt": "2026-06-03T02:01:50Z"
+    },
+    {
       "id": "_6jcijuT_SU",
       "title": "Awesome races today at the Spanish Fork welding expo!",
       "thumbnail": "https://i.ytimg.com/vi/_6jcijuT_SU/hqdefault.jpg",
@@ -29,19 +35,13 @@
       "title": "What a nice looking lawn mow",
       "thumbnail": "https://i.ytimg.com/vi/F597uRqtPu0/hqdefault.jpg",
       "publishedAt": "2026-04-14T01:23:27Z"
-    },
-    {
-      "id": "Hy80vCwDECI",
-      "title": "Is that a crack??",
-      "thumbnail": "https://i.ytimg.com/vi/Hy80vCwDECI/hqdefault.jpg",
-      "publishedAt": "2026-04-11T05:10:22Z"
     }
   ],
   "stats": {
     "subscriberCount": "9280",
-    "videoCount": "480",
-    "viewCount": "761962",
+    "videoCount": "481",
+    "viewCount": "762219",
     "playlistCount": "9",
-    "updatedAt": "2026-06-02T07:46:29Z"
+    "updatedAt": "2026-06-03T07:49:58Z"
   }
 }
