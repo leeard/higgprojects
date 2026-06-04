@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "RSa9OBhunso",
+      "title": "I’d love to see the hail that caused this!",
+      "thumbnail": "https://i.ytimg.com/vi/RSa9OBhunso/hqdefault.jpg",
+      "publishedAt": "2026-06-04T04:10:35Z"
+    },
+    {
       "id": "LNsANO6yshc",
       "title": "Now that’s a happy dog",
       "thumbnail": "https://i.ytimg.com/vi/LNsANO6yshc/hqdefault.jpg",
@@ -29,19 +35,13 @@
       "title": "Just out smoking in my garage",
       "thumbnail": "https://i.ytimg.com/vi/5lO7uD7YcFs/hqdefault.jpg",
       "publishedAt": "2026-04-20T23:21:01Z"
-    },
-    {
-      "id": "F597uRqtPu0",
-      "title": "What a nice looking lawn mow",
-      "thumbnail": "https://i.ytimg.com/vi/F597uRqtPu0/hqdefault.jpg",
-      "publishedAt": "2026-04-14T01:23:27Z"
     }
   ],
   "stats": {
     "subscriberCount": "9280",
-    "videoCount": "481",
-    "viewCount": "762219",
+    "videoCount": "482",
+    "viewCount": "763466",
     "playlistCount": "9",
-    "updatedAt": "2026-06-03T07:49:58Z"
+    "updatedAt": "2026-06-04T07:45:11Z"
   }
 }
