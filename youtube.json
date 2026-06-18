@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "7nBagOm4fL8",
+      "title": "Man I love a good lawn edge",
+      "thumbnail": "https://i.ytimg.com/vi/7nBagOm4fL8/hqdefault.jpg",
+      "publishedAt": "2026-06-18T03:38:09Z"
+    },
+    {
       "id": "LNsANO6yshc",
       "title": "Now that’s a happy dog",
       "thumbnail": "https://i.ytimg.com/vi/LNsANO6yshc/hqdefault.jpg",
@@ -29,19 +35,13 @@
       "title": "Just out smoking in my garage",
       "thumbnail": "https://i.ytimg.com/vi/5lO7uD7YcFs/hqdefault.jpg",
       "publishedAt": "2026-04-20T23:21:01Z"
-    },
-    {
-      "id": "F597uRqtPu0",
-      "title": "What a nice looking lawn mow",
-      "thumbnail": "https://i.ytimg.com/vi/F597uRqtPu0/hqdefault.jpg",
-      "publishedAt": "2026-04-14T01:23:27Z"
     }
   ],
   "stats": {
     "subscriberCount": "9280",
-    "videoCount": "483",
-    "viewCount": "767981",
+    "videoCount": "484",
+    "viewCount": "768135",
     "playlistCount": "9",
-    "updatedAt": "2026-06-17T07:59:29Z"
+    "updatedAt": "2026-06-18T07:49:02Z"
   }
 }
