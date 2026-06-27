@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "vIJfjzagL6Y",
+      "title": "Helping my mom get her planters done",
+      "thumbnail": "https://i.ytimg.com/vi/vIJfjzagL6Y/hqdefault.jpg",
+      "publishedAt": "2026-06-27T03:33:06Z"
+    },
+    {
       "id": "7nBagOm4fL8",
       "title": "Man I love a good lawn edge",
       "thumbnail": "https://i.ytimg.com/vi/7nBagOm4fL8/hqdefault.jpg",
@@ -29,19 +35,13 @@
       "title": "It’s race day for James welding class!   Me and Luke are on pit crew duty.    I’ll post more later",
       "thumbnail": "https://i.ytimg.com/vi/4RrduN2TnTY/hqdefault.jpg",
       "publishedAt": "2026-05-14T12:56:59Z"
-    },
-    {
-      "id": "5lO7uD7YcFs",
-      "title": "Just out smoking in my garage",
-      "thumbnail": "https://i.ytimg.com/vi/5lO7uD7YcFs/hqdefault.jpg",
-      "publishedAt": "2026-04-20T23:21:01Z"
     }
   ],
   "stats": {
     "subscriberCount": "9270",
-    "videoCount": "484",
-    "viewCount": "771070",
+    "videoCount": "485",
+    "viewCount": "771391",
     "playlistCount": "9",
-    "updatedAt": "2026-06-26T07:24:56Z"
+    "updatedAt": "2026-06-27T07:11:21Z"
   }
 }
