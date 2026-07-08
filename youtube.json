@@ -1,6 +1,24 @@
 {
   "shorts": [
     {
+      "id": "0S2WSokBL5Q",
+      "title": "Every time I mow",
+      "thumbnail": "https://i.ytimg.com/vi/0S2WSokBL5Q/hqdefault.jpg",
+      "publishedAt": "2026-07-08T06:54:57Z"
+    },
+    {
+      "id": "IoI0Nt10r2I",
+      "title": "Pretty sweet gas valve",
+      "thumbnail": "https://i.ytimg.com/vi/IoI0Nt10r2I/hqdefault.jpg",
+      "publishedAt": "2026-07-08T01:07:35Z"
+    },
+    {
+      "id": "b_Djo7l3cqI",
+      "title": "Targeting weeds week 1 after laying bark",
+      "thumbnail": "https://i.ytimg.com/vi/b_Djo7l3cqI/hqdefault.jpg",
+      "publishedAt": "2026-07-07T23:47:38Z"
+    },
+    {
       "id": "xbRaZwG52Ow",
       "title": "The EMERGENCY 10mm",
       "thumbnail": "https://i.ytimg.com/vi/xbRaZwG52Ow/hqdefault.jpg",
@@ -17,31 +35,13 @@
       "title": "3d printed AR-15 mag loader",
       "thumbnail": "https://i.ytimg.com/vi/VU1KT_P1Y38/hqdefault.jpg",
       "publishedAt": "2026-06-28T04:17:08Z"
-    },
-    {
-      "id": "vIJfjzagL6Y",
-      "title": "Porch planters make an apartment feel like home",
-      "thumbnail": "https://i.ytimg.com/vi/vIJfjzagL6Y/hqdefault.jpg",
-      "publishedAt": "2026-06-27T03:33:06Z"
-    },
-    {
-      "id": "7nBagOm4fL8",
-      "title": "Man I love a good lawn edge",
-      "thumbnail": "https://i.ytimg.com/vi/7nBagOm4fL8/hqdefault.jpg",
-      "publishedAt": "2026-06-18T03:38:09Z"
-    },
-    {
-      "id": "LNsANO6yshc",
-      "title": "Now that’s a happy dog",
-      "thumbnail": "https://i.ytimg.com/vi/LNsANO6yshc/hqdefault.jpg",
-      "publishedAt": "2026-06-03T02:01:50Z"
     }
   ],
   "stats": {
-    "subscriberCount": "9270",
-    "videoCount": "487",
-    "viewCount": "774168",
+    "subscriberCount": "9260",
+    "videoCount": "490",
+    "viewCount": "774432",
     "playlistCount": "9",
-    "updatedAt": "2026-07-07T09:43:42Z"
+    "updatedAt": "2026-07-08T08:30:17Z"
   }
 }
