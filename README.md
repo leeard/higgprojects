@@ -14,13 +14,7 @@
 
 Hey, I'm Lee! I fix tractors, riding mowers, 3D printers, and whatever else breaks. Sometimes it works, sometimes it doesn't - but we always learn something along the way.
 
-You might also see my son Luke in some videos - he helps out and does his own projects too. It's a family affair!
-
-### Stats
-
-| Subscribers | Videos | Playlists |
-|:-----------:|:------:|:---------:|
-| 7,400+      | 100+   | 9         |
+My boys help out too — Luke makes his own videos, and James, Evan, and Jenna star in videos at times. It's a family affair!
 
 ---
 
@@ -35,35 +29,24 @@ You might also see my son Luke in some videos - he helps out and does his own pr
 
 ## Tech Stack
 
-This site is built with:
+Static site, no build step:
 
-- **Tailwind CSS** - Utility-first CSS framework
-- **DaisyUI** - Tailwind CSS component library
-- **Font Awesome** - Icons
-- **Vanilla JS** - Animations, theme toggle, parallax effects
+- **index.html** — the page
+- **styles.css** — hand-written CSS ("Varsity Shop" design system)
+- **fonts/varsity-team.woff2** — Varsity Team Bold, the badge logo's letterforms, used as the display face
+- **Google Fonts** — Bitter (body), Archivo (utility), IBM Plex Mono (ledger/spec plate)
+- **Vanilla JS** — live channel stats from `youtube.json`, sticker form AJAX
 
-### Features
+### Data
 
-- Dark/Light theme toggle with system preference detection
-- Parallax scrolling hero section
-- Animated stat counters
-- Video lightbox modals
-- Staggered scroll reveal animations
-- Fully responsive design
+`youtube.json` is refreshed daily by the GitHub Action in `.github/workflows/fetch-youtube.yml` (channel stats + latest shorts). The page reads `stats` at load and falls back to the numbers baked into the markup.
 
----
+### Development
 
-## Development
+No build. Open `index.html` in a browser, or serve the folder:
 
 ```bash
-# Install dependencies
-npm install
-
-# Build CSS
-npm run build
-
-# Watch for changes
-npm run watch
+python3 -m http.server
 ```
 
 ---

@@ -10,53 +10,112 @@ permissions:
   contents: write
 
 jobs:
-  fetch-shorts:
+  fetch-youtube:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch latest shorts and channel stats from YouTube
+      - name: Fetch latest shorts, videos and channel stats from YouTube
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           CHANNEL_ID: UC88w6T7O_jV_G5eSUWBhVVw
         run: |
-          # Fetch recent videos from channel (shorts are videos under 60 seconds)
+          # Fetch recent videos from channel
           response=$(curl -s "https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=20&type=video")
 
           # Extract video IDs
           video_ids=$(echo "$response" | jq -r '.items[].id.videoId' | tr '\n' ',' | sed 's/,$//')
 
-          # Get video details including duration
-          details=$(curl -s "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${video_ids}&part=contentDetails,snippet")
+          # Get video details including duration, snippet and statistics
+          details=$(curl -s "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${video_ids}&part=contentDetails,snippet,statistics")
 
-          # Filter for shorts (duration <= 60 seconds)
-          shorts=$(echo "$details" | jq '[.items[] |
-            select(.contentDetails.duration | test("^PT([0-5]?[0-9]S|1M)$")) |
+          # Classify Shorts. Shorts can be up to 3 minutes (since Oct 2024), so
+          # duration alone is ambiguous: for every video <= 180s, confirm via the
+          # /shorts/ URL (a real Short returns HTTP 200; regular videos redirect).
+          candidates=$(echo "$details" | jq -r '.items[] |
+            select(
+              (.contentDetails.duration
+                | capture("^PT(?:(?<h>[0-9]+)H)?(?:(?<m>[0-9]+)M)?(?:(?<s>[0-9]+)S)?$")?
+                // {h: null, m: null, s: null}
+                | ((.h // "0") | tonumber) * 3600 + ((.m // "0") | tonumber) * 60 + ((.s // "0") | tonumber)
+              ) as $secs | $secs > 0 and $secs <= 180
+            ) | .id')
+
+          short_ids="[]"
+          for id in $candidates; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" "https://www.youtube.com/shorts/${id}")
+            if [ "$status" = "200" ]; then
+              short_ids=$(echo "$short_ids" | jq --arg id "$id" '. + [$id]')
+            fi
+          done
+
+          # Shorts, newest first — pulled from the channel's dedicated Shorts
+          # playlist (channel ID with its UC prefix swapped for UUSH), so the
+          # rail stays full even when recent uploads are mostly long videos.
+          shorts_playlist="UUSH${CHANNEL_ID#UC}"
+          playlist_response=$(curl -s "https://www.googleapis.com/youtube/v3/playlistItems?key=${YOUTUBE_API_KEY}&playlistId=${shorts_playlist}&part=snippet&maxResults=6")
+          shorts=$(echo "$playlist_response" | jq '[.items[]? |
             {
-              id: .id,
+              id: .snippet.resourceId.videoId,
               title: .snippet.title,
               thumbnail: .snippet.thumbnails.high.url,
               publishedAt: .snippet.publishedAt
+            }
+          ]')
+
+          # Fallback: if the playlist lookup returned nothing, use the Shorts
+          # confirmed among the recent uploads instead.
+          if [ "$(echo "$shorts" | jq 'length')" = "0" ]; then
+            shorts=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
+              select(.id as $i | $short_ids | index($i)) |
+              {
+                id: .id,
+                title: .snippet.title,
+                thumbnail: .snippet.thumbnails.high.url,
+                publishedAt: .snippet.publishedAt
+              }
+            ] | .[0:6]')
+          fi
+
+          # Regular videos (everything that is not a confirmed Short), newest first
+          videos=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
+            select(.id as $i | $short_ids | index($i) | not) |
+            {
+              id: .id,
+              title: .snippet.title,
+              publishedAt: .snippet.publishedAt,
+              duration: .contentDetails.duration
+            }
+          ] | .[0:6]')
+
+          # Gear: recent videos whose description carries a product link
+          # (a.co / amzn.to / geni.us / amazon.com) — first link wins, newest first
+          gear=$(echo "$details" | jq '[.items[] |
+            (.snippet.description
+              | capture("(?<u>https?://(a\\.co|amzn\\.to|geni\\.us|www\\.amazon\\.com)/[^\\s)\"]+)")? // null
+            ) as $m |
+            select($m != null) |
+            {
+              id: .id,
+              title: .snippet.title,
+              link: $m.u
             }
           ] | .[0:6]')
 
           # Fetch channel statistics
           channel=$(curl -s "https://www.googleapis.com/youtube/v3/channels?key=${YOUTUBE_API_KEY}&id=${CHANNEL_ID}&part=statistics")
 
-          # Fetch playlist count
-          playlists=$(curl -s "https://www.googleapis.com/youtube/v3/playlists?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet&maxResults=1")
-          playlist_count=$(echo "$playlists" | jq '.pageInfo.totalResults')
-
-          # Combine shorts and stats into single JSON
-          jq -n --argjson shorts "$shorts" --argjson channel "$channel" --argjson playlistCount "$playlist_count" '{
+          # Combine shorts, videos, gear and stats into single JSON
+          jq -n --argjson shorts "$shorts" --argjson videos "$videos" --argjson gear "$gear" --argjson channel "$channel" '{
             shorts: $shorts,
+            videos: $videos,
+            gear: $gear,
             stats: {
               subscriberCount: $channel.items[0].statistics.subscriberCount,
               videoCount: $channel.items[0].statistics.videoCount,
               viewCount: $channel.items[0].statistics.viewCount,
-              playlistCount: ($playlistCount | tostring),
               updatedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ"))
             }
           }' > youtube.json

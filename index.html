@@ -1,938 +1,688 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="higgprojects">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HiggProjects | DIY Fixes & Restorations</title>
-  <meta name="description" content="Something broken? If I can fix it, you can too. Let's get it done!">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HiggProjects — Something broken? Let's get it done.</title>
+<meta name="description" content="Lee Higginson fixes whatever breaks — tractors, ATVs, mowers, drill batteries, grills — and films it. If he can fix it, you can too. Let's get it done!">
+<link rel="canonical" href="https://higgprojects.com">
 
-  <!-- Open Graph / Social Preview -->
-  <meta property="og:title" content="HiggProjects">
-  <meta property="og:description" content="Something broken? If I can fix it, you can too. Let's get it done!">
-  <meta property="og:image" content="https://higgprojects.com/images/logo.jpg">
-  <meta property="og:url" content="https://higgprojects.com">
-  <meta property="og:type" content="website">
+<!-- Open Graph / Social Preview -->
+<meta property="og:title" content="HiggProjects — Get It Done">
+<meta property="og:description" content="Something broken? If I can fix it, you can too. Let's get it done!">
+<meta property="og:image" content="https://higgprojects.com/images/logo.jpg">
+<meta property="og:url" content="https://higgprojects.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HiggProjects — Get It Done">
+<meta name="twitter:description" content="Something broken? If I can fix it, you can too. Let's get it done!">
+<meta name="twitter:image" content="https://higgprojects.com/images/logo.jpg">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="HiggProjects">
-  <meta name="twitter:description" content="Something broken? If I can fix it, you can too. Let's get it done!">
-  <meta name="twitter:image" content="https://higgprojects.com/images/logo.jpg">
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
-
-  <!-- Tailwind/DaisyUI CSS -->
-  <link href="dist/output.css" rel="stylesheet">
-
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Set theme before page renders to prevent flash -->
-  <script>
-    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'higgprojects');
-  </script>
-
-  <style>
-    /* Smooth theme transition */
-    html {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    html.theme-transitioning,
-    html.theme-transitioning *,
-    html.theme-transitioning *::before,
-    html.theme-transitioning *::after {
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
-    }
-  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Bitter:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/varsity-team.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-base-100 text-base-content bg-noise">
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Navbar -->
-  <nav class="navbar bg-base-200/95 backdrop-blur-sm fixed top-0 z-50 shadow-lg">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-          </svg>
-        </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-200 rounded-box w-52">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#videos" class="nav-link">Videos</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-          <li><a href="#sticker" class="nav-link text-primary font-bold"><i class="fas fa-gift mr-1"></i>Free Sticker</a></li>
-        </ul>
-      </div>
-      <a href="#home" class="btn btn-ghost text-xl font-oswald text-primary">
-        HIGG&nbsp;&nbsp;PROJECTS
-      </a>
-    </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1 gap-2">
-        <li><a href="#home" class="nav-link font-medium">Home</a></li>
-        <li><a href="#about" class="nav-link font-medium">About</a></li>
-        <li><a href="#videos" class="nav-link font-medium">Videos</a></li>
-        <li><a href="#projects" class="nav-link font-medium">Projects</a></li>
-        <li><a href="#contact" class="nav-link font-medium">Contact</a></li>
-      </ul>
-    </div>
-    <div class="navbar-end gap-2">
-      <a href="#sticker" class="btn btn-sm btn-primary gap-1">
-        <i class="fas fa-gift"></i>
-        <span class="hidden sm:inline">Free Sticker</span>
-      </a>
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-sm btn-ghost gap-1">
-          <i class="fas fa-circle-half-stroke"></i>
-          <span class="hidden sm:inline text-xs">Theme</span>
-          <i class="fas fa-chevron-down text-xs"></i>
-        </div>
-        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-200 rounded-box w-36 mt-2">
-          <li><button type="button" id="themeDark" class="w-full text-left"><i class="fas fa-moon"></i> Dark</button></li>
-          <li><button type="button" id="themeLight" class="w-full text-left"><i class="fas fa-sun"></i> Light</button></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero min-h-screen relative overflow-hidden">
-    <!-- Background image with parallax -->
-    <div id="heroBackground" class="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110" style="background-image: url('images/shopsunset.jpg'); will-change: transform; -webkit-backface-visibility: hidden;"></div>
-    <!-- Dark overlay for text readability -->
-    <div class="absolute inset-0 bg-black/50"></div>
-
-    <div class="hero-content text-center relative z-10 py-20">
-      <div class="max-w-4xl">
-        <!-- Logo -->
-        <div class="avatar mb-8">
-          <div class="w-52 h-52 rounded-full ring ring-primary ring-offset-base-100 ring-offset-4 logo-glow">
-            <img src="images/logo.jpg" alt="Higg Projects Logo" class="rounded-full">
-          </div>
-        </div>
-
-        <p class="text-xl md:text-2xl text-white/90 mb-4 max-w-2xl mx-auto drop-shadow-md">
-          Something broken? <span class="font-bold text-primary">If I can fix it, you can too.</span> Let's get it done!
-        </p>
-        <div class="inline-flex items-center gap-3 bg-yellow-500/20 border border-yellow-500/50 rounded-lg px-6 py-3 mb-8 backdrop-blur-sm">
-          <i class="fas fa-triangle-exclamation text-2xl text-yellow-300"></i>
-          <p class="text-xl md:text-2xl text-yellow-300 font-bold tracking-wide drop-shadow-md">
-            WARNING: I may be an idiot. Follow my advice at your own risk.
-          </p>
-          <i class="fas fa-triangle-exclamation text-2xl text-yellow-300"></i>
-        </div>
-
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://www.youtube.com/@higgprojects" target="_blank" rel="noopener noreferrer" class="btn btn-lg gap-2 bg-red-600 hover:bg-red-700 text-white border-none btn-shimmer">
-            <i class="fab fa-youtube text-xl"></i>
-            Subscribe on YouTube
-          </a>
-        </div>
-
-        <!-- Social proof teaser -->
-        <a href="#featured-tip" class="inline-flex items-center gap-2 mt-6 text-white/80 hover:text-white transition-colors group">
-          <span class="text-sm">19K+ viewers fixed their "dead" drill battery with this tip</span>
-          <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <a href="#featured-tip" class="text-base-content/50 hover:text-primary transition-colors">
-        <i class="fas fa-chevron-down text-2xl"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- Featured Tip Section -->
-  <section id="featured-tip" class="py-20 bg-base-200 reveal">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="section-title">This 60-Second Tip Has <span class="text-primary">Saved Hundreds</span></h2>
-        <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
-          Your "dead" drill battery probably isn't dead. Chargers just give up on batteries that drain too low. Here's the fix.
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <!-- Video -->
-          <a href="https://www.youtube.com/shorts/ZJBbARK9niU" target="_blank" rel="noopener noreferrer" class="block relative group">
-            <div class="aspect-[9/16] max-w-[280px] mx-auto rounded-2xl overflow-hidden shadow-2xl bg-base-300">
-              <img src="https://img.youtube.com/vi/ZJBbARK9niU/maxresdefault.jpg"
-                   alt="How to fix a drill battery that won't charge"
-                   class="w-full h-full object-cover"
-                   onerror="this.src='https://img.youtube.com/vi/ZJBbARK9niU/hqdefault.jpg'">
-              <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all flex items-center justify-center">
-                <div class="btn btn-circle btn-primary btn-lg">
-                  <i class="fas fa-play text-xl"></i>
-                </div>
-              </div>
-              <div class="absolute bottom-3 right-3 bg-red-600 text-white px-2 py-1 rounded text-sm font-bold">
-                <i class="fas fa-bolt mr-1"></i>SHORT
-              </div>
-            </div>
-            <p class="text-center mt-4 text-base-content/70 text-sm">
-              <i class="fas fa-eye mr-1"></i> 19K+ views
-            </p>
-          </a>
-
-          <!-- Testimonials -->
-          <div class="space-y-4">
-            <h3 class="text-xl font-bold mb-6">What viewers are saying:</h3>
-
-            <div class="card bg-base-100 shadow">
-              <div class="card-body py-4 px-5">
-                <p class="italic text-base-content/80">"Thank you it worked like a charm"</p>
-                <p class="text-sm text-primary font-medium mt-1">@Mike-fi5ob</p>
-              </div>
-            </div>
-
-            <div class="card bg-base-100 shadow">
-              <div class="card-body py-4 px-5">
-                <p class="italic text-base-content/80">"This worked with my dead battery that wasn't charging. It only needed a few seconds."</p>
-                <p class="text-sm text-primary font-medium mt-1">@M16A2evans</p>
-              </div>
-            </div>
-
-            <div class="card bg-base-100 shadow">
-              <div class="card-body py-4 px-5">
-                <p class="italic text-base-content/80">"Thanks man this was a life saver much appreciated"</p>
-                <p class="text-sm text-primary font-medium mt-1">@hakimnaushad2318</p>
-              </div>
-            </div>
-
-            <div class="card bg-base-100 shadow">
-              <div class="card-body py-4 px-5">
-                <p class="italic text-base-content/80">"Thank you brother. I tried it and it worked. Now my battery is charging like normal!"</p>
-                <p class="text-sm text-primary font-medium mt-1">@johnnymo9518</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-base-100 reveal">
-    <div class="container mx-auto px-4">
-      <h2 class="section-title">About <span class="text-primary">Me</span></h2>
-
-      <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-        <!-- Profile Photo -->
-        <div class="relative">
-          <div class="aspect-square rounded-2xl bg-base-300 overflow-hidden shadow-2xl">
-            <img src="https://www.gravatar.com/avatar/ba09e4305db32e5d791c29d8ccd2a36c?s=500"
-                 alt="HiggProjects"
-                 class="w-full h-full object-cover">
-          </div>
-          <!-- Decorative elements -->
-          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
-          <div class="absolute -top-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-2xl"></div>
-        </div>
-
-        <div class="space-y-6">
-          <h3 class="text-2xl font-bold">Hey, I'm Lee!</h3>
-          <p class="text-lg text-base-content/80 leading-relaxed">
-            Something broken? Let's fix it. I'm not a professional anything - I just fix whatever breaks and make videos along the way. Sometimes it works, sometimes it doesn't, but we always learn something.
-          </p>
-          <p class="text-lg text-base-content/80 leading-relaxed">
-            You might also see my son Luke in some videos - he helps out and does his own projects too. It's a family affair!
-          </p>
-          <p class="text-lg text-base-content/80 leading-relaxed">
-            Hear about something cool? Let me know and maybe we'll throw down a video about it. Thanks for tuning in and supporting the channel!
-          </p>
-
-          <!-- Stats -->
-          <div class="stats stats-vertical sm:stats-horizontal shadow-lg glass mt-8">
-            <div class="stat">
-              <div class="stat-figure text-primary">
-                <i class="fab fa-youtube text-3xl"></i>
-              </div>
-              <div class="stat-title">Subscribers</div>
-              <div id="stat-subscribers" class="stat-value text-primary counter" data-target="7400" data-suffix="+" data-format="k">0</div>
-            </div>
-            <div class="stat">
-              <div class="stat-figure text-primary">
-                <i class="fas fa-video text-3xl"></i>
-              </div>
-              <div class="stat-title">Videos</div>
-              <div id="stat-videos" class="stat-value text-primary counter" data-target="100" data-suffix="+">0</div>
-            </div>
-            <div class="stat">
-              <div class="stat-figure text-primary">
-                <i class="fas fa-tools text-3xl"></i>
-              </div>
-              <div class="stat-title">Playlists</div>
-              <div id="stat-playlists" class="stat-value text-primary counter" data-target="9">0</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Videos Section -->
-  <section id="videos" class="py-20 bg-base-200 reveal">
-    <div class="container mx-auto px-4">
-      <h2 class="section-title">Featured <span class="text-primary">Videos</span></h2>
-      <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
-        Check out some of my favorite projects and tutorials!
-      </p>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto stagger-children">
-
-        <!-- Video Card 1 -->
-        <a href="#" data-video="0LTwHzOjneE" class="video-card video-lightbox">
-          <figure class="relative">
-            <img src="https://img.youtube.com/vi/0LTwHzOjneE/hqdefault.jpg"
-                 alt="Bringing grandpa's Ford series 2N tractor home"
-                 class="w-full aspect-video object-cover bg-base-300"
-                 onerror="this.src='https://img.youtube.com/vi/0LTwHzOjneE/mqdefault.jpg'">
-            <div class="play-overlay absolute inset-0 bg-black/50 flex items-center justify-center">
-              <div class="btn btn-circle btn-primary btn-lg">
-                <i class="fas fa-play text-xl"></i>
-              </div>
-            </div>
-            <div class="absolute bottom-2 right-2 bg-black/80 text-white px-2 py-1 rounded text-sm font-mono font-bold"><i class="fas fa-play text-xs mr-1"></i>40:07</div>
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title text-lg">Bringing grandpa's Ford series 2N tractor home</h3>
-            <p class="text-base-content/70 text-sm">The journey of bringing a family heirloom tractor back where it belongs.</p>
-          </div>
-        </a>
-
-        <!-- Video Card 2 -->
-        <a href="#" data-video="qa3fVjtNyCY" class="video-card video-lightbox">
-          <figure class="relative">
-            <img src="https://img.youtube.com/vi/qa3fVjtNyCY/maxresdefault.jpg"
-                 alt="Boost Your Air Compressor! Expanding a small air compressor with a propane tank."
-                 class="w-full aspect-video object-cover bg-base-300"
-                 onerror="this.src='https://img.youtube.com/vi/qa3fVjtNyCY/hqdefault.jpg'">
-            <div class="play-overlay absolute inset-0 bg-black/50 flex items-center justify-center">
-              <div class="btn btn-circle btn-primary btn-lg">
-                <i class="fas fa-play text-xl"></i>
-              </div>
-            </div>
-            <div class="absolute bottom-2 right-2 bg-black/80 text-white px-2 py-1 rounded text-sm font-mono font-bold"><i class="fas fa-play text-xs mr-1"></i></div>
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title text-lg">Boost Your Air Compressor!</h3>
-            <p class="text-base-content/70 text-sm">Expanding a small air compressor with a propane tank.</p>
-          </div>
-        </a>
-
-        <!-- Video Card 3 -->
-        <a href="#" data-video="GDKEo4ovsck" class="video-card video-lightbox">
-          <figure class="relative">
-            <img src="https://img.youtube.com/vi/GDKEo4ovsck/maxresdefault.jpg"
-                 alt="Can we move our shed with a 4-wheeler?"
-                 class="w-full aspect-video object-cover bg-base-300"
-                 onerror="this.src='https://img.youtube.com/vi/GDKEo4ovsck/hqdefault.jpg'">
-            <div class="play-overlay absolute inset-0 bg-black/50 flex items-center justify-center">
-              <div class="btn btn-circle btn-primary btn-lg">
-                <i class="fas fa-play text-xl"></i>
-              </div>
-            </div>
-            <div class="absolute bottom-2 right-2 bg-black/80 text-white px-2 py-1 rounded text-sm font-mono font-bold"><i class="fas fa-play text-xs mr-1"></i></div>
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title text-lg">Can we move our shed with a 4-wheeler?</h3>
-            <p class="text-base-content/70 text-sm">Testing the limits of a 4-wheeler to relocate a shed.</p>
-          </div>
-        </a>
-
-      </div>
-
-      <div class="text-center mt-12">
-        <a href="https://www.youtube.com/@higgprojects/videos" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary btn-lg gap-2">
-          <i class="fab fa-youtube"></i>
-          View All Videos
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Shorts Section -->
-  <section id="shorts" class="py-20 bg-base-200 reveal">
-    <div class="container mx-auto px-4">
-      <h2 class="section-title">Latest <span class="text-primary">Shorts</span></h2>
-      <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
-        Quick tips, behind-the-scenes, and project highlights
-      </p>
-
-      <div id="shorts-container" class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory max-w-6xl mx-auto justify-center flex-wrap stagger-children">
-        <!-- Shorts loaded dynamically from shorts.json -->
-      </div>
-
-      <div class="text-center mt-8">
-        <a href="https://www.youtube.com/@higgprojects/shorts" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary gap-2">
-          <i class="fab fa-youtube"></i>
-          View All Shorts
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Playlists Section -->
-  <section id="projects" class="py-20 bg-base-200 reveal">
-    <div class="container mx-auto px-4">
-      <h2 class="section-title">Project <span class="text-primary">Playlists</span></h2>
-      <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
-        Explore my video series and project collections
-      </p>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto stagger-children">
-
-        <!-- Playlist 1 - Ford 2N Tractor -->
-        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzF2BfVNSK4FZwfs-oP3RnWj" target="_blank" rel="noopener noreferrer" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-          <div class="card-body items-center text-center">
-            <div class="w-20 h-20 rounded-full bg-info/20 flex items-center justify-center mb-4 playlist-icon">
-              <i class="fas fa-tractor text-3xl text-info"></i>
-            </div>
-            <h3 class="card-title text-center">Ford 2N Tractor Restoration</h3>
-            <p class="text-base-content/70">Restoring our great grandpa's classic tractor</p>
-          </div>
-        </a>
-
-        <!-- Playlist 2 - 3D Printing -->
-        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzEW_F-3iyGQKXnrIBF1wzF-" target="_blank" rel="noopener noreferrer" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-          <div class="card-body items-center text-center">
-            <div class="w-20 h-20 rounded-full bg-info/20 flex items-center justify-center mb-4 playlist-icon">
-              <i class="fas fa-cube text-3xl text-info"></i>
-            </div>
-            <h3 class="card-title">3D Printing for Beginners</h3>
-            <p class="text-base-content/70">Learn the basics of 3D printing</p>
-          </div>
-        </a>
-
-        <!-- Playlist 3 - Higg Reviews -->
-        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzG0ocgJjUyjhSKsvQliZGiJ" target="_blank" rel="noopener noreferrer" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-          <div class="card-body items-center text-center">
-            <div class="w-20 h-20 rounded-full bg-info/20 flex items-center justify-center mb-4 playlist-icon">
-              <i class="fas fa-star text-3xl text-info"></i>
-            </div>
-            <h3 class="card-title">Higg Reviews</h3>
-            <p class="text-base-content/70">Product reviews and recommendations</p>
-          </div>
-        </a>
-
-        <!-- Playlist 4 - Craftsman Mower -->
-        <a href="https://www.youtube.com/playlist?list=PLKAsT-fsdrzFJhYtjjDXv6w6PxnRttVvg" target="_blank" rel="noopener noreferrer" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-          <div class="card-body items-center text-center">
-            <div class="w-20 h-20 rounded-full bg-info/20 flex items-center justify-center mb-4 playlist-icon">
-              <i class="fas fa-wrench text-3xl text-info"></i>
-            </div>
-            <h3 class="card-title">Craftsman Riding Mower</h3>
-            <p class="text-base-content/70">Fixing up my dad's old riding mower</p>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter / Contact Section -->
-  <section id="contact" class="py-20 bg-base-100 reveal">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-
-        <div class="card bg-gradient-to-br from-primary/10 to-accent/10 shadow-2xl">
-          <div class="card-body text-center py-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">
-              Let's <span class="text-primary">Connect!</span>
-            </h2>
-            <p class="text-lg text-base-content/80 mb-8 max-w-xl mx-auto">
-              Follow me on social media for behind-the-scenes content, project updates, and more!
-            </p>
-
-            <!-- Social Links -->
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-              <a href="https://www.youtube.com/@higgprojects" target="_blank" rel="noopener noreferrer"
-                 class="btn btn-lg gap-3 bg-red-600 hover:bg-red-700 text-white border-none">
-                <i class="fab fa-youtube text-2xl"></i>
-                YouTube
-              </a>
-              <a href="https://www.facebook.com/higgprojects" target="_blank" rel="noopener noreferrer"
-                 class="btn btn-lg gap-3 bg-blue-600 hover:bg-blue-700 text-white border-none">
-                <i class="fab fa-facebook text-2xl"></i>
-                Facebook
-              </a>
-              <a href="https://www.instagram.com/higgprojects" target="_blank" rel="noopener noreferrer"
-                 class="btn btn-lg gap-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-none">
-                <i class="fab fa-instagram text-2xl"></i>
-                Instagram
-              </a>
-              <a href="https://x.com/higgprojects" target="_blank" rel="noopener noreferrer"
-                 class="btn btn-lg gap-3 bg-black hover:bg-gray-900 text-white border-none">
-                <i class="fab fa-x-twitter text-2xl"></i>
-                X
-              </a>
-              <a href="https://www.tiktok.com/@higg.projects" target="_blank" rel="noopener noreferrer"
-                 class="btn btn-lg gap-3 bg-black hover:bg-gray-900 text-white border-none">
-                <i class="fab fa-tiktok text-2xl"></i>
-                TikTok
-              </a>
-            </div>
-
-            <!-- Amazon Storefront -->
-            <div class="divider">SHOP MY FAVORITES</div>
-
-            <p class="text-base-content/70 mb-4 max-w-md mx-auto">
-              Check out the tools, gear, and products I use and recommend in my projects!
-            </p>
-            <a href="https://www.amazon.com/shop/higgprojects" target="_blank" rel="noopener noreferrer"
-               class="btn btn-lg gap-3 bg-[#FF9900] hover:bg-[#e88b00] text-black font-bold border-none">
-              <i class="fab fa-amazon text-2xl"></i>
-              My Storefront
-            </a>
-
-            <!-- Contact info -->
-            <div class="divider">BUSINESS INQUIRIES</div>
-
-            <p class="text-base-content/70 mb-4">Want your product featured on HiggProjects? Open to collaboration opportunities too!</p>
-            <a href="mailto:higgprojects@gmail.com" class="btn btn-outline btn-primary gap-2">
-              <i class="fas fa-envelope"></i>
-              higgprojects@gmail.com
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Free Sticker Section -->
-  <section id="sticker" class="py-20 bg-base-200 reveal">
-    <div class="container mx-auto px-4">
-      <div class="max-w-2xl mx-auto text-center">
-
-        <!-- Sticker Image -->
-        <div class="mb-8">
-          <div class="inline-block relative sticker-image">
-            <img src="images/logo.jpg" alt="HiggProjects Sticker"
-                 class="w-40 h-40 rounded-full shadow-2xl ring-4 ring-base-100">
-            <div class="absolute -bottom-2 -right-2 bg-primary text-primary-content text-xs font-bold px-2 py-1 rounded-full">
-              4" circle
-            </div>
-          </div>
-        </div>
-
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          Want a Free <span class="text-primary">Sticker</span>?
-        </h2>
-        <p class="text-base-content/70 mb-2">
-          Drop your address below and I'll mail you one!
-        </p>
-        <p class="text-sm text-base-content/50 mb-8">
-          <i class="fas fa-box-open mr-1"></i> While supplies last &bull; US addresses only
-        </p>
-
-        <!-- Sticker Request Form -->
-        <form id="stickerForm" action="https://formsubmit.co/ajax/higgprojects@gmail.com" method="POST" class="space-y-4">
-          <!-- FormSubmit config -->
-          <input type="hidden" name="_subject" value="Free Sticker Request!">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-
-          <div class="grid sm:grid-cols-2 gap-4">
-            <input type="text" name="name" placeholder="Your Name" required
-                   class="input input-bordered w-full">
-            <input type="email" name="email" placeholder="Email" required
-                   class="input input-bordered w-full">
-          </div>
-
-          <input type="text" name="address" placeholder="Street Address" required
-                 class="input input-bordered w-full">
-
-          <div class="grid sm:grid-cols-3 gap-4">
-            <input type="text" name="city" placeholder="City" required
-                   class="input input-bordered w-full">
-            <select name="state" required class="select select-bordered w-full bg-base-100 text-base-content">
-              <option value="" disabled selected>State</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option><option>DC</option>
-            </select>
-            <input type="text" name="zip" placeholder="ZIP" required pattern="[0-9]{5}"
-                   class="input input-bordered w-full">
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-lg gap-2 mt-4">
-            <i class="fas fa-paper-plane"></i>
-            Send Me a Sticker!
-          </button>
-        </form>
-
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer footer-center p-10 bg-base-200 text-base-content">
-    <aside>
-      <p class="text-2xl font-oswald">
-        HIGG&nbsp;&nbsp;PROJECTS
-      </p>
-      <p class="text-base-content/70">Get It Done.</p>
-    </aside>
-    <nav>
-      <div class="grid grid-flow-col gap-6">
-        <a href="https://www.youtube.com/@higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.facebook.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://x.com/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="X">
-          <i class="fab fa-x-twitter"></i>
-        </a>
-        <a href="https://www.tiktok.com/@higg.projects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="TikTok">
-          <i class="fab fa-tiktok"></i>
-        </a>
-        <a href="https://www.amazon.com/shop/higgprojects" target="_blank" rel="noopener noreferrer" class="social-btn text-2xl" title="Amazon Storefront">
-          <i class="fab fa-amazon"></i>
-        </a>
-      </div>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Higg Projects home">
+      <img src="images/logo.jpg" alt="" width="40" height="40">
+      HIGG PROJECTS
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="navlink" href="#latest">Latest</a>
+      <a class="navlink" href="#videos">Videos</a>
+      <a class="navlink" href="#proof">Proof</a>
+      <a class="navlink" href="#gear">Gear</a>
+      <a class="navlink" href="#team">The Team</a>
+      <a class="navlink" href="#sticker">Free Sticker</a>
+      <a class="btn btn-primary btn-small" href="https://www.youtube.com/@higgprojects?sub_confirmation=1">Subscribe</a>
     </nav>
-    <aside class="flex flex-col items-center gap-2">
-      <img src="https://visitor-badge.laobi.icu/badge?page_id=higgprojects.com" alt="visitor count" class="opacity-70">
-      <p class="text-base-content/50">&copy; 2026 HiggProjects. All rights reserved.</p>
-    </aside>
-  </footer>
+  </div>
+</header>
 
-  <!-- Video Lightbox Modal -->
-  <div id="videoLightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm">
-    <div class="relative w-full max-w-5xl mx-4">
-      <button id="closeLightbox" class="absolute -top-12 right-0 btn btn-circle btn-ghost text-white text-2xl hover:bg-white/20">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="aspect-video">
-        <iframe id="videoFrame" class="w-full h-full rounded-lg border-0" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Higg Projects · Payson, Utah · Est. 2023</p>
+        <h1 class="display">Something broken?</h1>
+        <p class="lede">If I can fix it, you can too. Let&rsquo;s get it done!</p>
+        <p class="context">I&rsquo;m Lee — a dad who fixes whatever breaks (tractors, ATVs, mowers, drill batteries, grills) and films it. Sometimes it works, sometimes it doesn&rsquo;t, but we always learn something.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe — let&rsquo;s get it done</a>
+          <a class="quiet-link" href="#latest">or watch the latest first &darr;</a>
+        </div>
+        <p class="hero-record"><strong data-stat="videos">487</strong> videos &nbsp;·&nbsp; new fixes every week &nbsp;·&nbsp; free</p>
+        <div class="care-tag" role="note">
+          <p><span class="warn-word">Warning:</span> I may be an idiot. Follow my advice at your own risk.</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="badge-patch">
+          <img src="images/logo.jpg" alt="Higg Projects badge: a vintage Ford 2N tractor in teal halftone, circled by the words Higg Projects — Get It Done" width="380" height="380">
+        </div>
       </div>
     </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <p>Let&rsquo;s get it done <span class="star">&#9733;</span> Let&rsquo;s get it done <span class="star">&#9733;</span> Let&rsquo;s get it done <span class="star">&#9733;</span> Let&rsquo;s get it done</p>
   </div>
 
-  <!-- Back to top button -->
-  <a href="#home" class="btn btn-circle btn-primary fixed bottom-6 right-6 shadow-lg opacity-0 translate-y-10 transition-all duration-300" id="backToTop">
-    <i class="fas fa-arrow-up"></i>
-  </a>
-
-  <!-- Toast notification container -->
-  <div id="toast" class="toast toast-top toast-center z-[200] hidden">
-    <div class="alert alert-success shadow-lg">
-      <i class="fas fa-check-circle text-xl"></i>
-      <span class="font-medium">Sticker request received! Check your mailbox soon.</span>
+  <!-- ============ LATEST VIDEO (in-page player) ============ -->
+  <section class="section" id="latest">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Fresh out of the shop</p>
+        <h2>The latest video</h2>
+      </div>
+      <div class="latest-grid" id="latest-container">
+        <!-- Static fallback; re-rendered from youtube.json -->
+        <div class="facade" id="latest-player">
+          <img src="https://img.youtube.com/vi/IqEerVcPTg0/maxresdefault.jpg"
+               onerror="this.onerror=null;this.src='https://img.youtube.com/vi/IqEerVcPTg0/hqdefault.jpg'"
+               alt="Video thumbnail: Backyard Transformation! A little work goes a long way!" width="1280" height="720">
+          <button type="button" class="facade-play" data-video="IqEerVcPTg0" aria-label="Play: Backyard Transformation! A little work goes a long way!">
+            <span aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+        <div class="latest-info">
+          <p class="latest-title" id="latest-title">Backyard Transformation! A little work goes a long way!</p>
+          <p class="latest-sub">Hit play — it runs right here on the page.</p>
+          <a class="quiet-link" href="https://www.youtube.com/@higgprojects/videos">Can&rsquo;t wait? All <span data-stat="videos">487</span> videos &rarr;</a>
+          <a class="btn btn-primary" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe for the next one</a>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <script>
-    // Mobile menu toggle fix for Safari
-    (function() {
-      const menuBtn = document.querySelector('.dropdown > [tabindex="0"]');
-      const dropdown = menuBtn.closest('.dropdown');
-      let menuOpen = false;
+  <!-- ============ MORE FROM THE SHOP ============ -->
+  <section class="section" id="videos">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Straight off the bench</p>
+        <h2>More from the shop</h2>
+        <p class="kicker">Whatever&rsquo;s been on the bench lately — fixes, builds, and the occasional honest review. Updated as videos land.</p>
+      </div>
 
-      menuBtn.addEventListener('click', function(e) {
-        if (menuOpen) {
-          e.preventDefault();
-          e.stopPropagation();
-          this.blur();
-          menuOpen = false;
-        } else {
-          menuOpen = true;
-        }
-      });
+      <div class="video-grid" id="video-grid">
+        <a class="card" href="https://www.youtube.com/watch?v=79JJJnGcFt4">
+          <div class="thumb">
+            <img src="https://img.youtube.com/vi/79JJJnGcFt4/maxresdefault.jpg"
+                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/79JJJnGcFt4/hqdefault.jpg'"
+                 alt="Video thumbnail: Fixing a broken windshield wiper coupling on a Yukon" loading="lazy" width="480" height="270">
+          </div>
+          <div class="card-body"><h3>Fixing a broken windshield wiper coupling on a Yukon</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=6mEYVb8S6-g">
+          <div class="thumb">
+            <img src="https://img.youtube.com/vi/6mEYVb8S6-g/maxresdefault.jpg"
+                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/6mEYVb8S6-g/hqdefault.jpg'"
+                 alt="Video thumbnail: Our new mobile tool set with go handle!" loading="lazy" width="480" height="270">
+          </div>
+          <div class="card-body"><h3>Our new mobile tool set with go handle!</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=X7Ba42SYb6I">
+          <div class="thumb">
+            <img src="https://img.youtube.com/vi/X7Ba42SYb6I/maxresdefault.jpg"
+                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/X7Ba42SYb6I/hqdefault.jpg'"
+                 alt="Video thumbnail: We made a forge!" loading="lazy" width="480" height="270">
+          </div>
+          <div class="card-body"><h3>We made a forge!</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=Ckr7uwUYArg">
+          <div class="thumb">
+            <img src="https://img.youtube.com/vi/Ckr7uwUYArg/maxresdefault.jpg"
+                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Ckr7uwUYArg/hqdefault.jpg'"
+                 alt="Video thumbnail: Wilde Trail Flashlight — Full Review & Is It Worth It?" loading="lazy" width="480" height="270">
+          </div>
+          <div class="card-body"><h3>Wilde Trail Flashlight — Full Review &amp; Is It Worth It?</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=KRjkhbO8GkY">
+          <div class="thumb">
+            <img src="https://img.youtube.com/vi/KRjkhbO8GkY/maxresdefault.jpg"
+                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/KRjkhbO8GkY/hqdefault.jpg'"
+                 alt="Video thumbnail: These Wrenches Reach Where Others Can't – SUZUME Extra Long Ratcheting Wrench Set Review" loading="lazy" width="480" height="270">
+          </div>
+          <div class="card-body"><h3>These Wrenches Reach Where Others Can&rsquo;t – SUZUME Extra Long Ratcheting Wrench Set Review</h3></div>
+        </a>
+      </div>
 
-      // Close menu when clicking outside or on a link
-      document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-          menuOpen = false;
-        }
-      });
+      <div class="section-head shorts-label">
+        <p class="eyebrow">The short game · 60 seconds or less</p>
+      </div>
+      <div class="shorts-row" id="shorts-row">
+        <a class="card" href="https://www.youtube.com/shorts/xbRaZwG52Ow">
+          <div class="thumb">
+            <img src="https://i.ytimg.com/vi/xbRaZwG52Ow/hqdefault.jpg" alt="Short thumbnail: The EMERGENCY 10mm" loading="lazy" width="480" height="360">
+          </div>
+          <div class="card-body"><h3>The EMERGENCY 10mm</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/shorts/1-A9R75fTO4">
+          <div class="thumb">
+            <img src="https://i.ytimg.com/vi/1-A9R75fTO4/hqdefault.jpg" alt="Short thumbnail: Birds! They're everywhere!" loading="lazy" width="480" height="360">
+          </div>
+          <div class="card-body"><h3>Birds! They&rsquo;re everywhere!</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/shorts/VU1KT_P1Y38">
+          <div class="thumb">
+            <img src="https://i.ytimg.com/vi/VU1KT_P1Y38/hqdefault.jpg" alt="Short thumbnail: 3d printed AR-15 mag loader" loading="lazy" width="480" height="360">
+          </div>
+          <div class="card-body"><h3>3d printed AR-15 mag loader</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/shorts/vIJfjzagL6Y">
+          <div class="thumb">
+            <img src="https://i.ytimg.com/vi/vIJfjzagL6Y/hqdefault.jpg" alt="Short thumbnail: Porch planters make an apartment feel like home" loading="lazy" width="480" height="360">
+          </div>
+          <div class="card-body"><h3>Porch planters make an apartment feel like home</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/shorts/7nBagOm4fL8">
+          <div class="thumb">
+            <img src="https://i.ytimg.com/vi/7nBagOm4fL8/hqdefault.jpg" alt="Short thumbnail: Man I love a good lawn edge" loading="lazy" width="480" height="360">
+          </div>
+          <div class="card-body"><h3>Man I love a good lawn edge</h3></div>
+        </a>
+        <a class="card" href="https://www.youtube.com/shorts/LNsANO6yshc">
+          <div class="thumb">
+            <img src="https://i.ytimg.com/vi/LNsANO6yshc/hqdefault.jpg" alt="Short thumbnail: Now that's a happy dog" loading="lazy" width="480" height="360">
+          </div>
+          <div class="card-body"><h3>Now that&rsquo;s a happy dog</h3></div>
+        </a>
+      </div>
 
-      document.querySelectorAll('.dropdown-content a').forEach(link => {
-        link.addEventListener('click', () => {
-          document.activeElement.blur();
-          menuOpen = false;
-        });
-      });
-    })();
+      <div class="convert-bar">
+        <div>
+          <p class="line">New fixes land every week. <span class="count" data-stat="videos">487</span> videos deep.</p>
+          <p class="sub">Watching is free. So is subscribing — unsubscribe anytime.</p>
+        </div>
+        <a class="btn btn-primary" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe</a>
+      </div>
+    </div>
+  </section>
 
-    // Load YouTube data (shorts and stats)
-    fetch('youtube.json')
-      .then(response => response.json())
-      .then(data => {
-        // Update stats counters
-        if (data.stats) {
-          const subEl = document.getElementById('stat-subscribers');
-          const vidEl = document.getElementById('stat-videos');
-          const playEl = document.getElementById('stat-playlists');
-          if (subEl && data.stats.subscriberCount) subEl.dataset.target = data.stats.subscriberCount;
-          if (vidEl && data.stats.videoCount) vidEl.dataset.target = data.stats.videoCount;
-          if (playEl && data.stats.playlistCount) playEl.dataset.target = data.stats.playlistCount;
-        }
+  <!-- ============ PROOF ============ -->
+  <section class="section" id="proof">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">From the comments</p>
+        <h2>The fixes actually work. Ask the internet.</h2>
+        <p class="kicker">One 60-second short — &ldquo;How to fix a drill battery that won&rsquo;t charge&rdquo; — keeps reviving people&rsquo;s &ldquo;dead&rdquo; batteries. The comments are the scoreboard:</p>
+      </div>
+      <div class="proof-grid">
+        <a class="proof-thumb" href="https://www.youtube.com/shorts/ZJBbARK9niU" aria-label="Watch the short: How to fix a drill battery that won't charge">
+          <img src="https://img.youtube.com/vi/ZJBbARK9niU/hqdefault.jpg"
+               alt="Short thumbnail: How to fix a drill battery that won't charge" loading="lazy" width="480" height="360">
+        </a>
+        <div>
+          <div class="quote-list">
+            <div class="quote">
+              <blockquote>&ldquo;Thank you it worked like a charm&rdquo;</blockquote>
+              <cite>@Mike-fi5ob</cite>
+            </div>
+            <div class="quote">
+              <blockquote>&ldquo;This worked with my dead battery that wasn&rsquo;t charging. It only needed a few seconds.&rdquo;</blockquote>
+              <cite>@M16A2evans</cite>
+            </div>
+            <div class="quote">
+              <blockquote>&ldquo;Thanks man this was a life saver much appreciated&rdquo;</blockquote>
+              <cite>@hakimnaushad2318</cite>
+            </div>
+            <div class="quote">
+              <blockquote>&ldquo;Thank you brother. I tried it and it worked. Now my battery is charging like normal!&rdquo;</blockquote>
+              <cite>@johnnymo9518</cite>
+            </div>
+          </div>
+          <p class="proof-cta-line">That&rsquo;s the whole channel in one comment section: <strong>plain fixes that actually work for regular people.</strong> Want the next one in your feed?</p>
+          <a class="btn btn-primary" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe — join the team</a>
+          <p class="micro-note">Unsubscribe anytime — no hard feelings.</p>
+        </div>
+      </div>
+      <a class="also-real" href="https://www.youtube.com/watch?v=qa3fVjtNyCY">
+        <img src="https://img.youtube.com/vi/qa3fVjtNyCY/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+        <span class="also-real-text"><strong>Fan favorite: Boost Your Air Compressor!</strong><span>Turning a propane tank into extra air capacity — 20K people found this one on their own.</span></span>
+        <span class="also-real-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </section>
 
-        // Render shorts
-        const shorts = data.shorts || data;
-        const container = document.getElementById('shorts-container');
-        container.innerHTML = shorts.map(short => `
-          <a href="https://www.youtube.com/shorts/${short.id}" target="_blank" rel="noopener noreferrer" class="short-card snap-center flex-shrink-0">
-            <div class="relative w-44 aspect-[9/16] rounded-xl overflow-hidden bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <img src="https://img.youtube.com/vi/${short.id}/maxresdefault.jpg"
-                   alt="${short.title}"
-                   class="w-full h-full object-cover"
-                   onerror="this.src='https://img.youtube.com/vi/${short.id}/hqdefault.jpg'">
-              <div class="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                <div class="btn btn-circle btn-primary">
-                  <i class="fas fa-play"></i>
-                </div>
+  <!-- ============ THE LONG-TERM PROJECT ============ -->
+  <section class="section" id="story">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Every shop has one</p>
+        <h2>The long-term project</h2>
+        <p class="kicker">My great-grandpa&rsquo;s Ford 2N is where the channel started. Those videos are older — I&rsquo;ve gotten better since, and honestly, she&rsquo;s been waiting on us a while. She&rsquo;ll get her day.</p>
+      </div>
+      <article class="ticket" aria-label="Ford 2N service record">
+        <span class="ticket-stamp" aria-hidden="true">On the list</span>
+        <div class="ticket-head">
+          <span>Higg Projects · Payson, Utah</span>
+          <span>Service record · Nº 001</span>
+        </div>
+        <h3>Unit: Ford 2N — &ldquo;Grandpa&rsquo;s tractor&rdquo;</h3>
+        <p class="ticket-meta"><strong>Owner:</strong> The Higginson family &nbsp;&nbsp; <strong>Complaint:</strong> Doesn&rsquo;t run. Yet.</p>
+        <ol class="ledger">
+          <li>
+            <a href="https://www.youtube.com/watch?v=450t_J_KsoI">
+              <span class="no">01</span>
+              <img src="https://img.youtube.com/vi/450t_J_KsoI/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>We bought my great grandpa&rsquo;s tractor!</strong><span>Where it all started</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=0LTwHzOjneE">
+              <span class="no">02</span>
+              <img src="https://img.youtube.com/vi/0LTwHzOjneE/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>Bringing grandpa&rsquo;s Ford series 2N tractor home</strong><span>The haul home</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=NJejiOXFkOo">
+              <span class="no">03</span>
+              <img src="https://img.youtube.com/vi/NJejiOXFkOo/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>Will the tractor run this time?</strong><span>Spoiler: not yet</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/shorts/C1w_VRMpRC4">
+              <span class="no">04</span>
+              <img src="https://img.youtube.com/vi/C1w_VRMpRC4/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>Made some progress on our grandpas old Ford 2N!</strong><span>Last entry &mdash; for now</span></span>
+            </a>
+          </li>
+        </ol>
+        <div class="ticket-foot">
+          <p class="status"><strong>Status: on hold.</strong> She&rsquo;ll run someday — subscribe and you&rsquo;ll be there when she does.</p>
+          <a class="btn btn-rust" href="https://www.youtube.com/@higgprojects?sub_confirmation=1">Subscribe — be there when she runs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ THE PARTS COUNTER ============ -->
+  <section class="section" id="gear">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The parts counter</p>
+        <h2>Gear that earned a spot</h2>
+        <p class="kicker">Tools and gear from recent videos — reviewed on camera, honest take included. Grab them from the video or browse the whole storefront.</p>
+      </div>
+      <div class="gear-list" id="gear-list">
+        <a class="gear-item" href="https://geni.us/7FPEJ" rel="sponsored noopener" target="_blank">
+          <img src="https://img.youtube.com/vi/6mEYVb8S6-g/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+          <span class="gear-text"><strong>Our new mobile tool set with go handle!</strong><span>On Amazon &rarr;</span></span>
+        </a>
+        <a class="gear-item" href="https://amzn.to/4lHFRxh" rel="sponsored noopener" target="_blank">
+          <img src="https://img.youtube.com/vi/Ckr7uwUYArg/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+          <span class="gear-text"><strong>Wilde Trail Flashlight — Full Review &amp; Is It Worth It?</strong><span>On Amazon &rarr;</span></span>
+        </a>
+        <a class="gear-item" href="https://a.co/d/0g4LsIzN" rel="sponsored noopener" target="_blank">
+          <img src="https://img.youtube.com/vi/KRjkhbO8GkY/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+          <span class="gear-text"><strong>These Wrenches Reach Where Others Can&rsquo;t – SUZUME Extra Long Ratcheting Wrench Set Review</strong><span>On Amazon &rarr;</span></span>
+        </a>
+        <a class="gear-item" href="https://geni.us/WU1TT" rel="sponsored noopener" target="_blank">
+          <img src="https://img.youtube.com/vi/TzVUmD0YulU/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+          <span class="gear-text"><strong>Fanttik F2 Pro rotary tool review</strong><span>On Amazon &rarr;</span></span>
+        </a>
+        <a class="gear-item" href="https://geni.us/U1568" rel="sponsored noopener" target="_blank">
+          <img src="https://img.youtube.com/vi/ijJZ63g57cQ/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+          <span class="gear-text"><strong>My review of the Fanttik E2 Ultra Mini Electric Screwdriver</strong><span>On Amazon &rarr;</span></span>
+        </a>
+      </div>
+      <div class="convert-bar gear-cta">
+        <div>
+          <p class="line">The whole toolbox is on the <span class="count">storefront</span>.</p>
+          <p class="sub">Some links earn a small commission at no extra cost to you — it helps keep the shop lights on.</p>
+        </div>
+        <a class="btn btn-ghost" href="https://www.amazon.com/shop/higgprojects" rel="sponsored noopener" target="_blank">Browse the Amazon storefront</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROSTER ============ -->
+  <section class="section" id="team">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">It&rsquo;s a family affair</p>
+        <h2>The roster</h2>
+      </div>
+      <div class="team-grid">
+        <div>
+          <p class="lee-quote"><span class="hey">&ldquo;Hey, I&rsquo;m Lee!</span> I&rsquo;m not a professional anything - I just fix whatever breaks and make videos along the way. Sometimes it works, sometimes it doesn&rsquo;t, but we always learn something.&rdquo;</p>
+          <ul class="roster">
+            <li>
+              <span class="letter" aria-hidden="true">L</span>
+              <span class="who"><strong>Lee</strong><span>Dad. 6&rsquo;8&Prime; — confirmed local sasquatch (Apple Maps caught him once). Fixes whatever breaks, on camera.</span></span>
+            </li>
+            <li>
+              <span class="letter" aria-hidden="true">L</span>
+              <span class="who"><strong>Luke</strong><span>Welds, wrenches on his Silverado — and makes his own videos.</span></span>
+            </li>
+            <li>
+              <span class="letter" aria-hidden="true">J</span>
+              <span class="who"><strong>James</strong><span>The green guy. High-school basketball, and stars when a Grand Prix is involved.</span></span>
+            </li>
+            <li>
+              <span class="letter" aria-hidden="true">E</span>
+              <span class="who"><strong>Evan</strong><span>Turns up in a video now and then.</span></span>
+            </li>
+            <li>
+              <span class="letter" aria-hidden="true">J</span>
+              <span class="who"><strong>Jenna</strong><span>Has shown up a time or two.</span></span>
+            </li>
+            <li>
+              <span class="letter" aria-hidden="true">&#9733;</span>
+              <span class="who"><strong>The dogs</strong><span>Morale department.</span></span>
+            </li>
+          </ul>
+        </div>
+        <div class="team-photos">
+          <figure class="homefield">
+            <img src="images/shopsunset-web.jpg" alt="Lee's metal carport workshop lit up under a pink and purple Utah sunset" loading="lazy" width="1600" height="1200">
+            <figcaption>The home field — the shop, Payson, Utah</figcaption>
+          </figure>
+          <figure class="squatch">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/sasquatch.jpg" alt="Apple Maps street view of Lee's driveway with 'Sasquatch Sighting' written across it — a very tall blurred figure by the garage" loading="lazy" width="720" height="900">
+            <figcaption>Actual Apple Maps footage. Lee is 6&rsquo;8&Prime;. The legend is real.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="stats-band" role="group" aria-label="Shop facts">
+        <div class="stat"><span class="num" data-stat="videos">487</span><span class="lbl">Videos</span></div>
+        <div class="stat"><span class="num">2023</span><span class="lbl">In the shop since</span></div>
+        <div class="stat"><span class="num">Weekly</span><span class="lbl">New fixes</span></div>
+        <div class="stat"><span class="num">6+</span><span class="lbl">Crew, dogs included</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STICKER ============ -->
+  <section class="section" id="sticker">
+    <div class="wrap">
+      <div class="sticker-grid">
+        <div class="sticker-visual">
+          <div class="sticker-wrap">
+            <div class="sticker-disc">
+              <img src="images/logo.jpg" alt="The Higg Projects sticker: the teal tractor badge printed as a 4-inch circle" loading="lazy" width="280" height="280">
+            </div>
+            <span class="size-chip">4&Prime; circle</span>
+          </div>
+        </div>
+        <div>
+          <div class="section-head" style="margin-bottom:0">
+            <p class="eyebrow">Wear the colors</p>
+            <h2>Free sticker</h2>
+            <p class="kicker">Want a free sticker? Drop your address below and I&rsquo;ll mail you one!</p>
+          </div>
+          <form class="sticker-form" id="stickerForm" action="https://formsubmit.co/ajax/higgprojects@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Free Sticker Request!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
               </div>
-              <div class="absolute bottom-2 right-2 bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">
-                <i class="fas fa-bolt mr-1"></i>SHORT
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required>
               </div>
             </div>
-          </a>
-        `).join('');
-      })
-      .catch(err => console.error('Failed to load YouTube data:', err));
+            <div class="field">
+              <label for="f-street">Street address</label>
+              <input id="f-street" name="address" type="text" autocomplete="street-address" required>
+            </div>
+            <div class="field-row-3">
+              <div class="field">
+                <label for="f-city">City</label>
+                <input id="f-city" name="city" type="text" autocomplete="address-level2" required>
+              </div>
+              <div class="field">
+                <label for="f-state">State</label>
+                <input id="f-state" name="state" type="text" autocomplete="address-level1" maxlength="2" placeholder="UT" required>
+              </div>
+              <div class="field">
+                <label for="f-zip">ZIP</label>
+                <input id="f-zip" name="zip" type="text" inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code" required>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">Mail me one</button>
+            </div>
+            <p class="form-note" id="formNote" role="status"></p>
+            <p class="fine-print">While supplies last · US addresses only</p>
+          </form>
+          <p class="sticker-loop">The sticker&rsquo;s free. So is <a href="https://www.youtube.com/@higgprojects?sub_confirmation=1">subscribing</a> — do both and make it official.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Parallax hero background (optimized for iOS/iPad)
-    var heroBackground = document.getElementById('heroBackground');
-    var heroSection = document.getElementById('home');
-    var ticking = false;
+  <!-- ============ COLLAB CALLOUT ============ -->
+  <section class="section collab" aria-label="Business and collaborations">
+    <div class="wrap">
+      <div class="collab-card">
+        <div>
+          <p class="eyebrow">Business &amp; collabs</p>
+          <h2 class="collab-title">Got a product worth testing? Let&rsquo;s talk.</h2>
+          <p class="collab-sub">Want your product featured on HiggProjects, or have a collab idea? I&rsquo;m picky about what I&rsquo;ll review these days — but if it&rsquo;s good, I&rsquo;ll give it an honest run on camera.</p>
+        </div>
+        <a class="btn btn-primary" href="mailto:higgprojects@gmail.com">higgprojects@gmail.com</a>
+      </div>
+    </div>
+  </section>
 
-    function updateParallax() {
-      var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-      var heroHeight = heroSection.offsetHeight;
+</main>
 
-      if (scrolled < heroHeight) {
-        var translateY = Math.round(scrolled * 0.4);
-        heroBackground.style.transform = 'scale(1.1) translate3d(0, ' + translateY + 'px, 0)';
-      }
-      ticking = false;
-    }
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <dl class="spec-plate">
+      <span class="rivet-b" aria-hidden="true"></span>
+      <div><dt>Ref</dt><dd>Lee Higginson</dd></div>
+      <div><dt>Works</dt><dd>Payson, Utah</dd></div>
+      <div><dt>In service since</dt><dd>Feb 25, 2023</dd></div>
+      <div><dt>Subscribers</dt><dd data-stat="subs">9,270</dd></div>
+      <div><dt>Videos</dt><dd data-stat="videos">487</dd></div>
+      <div><dt>Total views</dt><dd data-stat="views">774,168</dd></div>
+    </dl>
+    <p class="stamp">Get it done.</p>
+    <p class="foot-tag">Something broken? If I can fix it, you can too. Thank you for tuning in and supporting the channel.</p>
+    <div class="foot-cols">
+      <div>
+        <h3>Watch</h3>
+        <ul>
+          <li><a class="primary-link" href="https://www.youtube.com/@higgprojects?sub_confirmation=1">YouTube — Subscribe</a></li>
+          <li><a href="https://www.youtube.com/@higgprojects">@higgprojects · <span data-stat="videos">487</span> videos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://www.tiktok.com/@higg.projects">TikTok</a></li>
+          <li><a href="https://www.instagram.com/higgprojects">Instagram</a></li>
+          <li><a href="https://www.facebook.com/higgprojects">Facebook</a></li>
+          <li><a href="https://x.com/higgprojects">X</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="https://www.amazon.com/shop/higgprojects">Amazon storefront</a></li>
+          <li><a href="#gear">Gear that earned a spot</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Business &amp; collabs</h3>
+        <ul>
+          <li><a href="mailto:higgprojects@gmail.com">higgprojects@gmail.com</a></li>
+          <li><a href="mailto:higgprojects@gmail.com?subject=Product%20for%20HiggProjects">Pitch a product</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>Higg Projects · Payson, Utah</span>
+      <span>Est. Feb 25, 2023 · <span data-stat="views-short">774K+</span> total views</span>
+    </div>
+  </div>
+</footer>
 
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    }, { passive: true });
+<script>
+(function(){
+  'use strict';
 
-    // Back to top button visibility
-    var backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        backToTop.classList.remove('opacity-0', 'translate-y-10');
-        backToTop.classList.add('opacity-100', 'translate-y-0');
-      } else {
-        backToTop.classList.add('opacity-0', 'translate-y-10');
-        backToTop.classList.remove('opacity-100', 'translate-y-0');
-      }
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
     });
+  }
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const navHeight = document.querySelector('nav').offsetHeight;
-          const targetPosition = target.offsetTop - navHeight;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+  function thumbImg(id, alt, tall){
+    return '<img src="https://img.youtube.com/vi/' + id + '/' + (tall ? 'hqdefault' : 'maxresdefault') + '.jpg" ' +
+      (tall ? '' : 'onerror="this.onerror=null;this.src=\'https://img.youtube.com/vi/' + id + '/hqdefault.jpg\'" ') +
+      'alt="' + alt + '" loading="lazy" width="480" height="' + (tall ? '360' : '270') + '">';
+  }
+
+  // ---- Featured in-page player ----
+  function wireFacade(){
+    var btn = document.querySelector('.facade-play');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var player = document.getElementById('latest-player');
+      var vid = this.dataset.video;
+      var title = document.getElementById('latest-title').textContent;
+      player.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + vid +
+        '?autoplay=1&playsinline=1&rel=0" title="' + esc(title) +
+        '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      var frame = player.querySelector('iframe');
+      frame.setAttribute('tabindex', '0');
+      frame.focus();
+    }, { once: true });
+  }
+  wireFacade();
+
+  function relativeDate(iso){
+    if (!iso) return '';
+    var days = Math.floor((Date.now() - new Date(iso).getTime()) / 864e5);
+    if (days < 1) return 'today';
+    if (days === 1) return 'yesterday';
+    if (days < 30) return days + ' days ago';
+    var months = Math.floor(days / 30);
+    if (months < 12) return months + (months === 1 ? ' month ago' : ' months ago');
+    var years = Math.floor(days / 365);
+    return years + (years === 1 ? ' year ago' : ' years ago');
+  }
+
+  function renderLatest(video){
+    var player = document.getElementById('latest-player');
+    if (player.querySelector('iframe')) return; // already playing — don't interrupt
+    var title = esc(video.title);
+    player.innerHTML =
+      '<img src="https://img.youtube.com/vi/' + video.id + '/maxresdefault.jpg" ' +
+        'onerror="this.onerror=null;this.src=\'https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg\'" ' +
+        'alt="Video thumbnail: ' + title + '" width="1280" height="720">' +
+      '<button type="button" class="facade-play" data-video="' + video.id + '" aria-label="Play: ' + title + '">' +
+        '<span aria-hidden="true">&#9654;</span></button>';
+    var t = document.getElementById('latest-title');
+    t.textContent = video.title;
+    var when = relativeDate(video.publishedAt);
+    var isNew = video.publishedAt && (Date.now() - new Date(video.publishedAt).getTime()) < 7 * 864e5;
+    var pill = document.getElementById('latest-pill');
+    if (pill) pill.remove();
+    if (isNew) t.insertAdjacentHTML('beforebegin', '<p class="pill-new" id="latest-pill">New this week</p>');
+    else if (when) t.insertAdjacentHTML('beforebegin', '<p class="pill-when" id="latest-pill">Posted ' + esc(when) + '</p>');
+    wireFacade();
+  }
+
+  function renderGrid(videos){
+    document.getElementById('video-grid').innerHTML = videos.map(function(v){
+      return '<a class="card" href="https://www.youtube.com/watch?v=' + v.id + '">' +
+        '<div class="thumb">' + thumbImg(v.id, 'Video thumbnail: ' + esc(v.title), false) + '</div>' +
+        '<div class="card-body"><h3>' + esc(v.title) + '</h3></div></a>';
+    }).join('');
+  }
+
+  function renderShorts(shorts){
+    document.getElementById('shorts-row').innerHTML = shorts.map(function(s){
+      return '<a class="card" href="https://www.youtube.com/shorts/' + s.id + '">' +
+        '<div class="thumb">' + thumbImg(s.id, 'Short thumbnail: ' + esc(s.title), true) + '</div>' +
+        '<div class="card-body"><h3>' + esc(s.title) + '</h3></div></a>';
+    }).join('');
+  }
+
+  // ---- Live data from youtube.json (updated daily by GitHub Action) ----
+  fetch('youtube.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (data.stats) {
+        var fmt = function(n){ return parseInt(n, 10).toLocaleString('en-US'); };
+        var set = function(key, value){
+          document.querySelectorAll('[data-stat="' + key + '"]').forEach(function(el){ el.textContent = value; });
+        };
+        if (data.stats.subscriberCount) set('subs', fmt(data.stats.subscriberCount));
+        if (data.stats.videoCount) set('videos', fmt(data.stats.videoCount));
+        if (data.stats.viewCount) {
+          set('views', fmt(data.stats.viewCount));
+          set('views-short', Math.floor(parseInt(data.stats.viewCount, 10) / 1000) + 'K+');
         }
-      });
-    });
-
-    // Scroll reveal animation
-    var revealElements = document.querySelectorAll('.reveal');
-    var staggerElements = document.querySelectorAll('.stagger-children');
-
-    var revealObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    revealElements.forEach(function(el) { revealObserver.observe(el); });
-    staggerElements.forEach(function(el) { revealObserver.observe(el); });
-
-    // Animated counters
-    const counters = document.querySelectorAll('.counter');
-    let countersAnimated = false;
-
-    function animateCounter(counter) {
-      const target = parseInt(counter.getAttribute('data-target'));
-      const suffix = counter.getAttribute('data-suffix') || '';
-      const format = counter.getAttribute('data-format');
-      const duration = 1500;
-      const steps = 60;
-      const stepTime = duration / steps;
-      let current = 0;
-      const increment = target / steps;
-
-      function updateCounter() {
-        current += increment;
-        if (current < target) {
-          let displayValue = Math.floor(current);
-          if (format === 'k') {
-            displayValue = (current / 1000).toFixed(1) + 'K';
-          }
-          counter.textContent = displayValue + suffix;
-          setTimeout(updateCounter, stepTime);
-        } else {
-          let finalValue = target;
-          if (format === 'k') {
-            finalValue = (target / 1000).toFixed(1) + 'K';
-          }
-          counter.textContent = finalValue + suffix;
-        }
       }
-      updateCounter();
-    }
-
-    const statsSection = document.querySelector('.stats');
-    const counterObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting && !countersAnimated) {
-          countersAnimated = true;
-          counters.forEach(function(counter) {
-            animateCounter(counter);
-          });
-        }
-      });
-    }, { threshold: 0.5 });
-
-    if (statsSection) {
-      counterObserver.observe(statsSection);
-    }
-
-    // Theme toggle
-    const themeDark = document.getElementById('themeDark');
-    const themeLight = document.getElementById('themeLight');
-    const html = document.documentElement;
-
-    function setTheme(theme) {
-      html.classList.add('theme-transitioning');
-      html.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      setTimeout(function() { html.classList.remove('theme-transitioning'); }, 300);
-      // Close dropdown
-      document.activeElement.blur();
-    }
-
-    themeDark.addEventListener('click', function() {
-      setTheme('higgprojects');
-    });
-
-    themeLight.addEventListener('click', function() {
-      setTheme('higgprojects-light');
-    });
-
-    // Video Lightbox
-    var videoLightbox = document.getElementById('videoLightbox');
-    var videoFrame = document.getElementById('videoFrame');
-    var closeLightbox = document.getElementById('closeLightbox');
-    var videoLinks = document.querySelectorAll('.video-lightbox');
-
-    videoLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var videoId = this.getAttribute('data-video');
-        videoFrame.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&playsinline=1&rel=0';
-        videoLightbox.classList.remove('hidden');
-        videoLightbox.classList.add('flex');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function closeVideoLightbox() {
-      videoLightbox.classList.add('hidden');
-      videoLightbox.classList.remove('flex');
-      videoFrame.src = '';
-      document.body.style.overflow = '';
-    }
-
-    closeLightbox.addEventListener('click', closeVideoLightbox);
-
-    videoLightbox.addEventListener('click', function(e) {
-      if (e.target === videoLightbox) {
-        closeVideoLightbox();
+      var videos = data.videos || [];
+      if (videos.length) {
+        renderLatest(videos[0]);
+        if (videos.length > 1) renderGrid(videos.slice(1, 6));
       }
-    });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && !videoLightbox.classList.contains('hidden')) {
-        closeVideoLightbox();
+      var shorts = data.shorts || [];
+      if (shorts.length) renderShorts(shorts.slice(0, 6));
+      var gear = data.gear || [];
+      if (gear.length) {
+        document.getElementById('gear-list').innerHTML = gear.map(function(g){
+          return '<a class="gear-item" href="' + esc(g.link) + '" rel="sponsored noopener" target="_blank">' +
+            '<img src="https://img.youtube.com/vi/' + g.id + '/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">' +
+            '<span class="gear-text"><strong>' + esc(g.title) + '</strong><span>On Amazon &rarr;</span></span></a>';
+        }).join('');
       }
+    })
+    .catch(function(){ /* static fallback content is already in the markup */ });
+
+  // ---- Sticker form: AJAX submit, inline confirmation ----
+  var form = document.getElementById('stickerForm');
+  var note = document.getElementById('formNote');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var original = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    note.className = 'form-note';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (!res.ok) throw new Error('failed');
+      form.reset();
+      note.textContent = 'Got it — check your mailbox soon. Let’s get it done!';
+      note.className = 'form-note show ok';
+    }).catch(function(){
+      note.textContent = 'Something broke (fitting, right?). Please try again in a minute.';
+      note.className = 'form-note show err';
+    }).finally(function(){
+      btn.textContent = original;
+      btn.disabled = false;
     });
-
-    // Sticker form AJAX submission
-    var stickerForm = document.getElementById('stickerForm');
-    var toast = document.getElementById('toast');
-
-    stickerForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var submitBtn = stickerForm.querySelector('button[type="submit"]');
-      var originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span class="loading loading-spinner"></span> Sending...';
-      submitBtn.disabled = true;
-
-      fetch(stickerForm.action, {
-        method: 'POST',
-        body: new FormData(stickerForm),
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(function(response) {
-        if (response.ok) {
-          // Show toast
-          toast.classList.remove('hidden');
-          // Reset form
-          stickerForm.reset();
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-          // Hide toast after 4 seconds
-          setTimeout(function() {
-            toast.classList.add('hidden');
-          }, 4000);
-        } else {
-          throw new Error('Form submission failed');
-        }
-      })
-      .catch(function(error) {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        alert('Oops! Something went wrong. Please try again.');
-      });
-    });
-  </script>
+  });
+})();
+</script>
 
 </body>
 </html>
