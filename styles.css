@@ -26,6 +26,7 @@
   --bone:#EDE4D3;
   --ink:#181512;
   --rust:#C1622F;
+  --rust-bright:#D07039;
   --rust-deep:#8F3E1B;
   --muted:#9DAFA9;
   --body:#C9D3CE;
@@ -80,7 +81,7 @@ a{color:var(--teal)}
   font-size:.75rem;
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--teal);
+  color:var(--rust-bright);
   display:flex;
   align-items:center;
   gap:.65rem;
@@ -88,7 +89,7 @@ a{color:var(--teal)}
 .eyebrow::before{
   content:"";
   width:26px;height:0;
-  border-top:2px dashed var(--teal);
+  border-top:2px dashed var(--rust-bright);
   opacity:.8;
 }
 
@@ -106,7 +107,7 @@ a{color:var(--teal)}
 }
 .brand{
   display:flex;align-items:center;gap:.7rem;
-  text-decoration:none;color:var(--teal);
+  text-decoration:none;color:var(--felt);
   font-family:var(--font-display);
   font-size:1.05rem;letter-spacing:.06em;
   white-space:nowrap;
@@ -166,7 +167,7 @@ a{color:var(--teal)}
   padding-bottom:.15rem;
   align-self:center;
 }
-.quiet-link:hover{color:var(--teal);border-bottom-color:var(--teal)}
+.quiet-link:hover{color:var(--rust-bright);border-bottom-color:var(--rust-bright)}
 
 /* ============ HERO ============ */
 .hero{padding:clamp(3rem,7vw,5rem) 0 clamp(2.5rem,5vw,4rem)}
@@ -178,7 +179,7 @@ a{color:var(--teal)}
 }
 .hero h1{
   font-size:clamp(3.1rem,8.2vw,6.2rem);
-  color:var(--teal);
+  color:var(--felt);
   margin:1.1rem 0 1.2rem;
   text-wrap:balance;
 }
@@ -309,7 +310,7 @@ a{color:var(--teal)}
 .latest-info{
   background:var(--panel);
   border:1px solid var(--line);
-  border-top:4px solid var(--teal);
+  border-top:4px solid var(--rust);
   border-radius:10px;
   padding:1.4rem 1.5rem 1.5rem;
   display:flex;flex-direction:column;gap:1rem;align-items:flex-start;
@@ -327,7 +328,7 @@ a{color:var(--teal)}
   border-radius:4px;
   padding:.3rem .6rem;
 }
-.pill-new{background:var(--teal);color:var(--ink)}
+.pill-new{background:var(--rust);color:var(--felt)}
 .pill-when{background:var(--panel-2);color:var(--muted);border:1px solid var(--line)}
 @media (max-width:900px){
   .latest-grid{grid-template-columns:1fr}
@@ -335,10 +336,10 @@ a{color:var(--teal)}
 
 /* ============ FELT STRIP DIVIDER ============ */
 .strip{
-  background:var(--felt);
-  color:var(--ink);
-  border-top:3px solid var(--teal-deep);
-  border-bottom:3px solid var(--teal-deep);
+  background:var(--rust);
+  color:var(--felt);
+  border-top:3px solid var(--rust-deep);
+  border-bottom:3px solid var(--rust-deep);
   transform:rotate(-.4deg) scale(1.01);
   overflow:hidden;
   padding:.55rem 0;
@@ -351,7 +352,7 @@ a{color:var(--teal)}
   white-space:nowrap;
   text-align:center;
 }
-.strip .star{color:var(--rust);padding:0 .8rem}
+.strip .star{color:var(--felt);opacity:.7;padding:0 .8rem}
 
 /* ============ SECTIONS ============ */
 .section{padding:clamp(3.5rem,8vw,6rem) 0}
@@ -430,7 +431,7 @@ a{color:var(--teal)}
   margin-top:2.4rem;
   background:var(--panel);
   border:1px solid var(--line);
-  border-left:6px solid var(--teal);
+  border-left:6px solid var(--rust);
   border-radius:10px;
   padding:1.5rem clamp(1.25rem,3vw,2rem);
   display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 2rem;
@@ -443,7 +444,7 @@ a{color:var(--teal)}
   color:var(--felt);
   line-height:1.25;
 }
-.convert-bar .line .count{color:var(--teal)}
+.convert-bar .line .count{color:var(--rust-bright)}
 .convert-bar .sub{
   font-family:var(--font-utility);font-weight:500;
   font-size:.85rem;color:var(--muted);
@@ -594,7 +595,7 @@ a{color:var(--teal)}
 .quote{
   background:var(--blacktop);
   border:1px solid var(--line);
-  border-left:4px solid var(--teal);
+  border-left:4px solid var(--rust);
   border-radius:8px;
   padding:1.05rem 1.25rem;
 }
@@ -778,7 +779,7 @@ a{color:var(--teal)}
   font-weight:500;
   margin-bottom:1.8rem;
 }
-.lee-quote .hey{color:var(--teal);font-weight:600}
+.lee-quote .hey{color:var(--rust-bright);font-weight:600}
 .roster{list-style:none}
 .roster li{
   display:flex;align-items:center;gap:1.1rem;
@@ -791,9 +792,9 @@ a{color:var(--teal)}
   width:2.9rem;height:2.9rem;
   display:grid;place-items:center;
   font-family:var(--font-display);
-  font-size:1.45rem;color:var(--teal);
+  font-size:1.45rem;color:var(--rust-bright);
   background:var(--panel);
-  border:1px solid var(--teal-deep);
+  border:1px solid var(--rust-deep);
   border-radius:8px;
 }
 .roster .who strong{
@@ -823,7 +824,7 @@ a{color:var(--teal)}
 .stats-band .num{
   font-family:var(--font-display);
   font-size:clamp(1.5rem,3.4vw,2.3rem);
-  color:var(--teal);letter-spacing:.03em;
+  color:var(--rust-bright);letter-spacing:.03em;
   display:block;line-height:1.1;
 }
 .stats-band .lbl{
