@@ -3,3 +3,5 @@ node_modules/
 .makeover-tmp/
 dist/
 src/
+.theme-lab/
+.lavish/
