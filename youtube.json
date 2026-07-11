@@ -39,35 +39,23 @@
   ],
   "videos": [
     {
-      "id": "rZKIwwdPw_Y",
-      "title": "We’re building guns and gas stations",
-      "publishedAt": "2025-01-07T02:36:24Z",
-      "duration": "PT19M42S"
+      "id": "IqEerVcPTg0",
+      "title": "Backyard Transformation!  A little work goes a long way!",
+      "publishedAt": "2026-06-28T04:18:57Z",
+      "duration": "PT7M30S"
     },
     {
-      "id": "524XXL47Tww",
-      "title": "Moving dirt is easy when you rent a mini skid steer",
-      "publishedAt": "2025-01-02T06:18:42Z",
-      "duration": "PT20M17S"
-    },
-    {
-      "id": "uvmBtI-1EB0",
-      "title": "We turned our old back porch into a thing of beauty",
-      "publishedAt": "2024-11-08T04:05:13Z",
-      "duration": "PT17M30S"
+      "id": "79JJJnGcFt4",
+      "title": "Fixing a broken windshield wiper coupling on a Yukon",
+      "publishedAt": "2026-05-30T04:34:13Z",
+      "duration": "PT6M52S"
     }
   ],
-  "gear": [
-    {
-      "id": "h33CUtiJgtg",
-      "title": "This clear ptfe tube looks amazing!",
-      "link": "https://geni.us/P90T5"
-    }
-  ],
+  "gear": [],
   "stats": {
     "subscriberCount": "9260",
-    "videoCount": "490",
-    "viewCount": "779282",
-    "updatedAt": "2026-07-10T09:37:31Z"
+    "videoCount": "488",
+    "viewCount": "780972",
+    "updatedAt": "2026-07-11T07:57:58Z"
   }
 }
