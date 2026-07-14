@@ -26,7 +26,7 @@
     },
     {
       "id": "1-A9R75fTO4",
-      "title": "Birds! They’re everywhere!",
+      "title": "Birds! They\u2019re everywhere!",
       "thumbnail": "https://i.ytimg.com/vi/1-A9R75fTO4/hqdefault.jpg",
       "publishedAt": "2026-06-30T02:58:06Z"
     },
@@ -49,13 +49,63 @@
       "title": "Fixing a broken windshield wiper coupling on a Yukon",
       "publishedAt": "2026-05-30T04:34:13Z",
       "duration": "PT6M52S"
+    },
+    {
+      "id": "6mEYVb8S6-g",
+      "title": "Our new mobile tool set with go handle!",
+      "publishedAt": null,
+      "duration": "PT3M56S"
+    },
+    {
+      "id": "X7Ba42SYb6I",
+      "title": "We made a forge!",
+      "publishedAt": null,
+      "duration": "PT3M36S"
+    },
+    {
+      "id": "Ckr7uwUYArg",
+      "title": "Wilde Trail Flashlight \u2014 Full Review & Is It Worth It?",
+      "publishedAt": null,
+      "duration": "PT5M16S"
+    },
+    {
+      "id": "KRjkhbO8GkY",
+      "title": "These Wrenches Reach Where Others Can\u2019t \u2013 SUZUME Extra Long Ratcheting Wrench Set Review",
+      "publishedAt": null,
+      "duration": "PT5M57S"
     }
   ],
-  "gear": [],
+  "gear": [
+    {
+      "id": "6mEYVb8S6-g",
+      "title": "Our new mobile tool set with go handle!",
+      "link": "https://geni.us/7FPEJ"
+    },
+    {
+      "id": "Ckr7uwUYArg",
+      "title": "Wilde Trail Flashlight \u2014 Full Review & Is It Worth It?",
+      "link": "https://amzn.to/4lHFRxh"
+    },
+    {
+      "id": "KRjkhbO8GkY",
+      "title": "These Wrenches Reach Where Others Can\u2019t \u2013 SUZUME Extra Long Ratcheting Wrench Set Review",
+      "link": "https://a.co/d/0g4LsIzN"
+    },
+    {
+      "id": "ijJZ63g57cQ",
+      "title": "My review of the Fanttik E2 Ultra Mini Electric Screwdriver",
+      "link": "https://geni.us/U1568"
+    },
+    {
+      "id": "TzVUmD0YulU",
+      "title": "Fanttik F2 Pro rotary tool review",
+      "link": "https://geni.us/WU1TT"
+    }
+  ],
   "stats": {
     "subscriberCount": "9260",
     "videoCount": "490",
     "viewCount": "781862",
-    "updatedAt": "2026-07-13T09:29:32Z"
+    "updatedAt": "2026-07-14T00:52:07Z"
   }
 }

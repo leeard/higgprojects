@@ -22,13 +22,23 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           CHANNEL_ID: UC88w6T7O_jV_G5eSUWBhVVw
         run: |
-          # Fetch recent videos from channel
-          response=$(curl -s "https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=20&type=video")
+          set -euo pipefail
 
-          # Extract video IDs
-          video_ids=$(echo "$response" | jq -r '.items[].id.videoId' | tr '\n' ',' | sed 's/,$//')
+          # Uploads playlist = channel ID with UC → UU. More reliable than
+          # search, and maxResults=50 covers enough history that a Shorts-
+          # heavy stretch still leaves 6+ long-form videos for the grid.
+          uploads_playlist="UU${CHANNEL_ID#UC}"
+          uploads_response=$(curl -s "https://www.googleapis.com/youtube/v3/playlistItems?key=${YOUTUBE_API_KEY}&playlistId=${uploads_playlist}&part=snippet&maxResults=50")
 
-          # Get video details including duration, snippet and statistics
+          video_ids=$(echo "$uploads_response" | jq -r '[.items[]?.snippet.resourceId.videoId] | join(",")')
+          if [ -z "$video_ids" ] || [ "$video_ids" = "null" ]; then
+            echo "ERROR: uploads playlist returned no video IDs" >&2
+            echo "$uploads_response" | jq . >&2 || echo "$uploads_response" >&2
+            exit 1
+          fi
+
+          # Details (duration + description) for classification and gear links.
+          # videos.list accepts up to 50 IDs per call — same as playlist page size.
           details=$(curl -s "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${video_ids}&part=contentDetails,snippet,statistics")
 
           # Classify Shorts. Shorts can be up to 3 minutes (since Oct 2024), so
@@ -45,41 +55,40 @@ jobs:
 
           short_ids="[]"
           for id in $candidates; do
+            # No -L: a real Short serves 200; a regular video redirects (3xx).
             status=$(curl -s -o /dev/null -w "%{http_code}" "https://www.youtube.com/shorts/${id}")
             if [ "$status" = "200" ]; then
               short_ids=$(echo "$short_ids" | jq --arg id "$id" '. + [$id]')
             fi
           done
 
-          # Shorts, newest first — pulled from the channel's dedicated Shorts
-          # playlist (channel ID with its UC prefix swapped for UUSH), so the
-          # rail stays full even when recent uploads are mostly long videos.
+          # Shorts rail — dedicated Shorts playlist (UC → UUSH).
           shorts_playlist="UUSH${CHANNEL_ID#UC}"
           playlist_response=$(curl -s "https://www.googleapis.com/youtube/v3/playlistItems?key=${YOUTUBE_API_KEY}&playlistId=${shorts_playlist}&part=snippet&maxResults=6")
           shorts=$(echo "$playlist_response" | jq '[.items[]? |
             {
               id: .snippet.resourceId.videoId,
               title: .snippet.title,
-              thumbnail: .snippet.thumbnails.high.url,
+              thumbnail: (.snippet.thumbnails.high.url // .snippet.thumbnails.medium.url // .snippet.thumbnails.default.url // ""),
               publishedAt: .snippet.publishedAt
             }
           ]')
 
-          # Fallback: if the playlist lookup returned nothing, use the Shorts
-          # confirmed among the recent uploads instead.
+          # Fallback: confirmed Shorts among recent uploads.
           if [ "$(echo "$shorts" | jq 'length')" = "0" ]; then
             shorts=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
               select(.id as $i | $short_ids | index($i)) |
               {
                 id: .id,
                 title: .snippet.title,
-                thumbnail: .snippet.thumbnails.high.url,
+                thumbnail: (.snippet.thumbnails.high.url // .snippet.thumbnails.medium.url // ""),
                 publishedAt: .snippet.publishedAt
               }
             ] | .[0:6]')
           fi
 
-          # Regular videos (everything that is not a confirmed Short), newest first
+          # Long-form: not a confirmed Short. Playlist order is newest-first.
+          # Take 6 so latest + "More from the shop" stay full even when Shorts dominate.
           videos=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
             select(.id as $i | $short_ids | index($i) | not) |
             {
@@ -90,11 +99,13 @@ jobs:
             }
           ] | .[0:6]')
 
-          # Gear: recent videos whose description carries a product link
-          # (a.co / amzn.to / geni.us / amazon.com) — first link wins, newest first
-          gear=$(echo "$details" | jq '[.items[] |
+          # Gear: affiliate/product links in descriptions (scan the full 50-window).
+          # First matching link wins; newest first. Skip pure Shorts so the list
+          # prefers real review videos.
+          gear=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
+            select(.id as $i | $short_ids | index($i) | not) |
             (.snippet.description
-              | capture("(?<u>https?://(a\\.co|amzn\\.to|geni\\.us|www\\.amazon\\.com)/[^\\s)\"]+)")? // null
+              | capture("(?<u>https?://(a\\.co|amzn\\.to|geni\\.us|www\\.amazon\\.com)/[^\\s)\"<>]+)")? // null
             ) as $m |
             select($m != null) |
             {
@@ -104,10 +115,14 @@ jobs:
             }
           ] | .[0:6]')
 
-          # Fetch channel statistics
           channel=$(curl -s "https://www.googleapis.com/youtube/v3/channels?key=${YOUTUBE_API_KEY}&id=${CHANNEL_ID}&part=statistics")
 
-          # Combine shorts, videos, gear and stats into single JSON
+          if [ "$(echo "$channel" | jq '.items | length')" = "0" ]; then
+            echo "ERROR: channel stats lookup failed" >&2
+            echo "$channel" | jq . >&2 || echo "$channel" >&2
+            exit 1
+          fi
+
           jq -n --argjson shorts "$shorts" --argjson videos "$videos" --argjson gear "$gear" --argjson channel "$channel" '{
             shorts: $shorts,
             videos: $videos,
@@ -120,9 +135,10 @@ jobs:
             }
           }' > youtube.json
 
-          # Show what we got
           echo "Fetched data:"
           cat youtube.json
+          echo ""
+          echo "Counts — videos: $(jq '.videos | length' youtube.json), shorts: $(jq '.shorts | length' youtube.json), gear: $(jq '.gear | length' youtube.json)"
 
       - name: Commit and push if changed
         run: |

@@ -1076,7 +1076,6 @@ h2{ font-size: clamp(1.7rem, 3.8vw, 2.4rem); font-weight: 700; }
   margin: 0 0 2.2rem;
   position: relative;
 }
-.spec-plate .rivet-b{ display: none; }
 .spec-plate dt{
   font-size: .72rem;
   font-weight: 800;

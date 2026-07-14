@@ -32,14 +32,21 @@ My boys help out too — Luke makes his own videos, and James, Evan, and Jenna s
 Static site, no build step:
 
 - **index.html** — the page
-- **styles.css** — hand-written CSS ("Varsity Shop" design system)
-- **fonts/varsity-team.woff2** — Varsity Team Bold, the badge logo's letterforms, used as the display face
-- **Google Fonts** — Bitter (body), Archivo (utility), IBM Plex Mono (ledger/spec plate)
-- **Vanilla JS** — live channel stats from `youtube.json`, sticker form AJAX
+- **styles.css** — hand-written CSS ("Golden Hour" design system)
+- **images/** — logo, shop-sunset hero, OG card, sasquatch sighting
+- **Google Fonts** — Bricolage Grotesque (display), Karla (body), Lora (serif accents)
+- **Vanilla JS** — live channel data from `youtube.json`, sticker form AJAX
 
 ### Data
 
-`youtube.json` is refreshed daily by the GitHub Action in `.github/workflows/fetch-youtube.yml` (channel stats + latest shorts). The page reads `stats` at load and falls back to the numbers baked into the markup.
+`youtube.json` is refreshed daily by the GitHub Action in `.github/workflows/fetch-youtube.yml`:
+
+- Channel stats (subs, video count, views)
+- Latest long-form videos (from the channel uploads playlist, Shorts filtered out)
+- Latest Shorts (from the dedicated Shorts playlist)
+- Gear links (affiliate URLs found in recent long-form descriptions)
+
+The page reads that file at load and falls back to the numbers and cards baked into the markup if the fetch fails or returns a thin list.
 
 ### Development
 
@@ -47,6 +54,12 @@ No build. Open `index.html` in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server
+```
+
+Manual YouTube refresh (needs repo secret `YOUTUBE_API_KEY`):
+
+```bash
+gh workflow run fetch-youtube.yml
 ```
 
 ---

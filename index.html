@@ -67,7 +67,7 @@
           <a class="btn btn-primary btn-lg" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe — let&rsquo;s get it done</a>
           <a class="quiet-link" href="#latest">or watch the latest first &darr;</a>
         </div>
-        <p class="hero-record"><strong data-stat="videos">487</strong> videos &nbsp;·&nbsp; new fixes every week &nbsp;·&nbsp; free</p>
+        <p class="hero-record"><strong data-stat="videos">490</strong> videos &nbsp;·&nbsp; new fixes every week &nbsp;·&nbsp; free</p>
         <div class="care-tag" role="note">
           <p class="tape-chip"><span class="warn-word">Warning:</span> I may be an idiot. Follow my advice at your own risk.</p>
         </div>
@@ -102,7 +102,7 @@
         <div class="latest-info">
           <p class="latest-title" id="latest-title">Backyard Transformation! A little work goes a long way!</p>
           <p class="latest-sub">Hit play — it runs right here on the page.</p>
-          <a class="quiet-link" href="https://www.youtube.com/@higgprojects/videos">Can&rsquo;t wait? All <span data-stat="videos">487</span> videos &rarr;</a>
+          <a class="quiet-link" href="https://www.youtube.com/@higgprojects/videos">Can&rsquo;t wait? All <span data-stat="videos">490</span> videos &rarr;</a>
           <a class="btn btn-primary" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe for the next one</a>
         </div>
       </div>
@@ -162,7 +162,7 @@
       </div>
 
       <div class="section-head shorts-label">
-        <p class="eyebrow">Quick ones · 60 seconds or less</p>
+        <p class="eyebrow">Quick hits from the shop</p>
       </div>
       <div class="shorts-row" id="shorts-row">
         <a class="card" href="https://www.youtube.com/shorts/xbRaZwG52Ow">
@@ -205,7 +205,7 @@
 
       <div class="convert-bar">
         <div>
-          <p class="line">New fixes land every week. <span class="count" data-stat="videos">487</span> videos deep.</p>
+          <p class="line">New fixes land every week. <span class="count" data-stat="videos">490</span> videos deep.</p>
           <p class="sub">Watching is free. So is subscribing — unsubscribe anytime.</p>
         </div>
         <a class="btn btn-primary" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe</a>
@@ -410,7 +410,7 @@
         </div>
       </div>
       <div class="stats-band" role="group" aria-label="Shop facts">
-        <div class="stat"><span class="num" data-stat="videos">487</span><span class="lbl">Videos</span></div>
+        <div class="stat"><span class="num" data-stat="videos">490</span><span class="lbl">Videos</span></div>
         <div class="stat"><span class="num">2023</span><span class="lbl">In the shop since</span></div>
         <div class="stat"><span class="num">Weekly</span><span class="lbl">New fixes</span></div>
         <div class="stat"><span class="num">8+</span><span class="lbl">Crew, dogs included</span></div>
@@ -438,7 +438,7 @@
           </div>
           <form class="sticker-form" id="stickerForm" action="https://formsubmit.co/ajax/higgprojects@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="Free Sticker Request!">
-            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_template" value="table">
             <div class="field-row">
               <div class="field">
@@ -500,13 +500,12 @@
 <footer class="site-foot">
   <div class="wrap">
     <dl class="spec-plate">
-      <span class="rivet-b" aria-hidden="true"></span>
       <div><dt>Ref</dt><dd>Lee Higginson</dd></div>
       <div><dt>Works</dt><dd>Payson, Utah</dd></div>
       <div><dt>In service since</dt><dd>Feb 25, 2023</dd></div>
-      <div><dt>Subscribers</dt><dd data-stat="subs">9,270</dd></div>
-      <div><dt>Videos</dt><dd data-stat="videos">487</dd></div>
-      <div><dt>Total views</dt><dd data-stat="views">774,168</dd></div>
+      <div><dt>Subscribers</dt><dd data-stat="subs">9,260</dd></div>
+      <div><dt>Videos</dt><dd data-stat="videos">490</dd></div>
+      <div><dt>Total views</dt><dd data-stat="views">781,862</dd></div>
     </dl>
     <p class="stamp">Get it done.</p>
     <p class="foot-tag">Something broken? If I can fix it, you can too. Thank you for tuning in and supporting the channel.</p>
@@ -515,7 +514,7 @@
         <h3>Watch</h3>
         <ul>
           <li><a class="primary-link" href="https://www.youtube.com/@higgprojects?sub_confirmation=1">YouTube — Subscribe</a></li>
-          <li><a href="https://www.youtube.com/@higgprojects">@higgprojects · <span data-stat="videos">487</span> videos</a></li>
+          <li><a href="https://www.youtube.com/@higgprojects">@higgprojects · <span data-stat="videos">490</span> videos</a></li>
         </ul>
       </div>
       <div>
@@ -544,7 +543,7 @@
     </div>
     <div class="foot-base">
       <span>Higg Projects · Payson, Utah</span>
-      <span>Est. Feb 25, 2023 · <span data-stat="views-short">774K+</span> total views</span>
+      <span>Est. Feb 25, 2023 · <span data-stat="views-short">781K+</span> total views</span>
     </div>
   </div>
 </footer>
@@ -650,12 +649,16 @@
       }
       var videos = data.videos || [];
       if (videos.length) {
+        // Latest always updates. Grid only replaces the static fallback when
+        // the daily fetch returned enough long-form videos to fill the rail
+        // (avoids collapsing a full markup fallback to a single card).
         renderLatest(videos[0]);
-        if (videos.length > 1) renderGrid(videos.slice(1, 6));
+        if (videos.length >= 4) renderGrid(videos.slice(1, 6));
       }
       var shorts = data.shorts || [];
       if (shorts.length) renderShorts(shorts.slice(0, 6));
       var gear = data.gear || [];
+      // Keep curated static gear when the fetch finds nothing recent with links.
       if (gear.length) {
         document.getElementById('gear-list').innerHTML = gear.map(function(g){
           return '<a class="gear-item" href="' + esc(g.link) + '" rel="sponsored noopener" target="_blank">' +
