@@ -44,7 +44,7 @@ Static site, no build step:
 - Channel stats (subs, video count, views)
 - Latest long-form videos (from the channel uploads playlist, Shorts filtered out)
 - Latest Shorts (from the dedicated Shorts playlist)
-- Gear links (affiliate URLs found in recent long-form descriptions)
+- Gear links **and coupon codes** from recent long-form descriptions (`scripts/parse_gear.py` — e.g. “10% off with code HIGGPROJECTS”)
 
 The page reads that file at load and falls back to the numbers and cards baked into the markup if the fetch fails or returns a thin list.
 

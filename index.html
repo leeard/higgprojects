@@ -321,25 +321,26 @@
         <p class="kicker">Tools and gear from recent videos — reviewed on camera, honest take included. Grab them from the video or browse the whole storefront.</p>
       </div>
       <div class="gear-list" id="gear-list">
+        <!-- Static fallback; replaced from youtube.json.gear (link + optional code/deal) -->
         <a class="gear-item" href="https://geni.us/7FPEJ" rel="sponsored noopener" target="_blank">
           <img src="https://img.youtube.com/vi/6mEYVb8S6-g/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
-          <span class="gear-text"><strong>Our new mobile tool set with go handle!</strong><span>On Amazon &rarr;</span></span>
+          <span class="gear-text"><strong>Our new mobile tool set with go handle!</strong><span class="gear-meta"><span class="gear-shop">On Amazon &rarr;</span></span></span>
         </a>
         <a class="gear-item" href="https://amzn.to/4lHFRxh" rel="sponsored noopener" target="_blank">
           <img src="https://img.youtube.com/vi/Ckr7uwUYArg/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
-          <span class="gear-text"><strong>Wilde Trail Flashlight — Full Review &amp; Is It Worth It?</strong><span>On Amazon &rarr;</span></span>
+          <span class="gear-text"><strong>Wilde Trail Flashlight — Full Review &amp; Is It Worth It?</strong><span class="gear-meta"><span class="gear-deal">10% OFF</span><span class="gear-code">HIGGPROJECTS</span><span class="gear-shop">On Amazon &rarr;</span></span></span>
         </a>
         <a class="gear-item" href="https://a.co/d/0g4LsIzN" rel="sponsored noopener" target="_blank">
           <img src="https://img.youtube.com/vi/KRjkhbO8GkY/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
-          <span class="gear-text"><strong>These Wrenches Reach Where Others Can&rsquo;t – SUZUME Extra Long Ratcheting Wrench Set Review</strong><span>On Amazon &rarr;</span></span>
+          <span class="gear-text"><strong>These Wrenches Reach Where Others Can&rsquo;t – SUZUME Extra Long Ratcheting Wrench Set Review</strong><span class="gear-meta"><span class="gear-shop">On Amazon &rarr;</span></span></span>
         </a>
         <a class="gear-item" href="https://geni.us/WU1TT" rel="sponsored noopener" target="_blank">
           <img src="https://img.youtube.com/vi/TzVUmD0YulU/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
-          <span class="gear-text"><strong>Fanttik F2 Pro rotary tool review</strong><span>On Amazon &rarr;</span></span>
+          <span class="gear-text"><strong>Fanttik F2 Pro rotary tool review</strong><span class="gear-meta"><span class="gear-shop">On Amazon &rarr;</span></span></span>
         </a>
         <a class="gear-item" href="https://geni.us/U1568" rel="sponsored noopener" target="_blank">
           <img src="https://img.youtube.com/vi/ijJZ63g57cQ/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
-          <span class="gear-text"><strong>My review of the Fanttik E2 Ultra Mini Electric Screwdriver</strong><span>On Amazon &rarr;</span></span>
+          <span class="gear-text"><strong>My review of the Fanttik E2 Ultra Mini Electric Screwdriver</strong><span class="gear-meta"><span class="gear-shop">On Amazon &rarr;</span></span></span>
         </a>
       </div>
       <div class="convert-bar gear-cta">
@@ -661,9 +662,14 @@
       // Keep curated static gear when the fetch finds nothing recent with links.
       if (gear.length) {
         document.getElementById('gear-list').innerHTML = gear.map(function(g){
+          var meta = [];
+          if (g.deal) meta.push('<span class="gear-deal">' + esc(g.deal) + '</span>');
+          if (g.code) meta.push('<span class="gear-code">' + esc(g.code) + '</span>');
+          meta.push('<span class="gear-shop">On Amazon &rarr;</span>');
           return '<a class="gear-item" href="' + esc(g.link) + '" rel="sponsored noopener" target="_blank">' +
             '<img src="https://img.youtube.com/vi/' + g.id + '/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">' +
-            '<span class="gear-text"><strong>' + esc(g.title) + '</strong><span>On Amazon &rarr;</span></span></a>';
+            '<span class="gear-text"><strong>' + esc(g.title) + '</strong>' +
+            '<span class="gear-meta">' + meta.join('') + '</span></span></a>';
         }).join('');
       }
     })

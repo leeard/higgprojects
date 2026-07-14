@@ -99,21 +99,19 @@ jobs:
             }
           ] | .[0:6]')
 
-          # Gear: affiliate/product links in descriptions (scan the full 50-window).
-          # First matching link wins; newest first. Skip pure Shorts so the list
-          # prefers real review videos.
-          gear=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
-            select(.id as $i | $short_ids | index($i) | not) |
-            (.snippet.description
-              | capture("(?<u>https?://(a\\.co|amzn\\.to|geni\\.us|www\\.amazon\\.com)/[^\\s)\"<>]+)")? // null
-            ) as $m |
-            select($m != null) |
-            {
-              id: .id,
-              title: .snippet.title,
-              link: $m.u
-            }
-          ] | .[0:6]')
+          # Gear: product links + coupon codes from long-form descriptions.
+          # scripts/parse_gear.py picks a.co / amzn.to / geni.us / amazon product
+          # URLs and any nearby "code HIGGPROJECTS" / "10% off" text.
+          gear=$(echo "$details" | jq --argjson short_ids "$short_ids" -c '
+            {items: [.items[]
+              | select(.id as $i | $short_ids | index($i) | not)
+              | {id: .id, title: .snippet.title, description: .snippet.description}
+            ]}
+          ' | python3 scripts/parse_gear.py)
+          if ! echo "$gear" | jq -e 'type == "array"' >/dev/null 2>&1; then
+            echo "WARN: gear parse failed, using empty list" >&2
+            gear='[]'
+          fi
 
           channel=$(curl -s "https://www.googleapis.com/youtube/v3/channels?key=${YOUTUBE_API_KEY}&id=${CHANNEL_ID}&part=statistics")
 
@@ -139,6 +137,7 @@ jobs:
           cat youtube.json
           echo ""
           echo "Counts — videos: $(jq '.videos | length' youtube.json), shorts: $(jq '.shorts | length' youtube.json), gear: $(jq '.gear | length' youtube.json)"
+          echo "Gear codes: $(jq -r '[.gear[] | select(.code != null) | "\(.id)=\(.code)"] | join(", ")' youtube.json)"
 
       - name: Commit and push if changed
         run: |

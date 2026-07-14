@@ -801,13 +801,33 @@ h2{ font-size: clamp(1.7rem, 3.8vw, 2.4rem); font-weight: 700; }
   border-radius: 6px;
   flex: none;
 }
-.gear-text{ display: grid; gap: .2rem; }
+.gear-text{ display: grid; gap: .25rem; min-width: 0; }
 .gear-text strong{ font-size: .93rem; line-height: 1.4; }
-.gear-text span span,
-.gear-text > span:last-child{
-  color: var(--amber);
+.gear-meta{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .65rem;
   font-size: .85rem;
   font-weight: 700;
+}
+.gear-shop{ color: var(--amber); }
+.gear-code{
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .15rem .5rem;
+  border-radius: 999px;
+  background: rgba(244,169,92,.14);
+  color: var(--amber-soft);
+  font-family: ui-monospace, "IBM Plex Mono", Menlo, monospace;
+  font-size: .78rem;
+  letter-spacing: .03em;
+}
+.gear-deal{
+  color: var(--muted);
+  font-weight: 700;
+  font-size: .8rem;
 }
 .gear-cta{ margin-top: 1.6rem; }
 

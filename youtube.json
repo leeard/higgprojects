@@ -26,7 +26,7 @@
     },
     {
       "id": "1-A9R75fTO4",
-      "title": "Birds! They’re everywhere!",
+      "title": "Birds! They\u2019re everywhere!",
       "thumbnail": "https://i.ytimg.com/vi/1-A9R75fTO4/hqdefault.jpg",
       "publishedAt": "2026-06-30T02:58:06Z"
     },
@@ -64,13 +64,13 @@
     },
     {
       "id": "Ckr7uwUYArg",
-      "title": "Wilde Trail Flashlight — Full Review & Is It Worth It?",
+      "title": "Wilde Trail Flashlight \u2014 Full Review & Is It Worth It?",
       "publishedAt": "2026-03-21T08:35:48Z",
       "duration": "PT5M16S"
     },
     {
       "id": "KRjkhbO8GkY",
-      "title": "These Wrenches Reach Where Others Can’t – SUZUME Extra Long Ratcheting Wrench Set Review",
+      "title": "These Wrenches Reach Where Others Can\u2019t \u2013 SUZUME Extra Long Ratcheting Wrench Set Review",
       "publishedAt": "2026-03-17T03:13:11Z",
       "duration": "PT5M57S"
     }
@@ -83,12 +83,14 @@
     },
     {
       "id": "Ckr7uwUYArg",
-      "title": "Wilde Trail Flashlight — Full Review & Is It Worth It?",
-      "link": "https://amzn.to/4lHFRxh"
+      "title": "Wilde Trail Flashlight \u2014 Full Review & Is It Worth It?",
+      "link": "https://amzn.to/4lHFRxh",
+      "code": "HIGGPROJECTS",
+      "deal": "10% OFF"
     },
     {
       "id": "KRjkhbO8GkY",
-      "title": "These Wrenches Reach Where Others Can’t – SUZUME Extra Long Ratcheting Wrench Set Review",
+      "title": "These Wrenches Reach Where Others Can\u2019t \u2013 SUZUME Extra Long Ratcheting Wrench Set Review",
       "link": "https://a.co/d/0g4LsIzN"
     },
     {
