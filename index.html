@@ -650,11 +650,19 @@
       }
       var videos = data.videos || [];
       if (videos.length) {
-        // Latest always updates. Grid only replaces the static fallback when
-        // the daily fetch returned enough long-form videos to fill the rail
-        // (avoids collapsing a full markup fallback to a single card).
-        renderLatest(videos[0]);
-        if (videos.length >= 4) renderGrid(videos.slice(1, 6));
+        // Hero slot: videos flagged by the pipeline (affiliate-style link in the
+        // description, no #feature override) never take it — the newest
+        // unflagged video wins. The grid keeps everything in true date order.
+        // Grid only replaces the static fallback when the daily fetch returned
+        // enough long-form videos to fill the rail (avoids collapsing a full
+        // markup fallback to one card).
+        var hero = videos[0];
+        for (var i = 0; i < videos.length; i++) {
+          if (!videos[i].skipLatest) { hero = videos[i]; break; }
+        }
+        renderLatest(hero);
+        var rest = videos.filter(function(v){ return v.id !== hero.id; });
+        if (rest.length >= 4) renderGrid(rest.slice(0, 5));
       }
       var shorts = data.shorts || [];
       if (shorts.length) renderShorts(shorts.slice(0, 6));
