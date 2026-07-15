@@ -42,37 +42,57 @@
       "id": "IqEerVcPTg0",
       "title": "Backyard Transformation!  A little work goes a long way!",
       "publishedAt": "2026-06-28T04:18:57Z",
-      "duration": "PT7M30S"
+      "duration": "PT7M30S",
+      "skipLatest": false
     },
     {
       "id": "79JJJnGcFt4",
       "title": "Fixing a broken windshield wiper coupling on a Yukon",
       "publishedAt": "2026-05-30T04:34:13Z",
-      "duration": "PT6M52S"
+      "duration": "PT6M52S",
+      "skipLatest": false
     },
     {
       "id": "6mEYVb8S6-g",
       "title": "Our new mobile tool set with go handle!",
       "publishedAt": "2026-04-06T22:04:28Z",
-      "duration": "PT3M56S"
+      "duration": "PT3M56S",
+      "skipLatest": true
     },
     {
       "id": "X7Ba42SYb6I",
       "title": "We made a forge!   ",
       "publishedAt": "2026-04-06T01:02:42Z",
-      "duration": "PT3M36S"
+      "duration": "PT3M36S",
+      "skipLatest": false
     },
     {
       "id": "Ckr7uwUYArg",
       "title": "Wilde Trail Flashlight — Full Review & Is It Worth It?",
       "publishedAt": "2026-03-21T08:35:48Z",
-      "duration": "PT5M16S"
+      "duration": "PT5M16S",
+      "skipLatest": true
     },
     {
       "id": "KRjkhbO8GkY",
       "title": "These Wrenches Reach Where Others Can’t – SUZUME Extra Long Ratcheting Wrench Set Review",
       "publishedAt": "2026-03-17T03:13:11Z",
-      "duration": "PT5M57S"
+      "duration": "PT5M57S",
+      "skipLatest": true
+    },
+    {
+      "id": "WyHCDZfzRuk",
+      "title": "Installing Brass Pathway Lights from Gardenreet",
+      "publishedAt": "2026-01-20T02:26:08Z",
+      "duration": "PT26M20S",
+      "skipLatest": false
+    },
+    {
+      "id": "ijJZ63g57cQ",
+      "title": "My review of the Fanttik E2 Ultra Mini Electric Screwdriver",
+      "publishedAt": "2026-01-07T08:01:07Z",
+      "duration": "PT2M21S",
+      "skipLatest": true
     }
   ],
   "gear": [
@@ -108,6 +128,6 @@
     "subscriberCount": "9260",
     "videoCount": "490",
     "viewCount": "782328",
-    "updatedAt": "2026-07-15T08:13:04Z"
+    "updatedAt": "2026-07-15T09:00:21Z"
   }
 }
