@@ -48,6 +48,8 @@ Static site, no build step:
 
 The page reads that file at load and falls back to the numbers and cards baked into the markup if the fetch fails or returns a thin list.
 
+**Hero ("latest video") slot rules:** a video whose description contains an affiliate-style product link (`a.co`, `amzn.to`, `geni.us`, or an `amazon.com` product URL — the storefront `/shop/` link doesn't count) is automatically kept out of the featured hero slot; the newest video *without* such a link is featured instead. Those videos still appear in the video grid and get their gear-section card as usual. To force a link-carrying video into the hero anyway (e.g. you only mention a product in passing), put `#feature` (case-insensitive) anywhere in its description. If every fetched video is excluded, the newest one is featured rather than leaving the hero empty.
+
 ### Development
 
 No build. Open `index.html` in a browser, or serve the folder:

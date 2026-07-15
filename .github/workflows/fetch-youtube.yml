@@ -88,16 +88,26 @@ jobs:
           fi
 
           # Long-form: not a confirmed Short. Playlist order is newest-first.
-          # Take 6 so latest + "More from the shop" stay full even when Shorts dominate.
+          # Hero-slot rule: a video whose description carries an affiliate-style
+          # product link (same families parse_gear.py matches: a.co / amzn.to /
+          # geni.us / amazon.com, storefront /shop/ excluded) is flagged so the
+          # site never features it as the latest video — it stays in the grid
+          # and surfaces in the gear section. Writing #feature anywhere in the
+          # description overrides that and lets the video take the hero slot
+          # (for passing-mention videos that happen to include a link).
+          # Take 8 so the hero + grid stay full even when recent videos are flagged.
           videos=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
             select(.id as $i | $short_ids | index($i) | not) |
+            (.snippet.description // "") as $d |
             {
               id: .id,
               title: .snippet.title,
               publishedAt: .snippet.publishedAt,
-              duration: .contentDetails.duration
+              duration: .contentDetails.duration,
+              skipLatest: (($d | test("https?://(a\\.co|amzn\\.to|geni\\.us|www\\.amazon\\.com)/(?!shop/)"; "i"))
+                           and (($d | test("#feature"; "i")) | not))
             }
-          ] | .[0:6]')
+          ] | .[0:8]')
 
           # Gear: product links + coupon codes from long-form descriptions.
           # scripts/parse_gear.py picks a.co / amzn.to / geni.us / amazon product
