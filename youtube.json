@@ -39,6 +39,13 @@
   ],
   "videos": [
     {
+      "id": "Yz9o-hqgDAE",
+      "title": "A wireless magnetic work bar that’s pretty dang sweet",
+      "publishedAt": "2026-07-28T21:10:42Z",
+      "duration": "PT2M59S",
+      "skipLatest": true
+    },
+    {
       "id": "egTf5WYIORk",
       "title": "Acebeam Keylite 500 review.  Mighty little light.  ",
       "publishedAt": "2026-07-20T00:58:25Z",
@@ -86,16 +93,14 @@
       "publishedAt": "2026-03-17T03:13:11Z",
       "duration": "PT5M57S",
       "skipLatest": true
-    },
-    {
-      "id": "WyHCDZfzRuk",
-      "title": "Installing Brass Pathway Lights from Gardenreet",
-      "publishedAt": "2026-01-20T02:26:08Z",
-      "duration": "PT26M20S",
-      "skipLatest": false
     }
   ],
   "gear": [
+    {
+      "id": "Yz9o-hqgDAE",
+      "title": "A wireless magnetic work bar that’s pretty dang sweet",
+      "link": "https://geni.us/4SC2N"
+    },
     {
       "id": "egTf5WYIORk",
       "title": "Acebeam Keylite 500 review.  Mighty little light.",
@@ -126,8 +131,8 @@
   ],
   "stats": {
     "subscriberCount": "9260",
-    "videoCount": "494",
+    "videoCount": "495",
     "viewCount": "789594",
-    "updatedAt": "2026-07-28T08:35:58Z"
+    "updatedAt": "2026-07-28T21:20:51Z"
   }
 }
