@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "qJ7eUOQ1jEI",
+      "title": "Grabbing the bare essentials",
+      "thumbnail": "https://i.ytimg.com/vi/qJ7eUOQ1jEI/hqdefault.jpg",
+      "publishedAt": "2026-08-05T01:04:54Z"
+    },
+    {
       "id": "tij1wWUhjdU",
       "title": "Tried out my porta power today.  Worked great!   Link in description",
       "thumbnail": "https://i.ytimg.com/vi/tij1wWUhjdU/hqdefault.jpg",
@@ -29,12 +35,6 @@
       "title": "Every time I mow",
       "thumbnail": "https://i.ytimg.com/vi/0S2WSokBL5Q/hqdefault.jpg",
       "publishedAt": "2026-07-08T06:54:57Z"
-    },
-    {
-      "id": "IoI0Nt10r2I",
-      "title": "Pretty sweet gas valve",
-      "thumbnail": "https://i.ytimg.com/vi/IoI0Nt10r2I/hqdefault.jpg",
-      "publishedAt": "2026-07-08T01:07:35Z"
     }
   ],
   "videos": [
@@ -122,17 +122,12 @@
       "id": "KRjkhbO8GkY",
       "title": "These Wrenches Reach Where Others Can’t – SUZUME Extra Long Ratcheting Wrench Set Review",
       "link": "https://a.co/d/0g4LsIzN"
-    },
-    {
-      "id": "ijJZ63g57cQ",
-      "title": "My review of the Fanttik E2 Ultra Mini Electric Screwdriver",
-      "link": "https://geni.us/U1568"
     }
   ],
   "stats": {
     "subscriberCount": "9250",
-    "videoCount": "496",
-    "viewCount": "791956",
-    "updatedAt": "2026-08-04T08:38:50Z"
+    "videoCount": "497",
+    "viewCount": "792277",
+    "updatedAt": "2026-08-05T08:37:52Z"
   }
 }
