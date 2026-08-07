@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "gYILIIclw1c",
+      "title": "Flushing Jimmy’s transmission fluid",
+      "thumbnail": "https://i.ytimg.com/vi/gYILIIclw1c/hqdefault.jpg",
+      "publishedAt": "2026-08-07T04:55:47Z"
+    },
+    {
       "id": "StcSYdZLYcU",
       "title": "My transmission fluid is bad.",
       "thumbnail": "https://i.ytimg.com/vi/StcSYdZLYcU/hqdefault.jpg",
@@ -29,15 +35,16 @@
       "title": "Super Mario Tires!  Fixed me up really nice.",
       "thumbnail": "https://i.ytimg.com/vi/9jDwg6fFOfg/hqdefault.jpg",
       "publishedAt": "2026-07-26T05:12:51Z"
-    },
-    {
-      "id": "_rDsofnsxzs",
-      "title": "James with the putback at a Las Vegas tournament.  Atta kid James",
-      "thumbnail": "https://i.ytimg.com/vi/_rDsofnsxzs/hqdefault.jpg",
-      "publishedAt": "2026-07-25T05:56:41Z"
     }
   ],
   "videos": [
+    {
+      "id": "gYILIIclw1c",
+      "title": "Flushing Jimmy’s transmission fluid",
+      "publishedAt": "2026-08-07T04:55:47Z",
+      "duration": "PT3M1S",
+      "skipLatest": false
+    },
     {
       "id": "Yz9o-hqgDAE",
       "title": "A wireless magnetic work bar that’s pretty dang sweet",
@@ -86,13 +93,6 @@
       "publishedAt": "2026-03-21T08:35:48Z",
       "duration": "PT5M16S",
       "skipLatest": true
-    },
-    {
-      "id": "KRjkhbO8GkY",
-      "title": "These Wrenches Reach Where Others Can’t – SUZUME Extra Long Ratcheting Wrench Set Review",
-      "publishedAt": "2026-03-17T03:13:11Z",
-      "duration": "PT5M57S",
-      "skipLatest": true
     }
   ],
   "gear": [
@@ -126,8 +126,8 @@
   ],
   "stats": {
     "subscriberCount": "9260",
-    "videoCount": "499",
-    "viewCount": "792995",
-    "updatedAt": "2026-08-06T06:59:47Z"
+    "videoCount": "500",
+    "viewCount": "793159",
+    "updatedAt": "2026-08-07T06:28:50Z"
   }
 }
