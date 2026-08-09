@@ -42,15 +42,17 @@ jobs:
           details=$(curl -s "https://www.googleapis.com/youtube/v3/videos?key=${YOUTUBE_API_KEY}&id=${video_ids}&part=contentDetails,snippet,statistics")
 
           # Classify Shorts. Shorts can be up to 3 minutes (since Oct 2024), so
-          # duration alone is ambiguous: for every video <= 180s, confirm via the
+          # duration alone is ambiguous: for every video <= 185s, confirm via the
           # /shorts/ URL (a real Short returns HTTP 200; regular videos redirect).
+          # 185 not 180: the API rounds durations up, so a 3:00 Short can report
+          # PT3M1S and would slip past a strict 180s cutoff into the videos list.
           candidates=$(echo "$details" | jq -r '.items[] |
             select(
               (.contentDetails.duration
                 | capture("^PT(?:(?<h>[0-9]+)H)?(?:(?<m>[0-9]+)M)?(?:(?<s>[0-9]+)S)?$")?
                 // {h: null, m: null, s: null}
                 | ((.h // "0") | tonumber) * 3600 + ((.m // "0") | tonumber) * 60 + ((.s // "0") | tonumber)
-              ) as $secs | $secs > 0 and $secs <= 180
+              ) as $secs | $secs > 0 and $secs <= 185
             ) | .id')
 
           short_ids="[]"
@@ -95,15 +97,20 @@ jobs:
           # and surfaces in the gear section. Writing #feature anywhere in the
           # description overrides that and lets the video take the hero slot
           # (for passing-mention videos that happen to include a link).
+          # Shorts are excluded UNLESS their description carries #feature — that
+          # is the opt-in for occasionally letting a Short take the hero slot.
+          # They carry isShort: true so the page keeps them out of the video grid.
           # Take 8 so the hero + grid stay full even when recent videos are flagged.
           videos=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
-            select(.id as $i | $short_ids | index($i) | not) |
             (.snippet.description // "") as $d |
+            ((.id as $i | $short_ids | index($i)) != null) as $isShort |
+            select(($isShort | not) or ($d | test("#feature"; "i"))) |
             {
               id: .id,
               title: .snippet.title,
               publishedAt: .snippet.publishedAt,
               duration: .contentDetails.duration,
+              isShort: $isShort,
               skipLatest: (($d | test("https?://(a\\.co|amzn\\.to|geni\\.us|www\\.amazon\\.com)/(?!shop/)"; "i"))
                            and (($d | test("#feature"; "i")) | not))
             }

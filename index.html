@@ -264,10 +264,10 @@
       <div class="section-head">
         <p class="eyebrow">Every shop has one</p>
         <h2>The long-term project</h2>
-        <p class="kicker">My great-grandpa&rsquo;s Ford 2N is where the channel started. Those videos are older — I&rsquo;ve gotten better since, and honestly, she&rsquo;s been waiting on us a while. She&rsquo;ll get her day.</p>
+        <p class="kicker">My great-grandpa&rsquo;s Ford 2N is where the channel started. Those videos are older — I&rsquo;ve gotten better since, and honestly, she&rsquo;s been waiting on us a while. Her day is finally coming.</p>
       </div>
       <article class="ticket" aria-label="Ford 2N service record">
-        <span class="ticket-stamp" aria-hidden="true">On the list</span>
+        <span class="ticket-stamp" aria-hidden="true">In the shop</span>
         <div class="ticket-head">
           <span>Higg Projects · Payson, Utah</span>
           <span>Service record · Nº 001</span>
@@ -300,12 +300,19 @@
             <a href="https://www.youtube.com/shorts/C1w_VRMpRC4">
               <span class="no">04</span>
               <img src="https://img.youtube.com/vi/C1w_VRMpRC4/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
-              <span class="entry"><strong>Made some progress on our grandpas old Ford 2N!</strong><span>Last entry &mdash; for now</span></span>
+              <span class="entry"><strong>Made some progress on our grandpas old Ford 2N!</strong><span>Chipping away</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/shorts/aF_8Dia7FBA">
+              <span class="no">05</span>
+              <img src="https://img.youtube.com/vi/aF_8Dia7FBA/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>It&rsquo;s time for the tractor!!</strong><span>The wait is over &mdash; she&rsquo;s up next</span></span>
             </a>
           </li>
         </ol>
         <div class="ticket-foot">
-          <p class="status"><strong>Status: on hold.</strong> She&rsquo;ll run someday — subscribe and you&rsquo;ll be there when she does.</p>
+          <p class="status"><strong>Status: back on it.</strong> She&rsquo;ll run — subscribe and you&rsquo;ll be there when she does.</p>
           <a class="btn btn-rust" href="https://www.youtube.com/@higgprojects?sub_confirmation=1">Subscribe — be there when she runs</a>
         </div>
       </article>
@@ -661,7 +668,9 @@
           if (!videos[i].skipLatest) { hero = videos[i]; break; }
         }
         renderLatest(hero);
-        var rest = videos.filter(function(v){ return v.id !== hero.id; });
+        // Shorts only ever reach this list via #feature; they belong in the
+        // hero or the shorts rail, never the long-form grid.
+        var rest = videos.filter(function(v){ return v.id !== hero.id && !v.isShort; });
         if (rest.length >= 4) renderGrid(rest.slice(0, 5));
       }
       var shorts = data.shorts || [];
