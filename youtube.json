@@ -39,10 +39,11 @@
   ],
   "videos": [
     {
-      "id": "gYILIIclw1c",
-      "title": "Flushing Jimmy’s transmission fluid",
-      "publishedAt": "2026-08-07T04:55:47Z",
-      "duration": "PT3M1S",
+      "id": "aF_8Dia7FBA",
+      "title": "It’s time for the tractor!!",
+      "publishedAt": "2026-08-08T20:41:33Z",
+      "duration": "PT1M42S",
+      "isShort": true,
       "skipLatest": false
     },
     {
@@ -50,6 +51,7 @@
       "title": "A wireless magnetic work bar that’s pretty dang sweet",
       "publishedAt": "2026-07-28T21:10:42Z",
       "duration": "PT2M59S",
+      "isShort": false,
       "skipLatest": true
     },
     {
@@ -57,6 +59,7 @@
       "title": "Acebeam Keylite 500 review.  Mighty little light.  ",
       "publishedAt": "2026-07-20T00:58:25Z",
       "duration": "PT5M27S",
+      "isShort": false,
       "skipLatest": true
     },
     {
@@ -64,6 +67,7 @@
       "title": "Backyard Transformation!  A little work goes a long way!",
       "publishedAt": "2026-06-28T04:18:57Z",
       "duration": "PT7M30S",
+      "isShort": false,
       "skipLatest": false
     },
     {
@@ -71,6 +75,7 @@
       "title": "Fixing a broken windshield wiper coupling on a Yukon",
       "publishedAt": "2026-05-30T04:34:13Z",
       "duration": "PT6M52S",
+      "isShort": false,
       "skipLatest": false
     },
     {
@@ -78,6 +83,7 @@
       "title": "Our new mobile tool set with go handle!",
       "publishedAt": "2026-04-06T22:04:28Z",
       "duration": "PT3M56S",
+      "isShort": false,
       "skipLatest": true
     },
     {
@@ -85,6 +91,7 @@
       "title": "We made a forge!   ",
       "publishedAt": "2026-04-06T01:02:42Z",
       "duration": "PT3M36S",
+      "isShort": false,
       "skipLatest": false
     },
     {
@@ -92,6 +99,7 @@
       "title": "Wilde Trail Flashlight — Full Review & Is It Worth It?",
       "publishedAt": "2026-03-21T08:35:48Z",
       "duration": "PT5M16S",
+      "isShort": false,
       "skipLatest": true
     }
   ],
@@ -128,6 +136,6 @@
     "subscriberCount": "9260",
     "videoCount": "501",
     "viewCount": "797189",
-    "updatedAt": "2026-08-08T23:34:46Z"
+    "updatedAt": "2026-08-09T00:41:12Z"
   }
 }
