@@ -39,8 +39,16 @@
   ],
   "videos": [
     {
+      "id": "RqKAQs9fy80",
+      "title": "Etenwolf S1 inflator review and test ",
+      "publishedAt": "2026-08-18T01:20:46Z",
+      "duration": "PT7M22S",
+      "isShort": false,
+      "skipLatest": true
+    },
+    {
       "id": "6xmbbpDNM0g",
-      "title": "Sometimes the crappy fix is the right thing to do",
+      "title": "Craftsman riding mower bagger fix, works for the moment",
       "publishedAt": "2026-08-16T15:40:17Z",
       "duration": "PT8M51S",
       "isShort": false,
@@ -93,17 +101,14 @@
       "duration": "PT6M52S",
       "isShort": false,
       "skipLatest": false
-    },
-    {
-      "id": "6mEYVb8S6-g",
-      "title": "Our new mobile tool set with go handle!",
-      "publishedAt": "2026-04-06T22:04:28Z",
-      "duration": "PT3M56S",
-      "isShort": false,
-      "skipLatest": true
     }
   ],
   "gear": [
+    {
+      "id": "RqKAQs9fy80",
+      "title": "Etenwolf S1 inflator review and test",
+      "link": "https://geni.us/K142O"
+    },
     {
       "id": "X2HpkkjeoMA",
       "title": "This little camera is amazing for the price.    The Tapo C120",
@@ -130,17 +135,12 @@
       "link": "https://amzn.to/4lHFRxh",
       "code": "HIGGPROJECTS",
       "deal": "10% OFF"
-    },
-    {
-      "id": "KRjkhbO8GkY",
-      "title": "These Wrenches Reach Where Others Can’t – SUZUME Extra Long Ratcheting Wrench Set Review",
-      "link": "https://a.co/d/0g4LsIzN"
     }
   ],
   "stats": {
     "subscriberCount": "9260",
-    "videoCount": "506",
-    "viewCount": "803472",
-    "updatedAt": "2026-08-17T06:15:23Z"
+    "videoCount": "507",
+    "viewCount": "804558",
+    "updatedAt": "2026-08-18T06:12:01Z"
   }
 }
