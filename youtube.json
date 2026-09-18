@@ -39,6 +39,14 @@
   ],
   "videos": [
     {
+      "id": "X67_9bXTPi8",
+      "title": "Etenwolf Vortex S7 aired up my truck tire",
+      "publishedAt": "2026-09-18T00:00:23Z",
+      "duration": "PT5M29S",
+      "isShort": false,
+      "skipLatest": true
+    },
+    {
       "id": "RqKAQs9fy80",
       "title": "Etenwolf S1 inflator pumped up my truck tire ",
       "publishedAt": "2026-08-18T01:20:46Z",
@@ -93,17 +101,14 @@
       "duration": "PT7M30S",
       "isShort": false,
       "skipLatest": false
-    },
-    {
-      "id": "79JJJnGcFt4",
-      "title": "Fixing a broken windshield wiper coupling on a Yukon",
-      "publishedAt": "2026-05-30T04:34:13Z",
-      "duration": "PT6M52S",
-      "isShort": false,
-      "skipLatest": false
     }
   ],
   "gear": [
+    {
+      "id": "X67_9bXTPi8",
+      "title": "Etenwolf Vortex S7 aired up my truck tire",
+      "link": "https://geni.us/66RV8"
+    },
     {
       "id": "RqKAQs9fy80",
       "title": "Etenwolf S1 inflator pumped up my truck tire",
@@ -132,8 +137,8 @@
   ],
   "stats": {
     "subscriberCount": "9330",
-    "videoCount": "515",
-    "viewCount": "820761",
-    "updatedAt": "2026-09-17T06:25:02Z"
+    "videoCount": "516",
+    "viewCount": "821662",
+    "updatedAt": "2026-09-18T06:24:07Z"
   }
 }
