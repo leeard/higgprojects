@@ -1,6 +1,18 @@
 {
   "shorts": [
     {
+      "id": "JUFYeOpg1PE",
+      "title": "This was hiding in my dryer 😬",
+      "thumbnail": "https://i.ytimg.com/vi/JUFYeOpg1PE/hqdefault.jpg",
+      "publishedAt": "2026-09-27T05:04:10Z"
+    },
+    {
+      "id": "p_pK600w5vI",
+      "title": "Will this parrot say hi? 🦜 #shorts",
+      "thumbnail": "https://i.ytimg.com/vi/p_pK600w5vI/hqdefault.jpg",
+      "publishedAt": "2026-09-26T23:10:56Z"
+    },
+    {
       "id": "lfwt1F8XR6M",
       "title": "Not complaining about this view",
       "thumbnail": "https://i.ytimg.com/vi/lfwt1F8XR6M/hqdefault.jpg",
@@ -23,21 +35,17 @@
       "title": "35 years later, Rod hears his grandpa’s tractor run again",
       "thumbnail": "https://i.ytimg.com/vi/20PD2Y1_77c/hqdefault.jpg",
       "publishedAt": "2026-09-15T04:21:08Z"
-    },
-    {
-      "id": "TXgOUXyWm3A",
-      "title": "Finally flushed my transmission fluid",
-      "thumbnail": "https://i.ytimg.com/vi/TXgOUXyWm3A/hqdefault.jpg",
-      "publishedAt": "2026-09-14T05:32:19Z"
-    },
-    {
-      "id": "i8YkVAi5RRA",
-      "title": "Fixed the ford 2N carb then broke it",
-      "thumbnail": "https://i.ytimg.com/vi/i8YkVAi5RRA/hqdefault.jpg",
-      "publishedAt": "2026-09-14T04:16:31Z"
     }
   ],
   "videos": [
+    {
+      "id": "q5CyEdFiE3w",
+      "title": "He Lived Here for 2 Years. Now He's Giving Us the Tour",
+      "publishedAt": "2026-09-26T22:33:03Z",
+      "duration": "PT19M31S",
+      "isShort": false,
+      "skipLatest": false
+    },
     {
       "id": "X67_9bXTPi8",
       "title": "Etenwolf Vortex S7 aired up my truck tire",
@@ -93,14 +101,6 @@
       "duration": "PT5M27S",
       "isShort": false,
       "skipLatest": true
-    },
-    {
-      "id": "IqEerVcPTg0",
-      "title": "Backyard Transformation!  A little work goes a long way!",
-      "publishedAt": "2026-06-28T04:18:57Z",
-      "duration": "PT7M30S",
-      "isShort": false,
-      "skipLatest": false
     }
   ],
   "gear": [
@@ -132,8 +132,8 @@
   ],
   "stats": {
     "subscriberCount": "9330",
-    "videoCount": "518",
-    "viewCount": "824999",
-    "updatedAt": "2026-09-26T06:23:21Z"
+    "videoCount": "521",
+    "viewCount": "825816",
+    "updatedAt": "2026-09-27T06:23:35Z"
   }
 }
