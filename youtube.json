@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "2WQptx5L8dQ",
+      "title": "2017 truck. Never flushed the transmission fluid. Yeah... 😬",
+      "thumbnail": "https://i.ytimg.com/vi/2WQptx5L8dQ/hqdefault.jpg",
+      "publishedAt": "2026-09-27T23:35:30Z"
+    },
+    {
       "id": "JUFYeOpg1PE",
       "title": "This was hiding in my dryer 😬",
       "thumbnail": "https://i.ytimg.com/vi/JUFYeOpg1PE/hqdefault.jpg",
@@ -29,15 +35,17 @@
       "title": "Completed the ford tractor tool kit",
       "thumbnail": "https://i.ytimg.com/vi/c9CK7G8HL4s/hqdefault.jpg",
       "publishedAt": "2026-09-16T03:37:34Z"
-    },
-    {
-      "id": "20PD2Y1_77c",
-      "title": "35 years later, Rod hears his grandpa’s tractor run again",
-      "thumbnail": "https://i.ytimg.com/vi/20PD2Y1_77c/hqdefault.jpg",
-      "publishedAt": "2026-09-15T04:21:08Z"
     }
   ],
   "videos": [
+    {
+      "id": "Qk_3D_-2zrU",
+      "title": "My \"15-Minute\" Transmission Flush Took Over an Hour",
+      "publishedAt": "2026-09-27T19:00:48Z",
+      "duration": "PT15M47S",
+      "isShort": false,
+      "skipLatest": true
+    },
     {
       "id": "q5CyEdFiE3w",
       "title": "He Lived Here for 2 Years. Now He's Giving Us the Tour",
@@ -93,17 +101,14 @@
       "duration": "PT2M59S",
       "isShort": false,
       "skipLatest": true
-    },
-    {
-      "id": "egTf5WYIORk",
-      "title": "Acebeam Keylite 500 review.  Mighty little light.  ",
-      "publishedAt": "2026-07-20T00:58:25Z",
-      "duration": "PT5M27S",
-      "isShort": false,
-      "skipLatest": true
     }
   ],
   "gear": [
+    {
+      "id": "Qk_3D_-2zrU",
+      "title": "My \"15-Minute\" Transmission Flush Took Over an Hour",
+      "link": "https://geni.us/keCyU"
+    },
     {
       "id": "X67_9bXTPi8",
       "title": "Etenwolf Vortex S7 aired up my truck tire",
@@ -131,9 +136,9 @@
     }
   ],
   "stats": {
-    "subscriberCount": "9330",
-    "videoCount": "521",
-    "viewCount": "825816",
-    "updatedAt": "2026-09-27T06:23:35Z"
+    "subscriberCount": "9340",
+    "videoCount": "523",
+    "viewCount": "827276",
+    "updatedAt": "2026-09-28T06:34:19Z"
   }
 }
