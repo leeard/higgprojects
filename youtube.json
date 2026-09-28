@@ -44,7 +44,7 @@
       "publishedAt": "2026-09-27T19:00:48Z",
       "duration": "PT15M47S",
       "isShort": false,
-      "skipLatest": true
+      "skipLatest": false
     },
     {
       "id": "q5CyEdFiE3w",
@@ -139,6 +139,6 @@
     "subscriberCount": "9340",
     "videoCount": "523",
     "viewCount": "827276",
-    "updatedAt": "2026-09-28T06:34:19Z"
+    "updatedAt": "2026-09-28T23:14:30Z"
   }
 }
