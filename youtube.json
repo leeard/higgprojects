@@ -39,6 +39,14 @@
   ],
   "videos": [
     {
+      "id": "YK1k3Z36RaA",
+      "title": "Luke Bought a Slot Machine. It Took Me 33 Minutes to Win.",
+      "publishedAt": "2026-10-02T19:24:54Z",
+      "duration": "PT10M50S",
+      "isShort": false,
+      "skipLatest": false
+    },
+    {
       "id": "Qk_3D_-2zrU",
       "title": "My \"15-Minute\" Transmission Flush Took Over an Hour",
       "publishedAt": "2026-09-27T19:00:48Z",
@@ -93,14 +101,6 @@
       "duration": "PT1M42S",
       "isShort": true,
       "skipLatest": false
-    },
-    {
-      "id": "Yz9o-hqgDAE",
-      "title": "A wireless magnetic work bar that’s pretty dang sweet",
-      "publishedAt": "2026-07-28T21:10:42Z",
-      "duration": "PT2M59S",
-      "isShort": false,
-      "skipLatest": true
     }
   ],
   "gear": [
@@ -137,8 +137,8 @@
   ],
   "stats": {
     "subscriberCount": "9340",
-    "videoCount": "524",
-    "viewCount": "831613",
-    "updatedAt": "2026-10-02T06:25:11Z"
+    "videoCount": "525",
+    "viewCount": "833352",
+    "updatedAt": "2026-10-03T06:25:19Z"
   }
 }
