@@ -57,7 +57,7 @@
     <div class="hero-sky" aria-hidden="true">
       <img src="images/shopsunset-web.jpg" alt="" width="1600" height="1200" fetchpriority="high">
     </div>
-    <div class="wrap">
+    <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Higg Projects · Payson, Utah · Est. 2023</p>
         <h1 class="display">Something broken?</h1>
@@ -65,11 +65,27 @@
         <p class="context">I&rsquo;m Lee — a dad who fixes whatever breaks (tractors, ATVs, mowers, drill batteries, grills) and films it. Sometimes it works, sometimes it doesn&rsquo;t, but we always learn something.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary btn-lg" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe — let&rsquo;s get it done</a>
-          <a class="quiet-link" href="#latest">or watch the latest first &darr;</a>
         </div>
         <p class="hero-record"><strong data-stat="videos">490</strong> videos &nbsp;·&nbsp; new fixes every week &nbsp;·&nbsp; free</p>
         <div class="care-tag" role="note">
           <p class="tape-chip"><span class="warn-word">Warning:</span> I may be an idiot. Follow my advice at your own risk.</p>
+        </div>
+      </div>
+
+      <!-- ============ LATEST VIDEO (in-page player, lives in the hero) ============ -->
+      <div class="hero-latest" id="latest" aria-label="The latest video">
+        <!-- Static fallback; re-rendered from youtube.json -->
+        <div class="facade" id="latest-player">
+          <img src="https://img.youtube.com/vi/IqEerVcPTg0/maxresdefault.jpg"
+               onerror="this.onerror=null;this.src='https://img.youtube.com/vi/IqEerVcPTg0/hqdefault.jpg'"
+               alt="Video thumbnail: Backyard Transformation! A little work goes a long way!" width="1280" height="720">
+          <button type="button" class="facade-play" data-video="IqEerVcPTg0" aria-label="Play: Backyard Transformation! A little work goes a long way!">
+            <span aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+        <div class="latest-info" id="latest-container">
+          <p class="latest-title" id="latest-title">Backyard Transformation! A little work goes a long way!</p>
+          <p class="latest-sub">Hit play — it runs right here on the page. <a class="quiet-link" href="https://www.youtube.com/@higgprojects/videos">All <span data-stat="videos">490</span> videos &rarr;</a></p>
         </div>
       </div>
     </div>
@@ -82,30 +98,64 @@
     <p>Let&rsquo;s get it done <span class="star">&#10022;</span> Let&rsquo;s get it done <span class="star">&#10022;</span> Let&rsquo;s get it done <span class="star">&#10022;</span> Let&rsquo;s get it done</p>
   </div>
 
-  <!-- ============ LATEST VIDEO (in-page player) ============ -->
-  <section class="section" id="latest">
+  <!-- ============ THE LONG-TERM PROJECT ============ -->
+  <section class="section" id="story">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Fresh out of the shop</p>
-        <h2>The latest video</h2>
+        <p class="eyebrow">Every shop has one</p>
+        <h2>The long-term project</h2>
+        <p class="kicker">My great-grandpa&rsquo;s Ford 2N is where the channel started. Those videos are older — I&rsquo;ve gotten better since, and honestly, she&rsquo;s been waiting on us a while. Her day is finally coming.</p>
       </div>
-      <div class="latest-grid" id="latest-container">
-        <!-- Static fallback; re-rendered from youtube.json -->
-        <div class="facade" id="latest-player">
-          <img src="https://img.youtube.com/vi/IqEerVcPTg0/maxresdefault.jpg"
-               onerror="this.onerror=null;this.src='https://img.youtube.com/vi/IqEerVcPTg0/hqdefault.jpg'"
-               alt="Video thumbnail: Backyard Transformation! A little work goes a long way!" width="1280" height="720">
-          <button type="button" class="facade-play" data-video="IqEerVcPTg0" aria-label="Play: Backyard Transformation! A little work goes a long way!">
-            <span aria-hidden="true">&#9654;</span>
-          </button>
+      <article class="ticket" aria-label="Ford 2N service record">
+        <span class="ticket-stamp" aria-hidden="true">In the shop</span>
+        <div class="ticket-head">
+          <span>Higg Projects · Payson, Utah</span>
+          <span>Service record · Nº 001</span>
         </div>
-        <div class="latest-info">
-          <p class="latest-title" id="latest-title">Backyard Transformation! A little work goes a long way!</p>
-          <p class="latest-sub">Hit play — it runs right here on the page.</p>
-          <a class="quiet-link" href="https://www.youtube.com/@higgprojects/videos">Can&rsquo;t wait? All <span data-stat="videos">490</span> videos &rarr;</a>
-          <a class="btn btn-primary" href="https://www.youtube.com/@higgprojects?sub_confirmation=1"><span class="play-glyph" aria-hidden="true">&#9654;</span> Subscribe for the next one</a>
+        <h3>Unit: Ford 2N — &ldquo;Grandpa&rsquo;s tractor&rdquo;</h3>
+        <p class="ticket-meta"><strong>Owner:</strong> The Higginson family &nbsp;&nbsp; <strong>Complaint:</strong> Doesn&rsquo;t run. Yet.</p>
+        <ol class="ledger">
+          <li>
+            <a href="https://www.youtube.com/watch?v=450t_J_KsoI">
+              <span class="no">01</span>
+              <img src="https://img.youtube.com/vi/450t_J_KsoI/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>We bought my great grandpa&rsquo;s tractor!</strong><span>Where it all started</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=0LTwHzOjneE">
+              <span class="no">02</span>
+              <img src="https://img.youtube.com/vi/0LTwHzOjneE/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>Bringing grandpa&rsquo;s Ford series 2N tractor home</strong><span>The haul home</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=NJejiOXFkOo">
+              <span class="no">03</span>
+              <img src="https://img.youtube.com/vi/NJejiOXFkOo/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>Will the tractor run this time?</strong><span>Spoiler: not yet</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/shorts/C1w_VRMpRC4">
+              <span class="no">04</span>
+              <img src="https://img.youtube.com/vi/C1w_VRMpRC4/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>Made some progress on our grandpas old Ford 2N!</strong><span>Chipping away</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/shorts/aF_8Dia7FBA">
+              <span class="no">05</span>
+              <img src="https://img.youtube.com/vi/aF_8Dia7FBA/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
+              <span class="entry"><strong>It&rsquo;s time for the tractor!!</strong><span>The wait is over &mdash; she&rsquo;s up next</span></span>
+            </a>
+          </li>
+        </ol>
+        <div class="ticket-foot">
+          <p class="status"><strong>Status: back on it.</strong> She&rsquo;ll run — subscribe and you&rsquo;ll be there when she does.</p>
+          <a class="btn btn-rust" href="https://www.youtube.com/@higgprojects?sub_confirmation=1">Subscribe — be there when she runs</a>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -255,67 +305,6 @@
         <span class="also-real-text"><strong>Fan favorite: Boost Your Air Compressor!</strong><span>Turning a propane tank into extra air capacity — 20K people found this one on their own.</span></span>
         <span class="also-real-arrow" aria-hidden="true">&rarr;</span>
       </a>
-    </div>
-  </section>
-
-  <!-- ============ THE LONG-TERM PROJECT ============ -->
-  <section class="section" id="story">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Every shop has one</p>
-        <h2>The long-term project</h2>
-        <p class="kicker">My great-grandpa&rsquo;s Ford 2N is where the channel started. Those videos are older — I&rsquo;ve gotten better since, and honestly, she&rsquo;s been waiting on us a while. Her day is finally coming.</p>
-      </div>
-      <article class="ticket" aria-label="Ford 2N service record">
-        <span class="ticket-stamp" aria-hidden="true">In the shop</span>
-        <div class="ticket-head">
-          <span>Higg Projects · Payson, Utah</span>
-          <span>Service record · Nº 001</span>
-        </div>
-        <h3>Unit: Ford 2N — &ldquo;Grandpa&rsquo;s tractor&rdquo;</h3>
-        <p class="ticket-meta"><strong>Owner:</strong> The Higginson family &nbsp;&nbsp; <strong>Complaint:</strong> Doesn&rsquo;t run. Yet.</p>
-        <ol class="ledger">
-          <li>
-            <a href="https://www.youtube.com/watch?v=450t_J_KsoI">
-              <span class="no">01</span>
-              <img src="https://img.youtube.com/vi/450t_J_KsoI/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
-              <span class="entry"><strong>We bought my great grandpa&rsquo;s tractor!</strong><span>Where it all started</span></span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/watch?v=0LTwHzOjneE">
-              <span class="no">02</span>
-              <img src="https://img.youtube.com/vi/0LTwHzOjneE/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
-              <span class="entry"><strong>Bringing grandpa&rsquo;s Ford series 2N tractor home</strong><span>The haul home</span></span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/watch?v=NJejiOXFkOo">
-              <span class="no">03</span>
-              <img src="https://img.youtube.com/vi/NJejiOXFkOo/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
-              <span class="entry"><strong>Will the tractor run this time?</strong><span>Spoiler: not yet</span></span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/shorts/C1w_VRMpRC4">
-              <span class="no">04</span>
-              <img src="https://img.youtube.com/vi/C1w_VRMpRC4/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
-              <span class="entry"><strong>Made some progress on our grandpas old Ford 2N!</strong><span>Chipping away</span></span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/shorts/aF_8Dia7FBA">
-              <span class="no">05</span>
-              <img src="https://img.youtube.com/vi/aF_8Dia7FBA/mqdefault.jpg" alt="" loading="lazy" width="72" height="44">
-              <span class="entry"><strong>It&rsquo;s time for the tractor!!</strong><span>The wait is over &mdash; she&rsquo;s up next</span></span>
-            </a>
-          </li>
-        </ol>
-        <div class="ticket-foot">
-          <p class="status"><strong>Status: back on it.</strong> She&rsquo;ll run — subscribe and you&rsquo;ll be there when she does.</p>
-          <a class="btn btn-rust" href="https://www.youtube.com/@higgprojects?sub_confirmation=1">Subscribe — be there when she runs</a>
-        </div>
-      </article>
     </div>
   </section>
 
@@ -589,6 +578,19 @@
     }, { once: true });
   }
   wireFacade();
+
+  // "Latest" in the nav: the video sits in the hero, so when it's side by side
+  // with the copy (wide screens) just go to the top; when it's stacked under
+  // the copy (narrow screens) let the browser scroll to it.
+  document.querySelectorAll('a.navlink[href="#latest"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (window.innerWidth >= 1001) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', '#top');
+      }
+    });
+  });
 
   function relativeDate(iso){
     if (!iso) return '';

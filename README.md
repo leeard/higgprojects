@@ -48,6 +48,8 @@ Static site, no build step:
 
 The page reads that file at load and falls back to the numbers and cards baked into the markup if the fetch fails or returns a thin list.
 
+**Page order:** the latest video lives *inside* the hero (right column on desktop, under the copy on phones), the Ford 2N service record is the first section below it, then the video grid, proof, gear, crew, sticker.
+
 **Hero ("latest video") slot rules:** a video whose description contains an affiliate-style product link (`a.co`, `amzn.to`, `geni.us`, or an `amazon.com` product URL — the storefront `/shop/` link doesn't count) is automatically kept out of the featured hero slot; the newest video *without* such a link is featured instead. Those videos still appear in the video grid and get their gear-section card as usual. To force a link-carrying video into the hero anyway (e.g. you only mention a product in passing), put `#feature` (case-insensitive) anywhere in its description. If every fetched video is excluded, the newest one is featured rather than leaving the hero empty.
 
 **Shorts and the hero slot:** Shorts never take the hero by default — it's reserved for long-form. To make a big-deal Short the featured video, put **`#feature` in its YouTube description** (edit the description on YouTube, then re-run the fetch workflow or wait for the daily run). It holds the hero until something newer without an affiliate link is uploaded, and it never occupies a slot in the long-form grid. TL;DR: **`#feature` in a description = "put this in the hero spot", and it works for Shorts too.**
