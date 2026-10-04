@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "U4bTlLhQXhI",
+      "title": "I grew up playing in an arcade, now we have a machine!",
+      "thumbnail": "https://i.ytimg.com/vi/U4bTlLhQXhI/hqdefault.jpg",
+      "publishedAt": "2026-10-03T19:43:45Z"
+    },
+    {
       "id": "KRYzeugq2-Q",
       "title": "Had the Whole Soccer Field to Myself... For 2 Minutes",
       "thumbnail": "https://i.ytimg.com/vi/KRYzeugq2-Q/hqdefault.jpg",
@@ -29,18 +35,20 @@
       "title": "Not complaining about this view",
       "thumbnail": "https://i.ytimg.com/vi/lfwt1F8XR6M/hqdefault.jpg",
       "publishedAt": "2026-09-25T19:13:19Z"
-    },
-    {
-      "id": "eL1CdHBFUrg",
-      "title": "Rain for hire…",
-      "thumbnail": "https://i.ytimg.com/vi/eL1CdHBFUrg/hqdefault.jpg",
-      "publishedAt": "2026-09-18T22:51:57Z"
     }
   ],
   "videos": [
     {
+      "id": "mHTd0QWMvzA",
+      "title": "I Flushed My Yukon's Transmission... Then It Started Slipping",
+      "publishedAt": "2026-10-04T00:40:38Z",
+      "duration": "PT17M33S",
+      "isShort": false,
+      "skipLatest": true
+    },
+    {
       "id": "YK1k3Z36RaA",
-      "title": "Luke Bought a Slot Machine. It Took Me 33 Minutes to Win.",
+      "title": "My Mom Ran an Arcade in the 80s. Now Luke Brought One Home.",
       "publishedAt": "2026-10-02T19:24:54Z",
       "duration": "PT10M50S",
       "isShort": false,
@@ -93,17 +101,14 @@
       "duration": "PT2M58S",
       "isShort": false,
       "skipLatest": true
-    },
-    {
-      "id": "aF_8Dia7FBA",
-      "title": "It’s time for the tractor!!",
-      "publishedAt": "2026-08-08T20:41:33Z",
-      "duration": "PT1M42S",
-      "isShort": true,
-      "skipLatest": false
     }
   ],
   "gear": [
+    {
+      "id": "mHTd0QWMvzA",
+      "title": "I Flushed My Yukon's Transmission... Then It Started Slipping",
+      "link": "https://www.amazon.com/dp/B0FD9WYBD3?tag=leehigginson-20"
+    },
     {
       "id": "Qk_3D_-2zrU",
       "title": "My \"15-Minute\" Transmission Flush Took Over an Hour",
@@ -128,17 +133,12 @@
       "id": "Yz9o-hqgDAE",
       "title": "A wireless magnetic work bar that’s pretty dang sweet",
       "link": "https://geni.us/4SC2N"
-    },
-    {
-      "id": "egTf5WYIORk",
-      "title": "Acebeam Keylite 500 review.  Mighty little light.",
-      "link": "https://geni.us/XNOR7"
     }
   ],
   "stats": {
-    "subscriberCount": "9340",
-    "videoCount": "525",
-    "viewCount": "833352",
-    "updatedAt": "2026-10-03T06:25:19Z"
+    "subscriberCount": "9350",
+    "videoCount": "527",
+    "viewCount": "833852",
+    "updatedAt": "2026-10-04T06:03:49Z"
   }
 }
