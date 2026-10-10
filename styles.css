@@ -1030,7 +1030,8 @@ h2{ font-size: clamp(1.7rem, 3.8vw, 2.4rem); font-weight: 700; }
   text-transform: uppercase;
   color: var(--muted);
 }
-.field input{
+.field input,
+.field textarea{
   background: var(--night);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius-sm);
@@ -1041,8 +1042,11 @@ h2{ font-size: clamp(1.7rem, 3.8vw, 2.4rem); font-weight: 700; }
   width: 100%;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
-.field input::placeholder{ color: rgba(192,179,206,.5); }
-.field input:focus{
+.field textarea{ resize: vertical; min-height: 5.5rem; }
+.field input::placeholder,
+.field textarea::placeholder{ color: rgba(192,179,206,.5); }
+.field input:focus,
+.field textarea:focus{
   outline: none;
   border-color: var(--amber);
   box-shadow: 0 0 0 3px rgba(244,169,92,.18);
