@@ -39,6 +39,14 @@
   ],
   "videos": [
     {
+      "id": "0soPQKv7KuE",
+      "title": "I Picked an Easy Job to Rebuild My Confidence. It Fell on My Head.",
+      "publishedAt": "2026-10-10T16:00:15Z",
+      "duration": "PT5M10S",
+      "isShort": false,
+      "skipLatest": false
+    },
+    {
       "id": "mHTd0QWMvzA",
       "title": "I Flushed My Yukon's Transmission... Then It Started Slipping",
       "publishedAt": "2026-10-04T00:40:38Z",
@@ -93,14 +101,6 @@
       "duration": "PT8M51S",
       "isShort": false,
       "skipLatest": false
-    },
-    {
-      "id": "X2HpkkjeoMA",
-      "title": "This little camera is amazing for the price.    The Tapo C120",
-      "publishedAt": "2026-08-11T05:41:26Z",
-      "duration": "PT2M58S",
-      "isShort": false,
-      "skipLatest": true
     }
   ],
   "gear": [
@@ -137,8 +137,8 @@
   ],
   "stats": {
     "subscriberCount": "9350",
-    "videoCount": "528",
-    "viewCount": "836958",
-    "updatedAt": "2026-10-10T06:23:39Z"
+    "videoCount": "529",
+    "viewCount": "837492",
+    "updatedAt": "2026-10-11T06:23:47Z"
   }
 }
