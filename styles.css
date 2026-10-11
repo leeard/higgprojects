@@ -370,12 +370,10 @@ h2{ font-size: clamp(1.7rem, 3.8vw, 2.4rem); font-weight: 700; }
   box-shadow: 0 0 0 5px rgba(245,239,230,.08), 0 16px 44px rgba(0,0,0,.55);
 }
 @media (max-width: 900px){
-  .hero-badge{
-    top: clamp(66px, 10vh, 96px);
-    bottom: auto;
-    right: clamp(16px, 4vw, 32px);
-    width: clamp(72px, 12vw, 96px);
-  }
+  /* Once the latest video stacks under the copy there's no open sky above the
+     headline for the badge to sit in — it lands on the text. The header logo
+     already carries the brand here, so drop the badge rather than fight for room. */
+  .hero-badge{ display: none; }
   .hero::after{
     background:
       linear-gradient(180deg,
