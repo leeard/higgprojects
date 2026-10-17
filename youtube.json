@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "pOew5yIsNxs",
+      "title": "My new sign from uncle Rod!",
+      "thumbnail": "https://i.ytimg.com/vi/pOew5yIsNxs/hqdefault.jpg",
+      "publishedAt": "2026-10-17T03:44:00Z"
+    },
+    {
       "id": "CgOIvQ4zXnE",
       "title": "Yukon transmission flush didn’t kill it yet!",
       "thumbnail": "https://i.ytimg.com/vi/CgOIvQ4zXnE/hqdefault.jpg",
@@ -29,12 +35,6 @@
       "title": "This was hiding in my dryer 😬",
       "thumbnail": "https://i.ytimg.com/vi/JUFYeOpg1PE/hqdefault.jpg",
       "publishedAt": "2026-09-27T05:04:10Z"
-    },
-    {
-      "id": "p_pK600w5vI",
-      "title": "Will this parrot say hi? 🦜 #shorts",
-      "thumbnail": "https://i.ytimg.com/vi/p_pK600w5vI/hqdefault.jpg",
-      "publishedAt": "2026-09-26T23:10:56Z"
     }
   ],
   "videos": [
@@ -137,8 +137,8 @@
   ],
   "stats": {
     "subscriberCount": "9350",
-    "videoCount": "529",
-    "viewCount": "839450",
-    "updatedAt": "2026-10-16T06:23:15Z"
+    "videoCount": "530",
+    "viewCount": "840010",
+    "updatedAt": "2026-10-17T06:20:41Z"
   }
 }
