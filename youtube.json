@@ -1,6 +1,18 @@
 {
   "shorts": [
     {
+      "id": "jFi28pkHDsM",
+      "title": "Side Effects of Visiting My Storefront",
+      "thumbnail": "https://i.ytimg.com/vi/jFi28pkHDsM/hqdefault.jpg",
+      "publishedAt": "2026-10-20T02:33:39Z"
+    },
+    {
+      "id": "yg_Fs42ETws",
+      "title": "Don't Forget This, It's Time (Tire Pressure)",
+      "thumbnail": "https://i.ytimg.com/vi/yg_Fs42ETws/hqdefault.jpg",
+      "publishedAt": "2026-10-20T02:30:55Z"
+    },
+    {
       "id": "7tmnPDxJIj8",
       "title": "One Man. One Dead Battery",
       "thumbnail": "https://i.ytimg.com/vi/7tmnPDxJIj8/hqdefault.jpg",
@@ -23,18 +35,6 @@
       "title": "I grew up playing in an arcade, now we have a machine!",
       "thumbnail": "https://i.ytimg.com/vi/U4bTlLhQXhI/hqdefault.jpg",
       "publishedAt": "2026-10-03T19:43:45Z"
-    },
-    {
-      "id": "KRYzeugq2-Q",
-      "title": "Had the Whole Soccer Field to Myself... For 2 Minutes",
-      "thumbnail": "https://i.ytimg.com/vi/KRYzeugq2-Q/hqdefault.jpg",
-      "publishedAt": "2026-10-01T04:50:05Z"
-    },
-    {
-      "id": "2WQptx5L8dQ",
-      "title": "2017 truck. Never flushed the transmission fluid. Yeah... 😬",
-      "thumbnail": "https://i.ytimg.com/vi/2WQptx5L8dQ/hqdefault.jpg",
-      "publishedAt": "2026-09-27T23:35:30Z"
     }
   ],
   "videos": [
@@ -137,8 +137,8 @@
   ],
   "stats": {
     "subscriberCount": "9350",
-    "videoCount": "532",
-    "viewCount": "841899",
-    "updatedAt": "2026-10-19T06:30:55Z"
+    "videoCount": "534",
+    "viewCount": "843211",
+    "updatedAt": "2026-10-20T06:22:55Z"
   }
 }
