@@ -39,6 +39,14 @@
   ],
   "videos": [
     {
+      "id": "JMYguW9HR_4",
+      "title": "Half My Christmas Tree Wouldn't Light Up. One LED Was the Problem.",
+      "publishedAt": "2026-10-24T00:44:04Z",
+      "duration": "PT19M50S",
+      "isShort": false,
+      "skipLatest": true
+    },
+    {
       "id": "mRxr4yHoCqk",
       "title": "Dead Battery or Bad Alternator? How I Check Before Buying Anything",
       "publishedAt": "2026-10-17T17:09:22Z",
@@ -93,17 +101,14 @@
       "duration": "PT5M29S",
       "isShort": false,
       "skipLatest": true
-    },
-    {
-      "id": "RqKAQs9fy80",
-      "title": "Etenwolf S1 inflator pumped up my truck tire ",
-      "publishedAt": "2026-08-18T01:20:46Z",
-      "duration": "PT7M22S",
-      "isShort": false,
-      "skipLatest": true
     }
   ],
   "gear": [
+    {
+      "id": "JMYguW9HR_4",
+      "title": "Half My Christmas Tree Wouldn't Light Up. One LED Was the Problem.",
+      "link": "https://geni.us/m9KtUSj"
+    },
     {
       "id": "mRxr4yHoCqk",
       "title": "Dead Battery or Bad Alternator? How I Check Before Buying Anything",
@@ -128,17 +133,12 @@
       "id": "RqKAQs9fy80",
       "title": "Etenwolf S1 inflator pumped up my truck tire",
       "link": "https://geni.us/K142O"
-    },
-    {
-      "id": "X2HpkkjeoMA",
-      "title": "This little camera is amazing for the price.    The Tapo C120",
-      "link": "https://geni.us/DTVTQ"
     }
   ],
   "stats": {
     "subscriberCount": "9350",
-    "videoCount": "534",
-    "viewCount": "845871",
-    "updatedAt": "2026-10-23T06:23:37Z"
+    "videoCount": "535",
+    "viewCount": "846271",
+    "updatedAt": "2026-10-24T06:21:17Z"
   }
 }
