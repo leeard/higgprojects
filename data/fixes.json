@@ -1,0 +1,115 @@
+[
+  {
+    "slug": "car-wont-start",
+    "problem": "My car won’t start",
+    "title": "Dead battery or bad alternator? How to check before you buy anything",
+    "summary": "Two quick tests tell you which one it is. Mine turned out to be the battery.",
+    "story": "Our Yukon wouldn’t start for Jen and the kids at Dairy Queen. Before I bought any parts, I ran the same two tests I always run.",
+    "video": {"id": "mRxr4yHoCqk", "short": false, "uploadDate": "2026-10-17", "duration": "PT15M35S"},
+    "steps": [
+      {"t": 65, "text": "Start with the alternator. With the engine running, put a multimeter on the battery. You want about 13 to 14 volts. Mine read 14.39, so the alternator was charging fine."},
+      {"t": 65, "text": "If it only reads 11 or 12 volts with the engine running, suspect the alternator first. The battery might be fine."},
+      {"t": 233, "text": "Charge the battery, then load test it. Hook up the tester, push the button, and watch the needle. Mine dove into WEAK and didn’t come back. Official diagnosis: dead battery."},
+      {"t": 848, "text": "Test the new battery the same way, so you can see what a good one looks like."}
+    ],
+    "kit": [
+      {"name": "Schumacher battery load tester (6/12 V)", "link": "https://amzn.to/3VToctB"},
+      {"name": "Innova 3320 multimeter", "link": "https://amzn.to/4dIsBFV"},
+      {"name": "Schumacher SC1307 battery charger (85-amp engine start)", "link": "https://amzn.to/4yqR0qK"}
+    ]
+  },
+  {
+    "slug": "drill-battery-wont-charge",
+    "problem": "My drill battery won’t charge",
+    "title": "How to fix a drill battery that won’t charge",
+    "summary": "The charger can’t see a completely dead battery. A few seconds on a good one wakes it up.",
+    "story": "This one has the comments to prove it. People keep writing in to say it brought their dead battery back.",
+    "video": {"id": "ZJBbARK9niU", "short": true, "uploadDate": "2024-05-24", "duration": "PT58S"},
+    "steps": [
+      {"text": "If a battery has no charge at all, the charger acts like there’s no battery there."},
+      {"text": "Connect it to a good, charged battery: negative to negative, positive to positive."},
+      {"text": "Mine took about 10 seconds. Then I put it on the charger and the charger accepted it."}
+    ],
+    "caution": "Use a matching battery from the same tool line, and stop right away if anything gets hot.",
+    "kit": [],
+    "kitNote": "Nothing to buy for this one. Those are my favorite fixes."
+  },
+  {
+    "slug": "tire-low",
+    "problem": "My tire’s low",
+    "title": "The battery tire inflator I keep in the truck",
+    "summary": "I test these on real truck tires, not on a desk. The Vortex S7 is the fastest pump I’ve tested.",
+    "story": "A low tire is a lot less of a problem when you’ve got a pump that can handle it. So I test them on my truck to see what they really do.",
+    "video": {"id": "X67_9bXTPi8", "short": false, "uploadDate": "2026-09-18", "duration": "PT5M29S"},
+    "steps": [
+      {"text": "I paid for the Vortex S7 myself and put it on a real truck tire, so you can see what it actually does."},
+      {"text": "Etenwolf sent me the smaller S1 to review. I drained a big truck tire down to 3 pounds to see if it could bring it back, and it knocked it out of the park."}
+    ],
+    "kit": [
+      {"name": "ETENWOLF Vortex S7 tire inflator", "link": "https://geni.us/66RV8"},
+      {"name": "ETENWOLF S1 tire inflator", "link": "https://geni.us/K142O"},
+      {"name": "ETENWOLF T300 Plus tire gauge", "link": "https://www.amazon.com/dp/B0CDLC8PPR?tag=leehigginson-20"}
+    ],
+    "also": [{"id": "RqKAQs9fy80", "title": "Etenwolf S1 inflator pumped up my truck tire"}]
+  },
+  {
+    "slug": "christmas-lights-half-out",
+    "problem": "Half my lights are out",
+    "title": "Half my Christmas tree wouldn’t light up. One LED was the problem.",
+    "summary": "A beginner soldering kit, one backwards LED, and a good lesson in tracking down what went wrong.",
+    "story": "I got into soldering with these little kits. I plugged this one in and half the tree stayed dark. It works in the end, and it’s a fun little craft night project if you want to learn to solder.",
+    "video": {"id": "JMYguW9HR_4", "short": false, "uploadDate": "2026-10-24", "duration": "PT19M49S"},
+    "steps": [
+      {"t": 252, "text": "Learn to read the resistor stripes before you start."},
+      {"t": 337, "text": "Then solder the parts: resistors, capacitors, transistors, and LEDs."},
+      {"t": 865, "text": "When half of it stays dark, go looking for the backwards LED. Mine was in the wrong way around."},
+      {"t": 865, "text": "If a part fights you coming back out, check your iron. Turns out I’d bumped mine down to 100."}
+    ],
+    "kit": [
+      {"name": "3D Christmas tree soldering kit", "link": "https://geni.us/m9KtUSj"},
+      {"name": "TS100 soldering iron (now the upgraded TS101, power supply sold separately)", "link": "https://geni.us/ZZ1EJR"},
+      {"name": "Magnetic helping hands", "link": "https://geni.us/PBd4eY"},
+      {"name": "Solder sucker", "link": "https://geni.us/roGT"},
+      {"name": "Tip tinner", "link": "https://geni.us/8q3NYD"},
+      {"name": "Kester 44 rosin core solder, 60/40 (the good stuff)", "link": "https://geni.us/ZwPEYGd"},
+      {"name": "Blue silicone solder mat", "link": "https://geni.us/eBUvZ4"}
+    ]
+  },
+  {
+    "slug": "transmission-fluid-black",
+    "problem": "My transmission fluid’s black",
+    "title": "Flushing transmission fluid through the cooler line, mistakes included",
+    "summary": "No pan drop, just a fitting and a hose. It went fine on my Silverado. Then my Yukon started slipping, so watch both first.",
+    "story": "I ignored the transmission fluid on our vehicles way too long, so it was time to repent. I’m not a mechanic, just stubborn.",
+    "video": {"id": "Qk_3D_-2zrU", "short": false, "uploadDate": "2026-09-27", "duration": "PT15M47S"},
+    "steps": [
+      {"t": 80, "text": "I flushed my 2017 Silverado through the cooler line at the radiator, with no pan drop."},
+      {"t": 175, "text": "The retainer clip was the boss fight. Give yourself more time than 15 minutes."},
+      {"t": 384, "text": "Make sure you’re hooked to the right line. I wasn’t, and I dumped a quart on the driveway."},
+      {"t": 828, "text": "Use the ATF your owner’s manual calls for, then check levels the next morning."}
+    ],
+    "caution": "On our Yukon, the transmission started slipping on the first dinner run after the flush. Watch that video before you decide to do this.",
+    "kit": [
+      {"name": "397 transmission line fitting", "link": "https://geni.us/keCyU"}
+    ],
+    "kitNote": "Plus 3/8 inch clear hose, a catch pan, and the ATF your owner’s manual calls for.",
+    "also": [{"id": "mHTd0QWMvzA", "title": "I Flushed My Yukon’s Transmission... Then It Started Slipping"}]
+  },
+  {
+    "slug": "air-compressor-runs-out",
+    "problem": "My air compressor runs out",
+    "title": "Boost a small air compressor with a propane tank",
+    "summary": "I added an 11-gallon tank to a Husky 4.5 gallon compressor to get enough air to sandblast tractor parts.",
+    "story": "A lot of you found this one on your own. I needed more air for sandblasting the tractor, so I added a second tank.",
+    "video": {"id": "qa3fVjtNyCY", "short": false, "uploadDate": "2024-03-14", "duration": "PT11M36S"},
+    "steps": [
+      {"text": "I teed in ahead of the regulator, so the second tank fills to full pressure."},
+      {"text": "I picked a new propane tank that had never held propane, so there’s no smell to deal with."},
+      {"text": "I used a full flow fitting and Teflon tape. Watch out, propane threads are lefty tighty."},
+      {"text": "Plug in the tank side of the hose first. A pressurized hose whips around, and I’ve got the cut on my leg to prove it."},
+      {"text": "While you’re out there, purge the water from your compressor tank. Mine ran and ran."}
+    ],
+    "caution": "Be safe. This is not a how-to on making an old propane tank safe.",
+    "kit": []
+  }
+]

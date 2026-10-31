@@ -44,7 +44,7 @@
       "publishedAt": "2026-10-24T00:44:04Z",
       "duration": "PT19M50S",
       "isShort": false,
-      "skipLatest": true
+      "skipLatest": false
     },
     {
       "id": "mRxr4yHoCqk",
@@ -52,7 +52,7 @@
       "publishedAt": "2026-10-17T17:09:22Z",
       "duration": "PT15M35S",
       "isShort": false,
-      "skipLatest": true
+      "skipLatest": false
     },
     {
       "id": "0soPQKv7KuE",
@@ -68,7 +68,7 @@
       "publishedAt": "2026-10-04T00:40:38Z",
       "duration": "PT17M33S",
       "isShort": false,
-      "skipLatest": true
+      "skipLatest": false
     },
     {
       "id": "YK1k3Z36RaA",
@@ -107,38 +107,138 @@
     {
       "id": "JMYguW9HR_4",
       "title": "Half My Christmas Tree Wouldn't Light Up. One LED Was the Problem.",
-      "link": "https://geni.us/m9KtUSj"
+      "items": [
+        {
+          "name": "3D Christmas tree soldering kit",
+          "link": "https://geni.us/m9KtUSj"
+        },
+        {
+          "name": "TS100 soldering iron (now the upgraded TS101, power supply sold separately)",
+          "link": "https://geni.us/ZZ1EJR"
+        },
+        {
+          "name": "Magnetic helping hands",
+          "link": "https://geni.us/PBd4eY"
+        },
+        {
+          "name": "Solder sucker",
+          "link": "https://geni.us/roGT"
+        },
+        {
+          "name": "Tip tinner",
+          "link": "https://geni.us/8q3NYD"
+        },
+        {
+          "name": "Kester 44 rosin core solder, 60/40 0.040 in. (the good stuff)",
+          "link": "https://geni.us/ZwPEYGd"
+        },
+        {
+          "name": "Blue silicone solder mat",
+          "link": "https://geni.us/eBUvZ4"
+        }
+      ]
     },
     {
       "id": "mRxr4yHoCqk",
       "title": "Dead Battery or Bad Alternator? How I Check Before Buying Anything",
-      "link": "https://amzn.to/3VToctB"
+      "items": [
+        {
+          "name": "Schumacher battery load tester (6/12 V)",
+          "link": "https://amzn.to/3VToctB"
+        },
+        {
+          "name": "Innova 3320 multimeter",
+          "link": "https://amzn.to/4dIsBFV"
+        },
+        {
+          "name": "Schumacher SC1307 battery charger (85-amp engine start)",
+          "link": "https://amzn.to/4yqR0qK"
+        }
+      ]
     },
     {
       "id": "mHTd0QWMvzA",
       "title": "I Flushed My Yukon's Transmission... Then It Started Slipping",
-      "link": "https://www.amazon.com/dp/B0FD9WYBD3?tag=leehigginson-20"
+      "items": [
+        {
+          "name": "397 Transmission Line Fitting (TESHITVLOG, the cooler line adapter)",
+          "link": "https://www.amazon.com/dp/B0FD9WYBD3?tag=leehigginson-20"
+        },
+        {
+          "name": "VEVOR porta-power kit (12-ton)",
+          "link": "https://www.amazon.com/dp/B0F3XHV477?tag=leehigginson-20"
+        },
+        {
+          "name": "VEVOR porta-power kit (10-ton, nearly the same)",
+          "link": "https://www.amazon.com/dp/B0BZGSDCHY?tag=leehigginson-20"
+        }
+      ]
     },
     {
       "id": "Qk_3D_-2zrU",
       "title": "My \"15-Minute\" Transmission Flush Took Over an Hour",
-      "link": "https://geni.us/keCyU"
+      "items": [
+        {
+          "name": "397 transmission line fitting",
+          "link": "https://geni.us/keCyU"
+        }
+      ]
     },
     {
       "id": "X67_9bXTPi8",
       "title": "Etenwolf Vortex S7 aired up my truck tire",
-      "link": "https://geni.us/66RV8"
+      "items": [
+        {
+          "name": "Etenwolf Vortex S7 aired up my truck tire",
+          "link": "https://geni.us/66RV8"
+        }
+      ]
     },
     {
       "id": "RqKAQs9fy80",
       "title": "Etenwolf S1 inflator pumped up my truck tire",
-      "link": "https://geni.us/K142O"
+      "items": [
+        {
+          "name": "Etenwolf S1 inflator pumped up my truck tire",
+          "link": "https://geni.us/K142O"
+        }
+      ]
+    },
+    {
+      "id": "X2HpkkjeoMA",
+      "title": "This little camera is amazing for the price.    The Tapo C120",
+      "items": [
+        {
+          "name": "This little camera is amazing for the price.    The Tapo C120",
+          "link": "https://geni.us/DTVTQ"
+        }
+      ]
+    },
+    {
+      "id": "Yz9o-hqgDAE",
+      "title": "A wireless magnetic work bar that’s pretty dang sweet",
+      "items": [
+        {
+          "name": "A wireless magnetic work bar that’s pretty dang sweet",
+          "link": "https://geni.us/4SC2N"
+        }
+      ]
+    },
+    {
+      "id": "egTf5WYIORk",
+      "title": "Acebeam Keylite 500 review.  Mighty little light.",
+      "items": [
+        {
+          "name": "Acebeam Keylite 500 review.  Mighty little light.",
+          "link": "https://geni.us/XNOR7"
+        }
+      ]
     }
   ],
   "stats": {
     "subscriberCount": "9340",
     "videoCount": "535",
-    "viewCount": "848691",
-    "updatedAt": "2026-10-30T06:17:47Z"
+    "viewCount": "849026",
+    "updatedAt": "2026-10-31T03:05:03Z"
   }
 }

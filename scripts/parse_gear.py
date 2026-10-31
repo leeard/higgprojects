@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Extract gear items (product links + coupon codes) from YouTube video details.
+"""Extract gear from YouTube video details for the page's "What I used" lists.
 
-Reads JSON on stdin — either:
-  { "items": [ {id, title, description}, ... ] }
-or a bare array of those objects.
+Reads JSON on stdin, either {"items": [{id, title, description}, ...]} or a bare
+array of those objects.
 
-Writes JSON array on stdout:
-  [{ id, title, link, code?, deal? }, ...]  (newest first, max 6)
+Writes a JSON array on stdout, newest first, max 12 videos:
+  [{id, title, items: [{name, link}, ...], code?, deal?}, ...]
 """
 from __future__ import annotations
 
@@ -14,10 +13,13 @@ import json
 import re
 import sys
 
+MAX_VIDEOS = 12
 LINK_RE = re.compile(
-    r"https?://(?:a\.co|amzn\.to|geni\.us|www\.amazon\.com)/(?!shop/)[^\s)\"<>]+",
+    r"https?://(?:a\.co|amzn\.to|geni\.us|www\.amazon\.com)/[^\s)\"<>]+",
     re.I,
 )
+GENERIC_LABELS = {"", "amazon", "amazon link", "link", "buy"}
+STOREFRONT_RE = re.compile(r"storefront|/shop/", re.I)
 # "code HIGGPROJECTS", "code: HIGGPROJECTS", "with code HIGGPROJECTS"
 CODE_RE = re.compile(
     r"(?i)\b(?:discount\s*code|promo\s*code|coupon(?:\s*code)?|"
@@ -54,33 +56,42 @@ def extract_deal(desc: str) -> str | None:
     return normalize_deal(m.group(1)) if m else None
 
 
-def parse_items(items: list) -> list[dict]:
-    gear: list[dict] = []
-    for item in items:
-        if not item:
-            continue
-        desc = item.get("description") or ""
-        m = LINK_RE.search(desc)
-        if not m:
+def extract_items(desc: str, title: str) -> list[dict]:
+    items: list[dict] = []
+    seen: set[str] = set()
+    for line in (desc or "").splitlines():
+        m = LINK_RE.search(line)
+        if not m or STOREFRONT_RE.search(line):
             continue
         link = clean_url(m.group(0))
-        # Skip channel storefront if it ever matches
-        if re.search(r"amazon\.com/shop/", link, re.I):
+        if link in seen:
             continue
-        entry = {
-            "id": item.get("id") or "",
-            "title": (item.get("title") or "").strip(),
-            "link": link,
-        }
+        seen.add(link)
+        label = line[: m.start()].strip().rstrip(":").strip()
+        name = title if label.lower() in GENERIC_LABELS else label
+        items.append({"name": name, "link": link})
+    return items
+
+
+def parse_items(videos: list) -> list[dict]:
+    gear: list[dict] = []
+    for video in videos:
+        if not video or not video.get("id"):
+            continue
+        desc = video.get("description") or ""
+        title = (video.get("title") or "").strip()
+        items = extract_items(desc, title)
+        if not items:
+            continue
+        entry = {"id": video["id"], "title": title, "items": items}
         code = extract_code(desc)
         deal = extract_deal(desc)
         if code:
             entry["code"] = code
         if deal:
             entry["deal"] = deal
-        if entry["id"]:
-            gear.append(entry)
-        if len(gear) >= 6:
+        gear.append(entry)
+        if len(gear) >= MAX_VIDEOS:
             break
     return gear
 
@@ -92,10 +103,10 @@ def main() -> None:
         return
     payload = json.loads(raw)
     if isinstance(payload, dict):
-        items = payload.get("items") or payload.get("videos") or []
+        videos = payload.get("items") or payload.get("videos") or []
     else:
-        items = payload
-    print(json.dumps(parse_items(items), ensure_ascii=False))
+        videos = payload
+    print(json.dumps(parse_items(videos), ensure_ascii=False))
 
 
 if __name__ == "__main__":
