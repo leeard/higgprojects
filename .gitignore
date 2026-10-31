@@ -5,3 +5,5 @@ dist/
 src/
 .theme-lab/
 .lavish/
+__pycache__/
+*.pyc
