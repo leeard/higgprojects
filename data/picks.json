@@ -1,0 +1,31 @@
+{
+  "note": "Hand-picked from the 2026 Amazon sales report and checked live on 2026-10-30. 'line' comes from Lee's own published review titles, trimmed only to drop the product name. Never add prices (Amazon Associates rule).",
+  "shelves": [
+    {
+      "name": "In the truck",
+      "items": [
+        {"name": "ETENWOLF Vortex S7 tire inflator", "asin": "B0DP32SRJK", "line": "The fastest pump I have tested", "video": "X67_9bXTPi8", "how": "I paid for this one myself."},
+        {"name": "ETENWOLF T300 Plus tire gauge", "asin": "B0CDLC8PPR", "line": "Seals good and I trust the reading"},
+        {"name": "Schumacher BT-100 battery load tester", "asin": "B000AMBOI0", "line": "8 years of real use", "video": "mRxr4yHoCqk"}
+      ]
+    },
+    {
+      "name": "In the shop and around the house",
+      "items": [
+        {"name": "HOTLIGH rechargeable work light", "asin": "B0CC51Q3K2", "line": "My favorite work light. I actually own 3 I bought myself"},
+        {"name": "WORKPRO extra thick kneeling pad", "asin": "B0CPF1WBKN", "line": "This pad is saving my knees"},
+        {"name": "Traxion ProGear rolling shop seat", "asin": "B00M2QMHK6", "line": "Sturdy and comfy shop roller seat"},
+        {"name": "Klein Tools 80024 data cable crimper", "asin": "B09FWH5RFF", "line": "The quality I expect from Klein"},
+        {"name": "Razzi Fidel 9-tier filament storage", "asin": "B0DS8YRYZ8", "line": "Holds more filament than I expected!"},
+        {"name": "BILLCONCH biometric handgun safe", "asin": "B0B3QPHZJ7", "line": "This has everything I need and more", "video": "SvTBzgM3rNQ"}
+      ]
+    },
+    {
+      "name": "In my pocket and the glove box",
+      "items": [
+        {"name": "Caressolove #60 retractable knife", "asin": "B0HJ83YN5L", "line": "See why it is my daily carry knife"},
+        {"name": "TrixHub rechargeable flashlights, 2 pack", "asin": "B0DJQF83C2", "line": "I found the perfect glove box flashlight", "video": "cX0AVE6I8VQ"}
+      ]
+    }
+  ]
+}
