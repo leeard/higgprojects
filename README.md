@@ -29,36 +29,58 @@ My boys help out too — Luke makes his own videos, and James, Evan, and Jenna s
 
 ## Tech Stack
 
-Static site, no build step:
+Static site, no framework and no build at runtime:
 
-- **index.html** — the page
-- **styles.css** — hand-written CSS ("Golden Hour" design system)
-- **images/** — logo, shop-sunset hero, OG card, sasquatch sighting
-- **Google Fonts** — Bricolage Grotesque (display), Karla (body), Lora (serif accents)
-- **Vanilla JS** — live channel data from `youtube.json`, sticker form AJAX
+- **index.html**: the home page, with generated blocks between `<!-- name:start -->` markers
+- **styles.css**: hand-written CSS, dark theme only
+- **site.js**: click-to-play video, fix panel, live data, sticker form, share button
+- **data/fixes.json**: the fix registry. Chips, panel, fix pages, footer list and sitemap all come from it
+- **data/picks.json**: the "Stuff I actually use" shelves
+- **scripts/build_site.py**: Python stdlib only. Writes `fix/<slug>/index.html`, `sitemap.xml`, `robots.txt` and the generated blocks in `index.html`. Header and footer on fix pages are copied from `index.html`
+- **images/**: Lee and the Yukon, logo, favicon, OG card, shop sunset, sasquatch sighting
+
+### Page order
+
+Header, hero with chips and photo (`#fixes`), fix panel, Hey I'm Lee with comments (`#lee`), Stuff I actually use (`#picks`), Latest from the shop (`#videos`), On the bench (`#bench`), the crew (`#team`), free sticker (`#sticker`), collabs, footer. Subscribe appears exactly three times on the home page: nav, Lee section, footer.
+
+### Add a fix or a pick
+
+1. Add an entry to `data/fixes.json` or a row to a shelf in `data/picks.json`.
+2. Run `python3 scripts/build_site.py`.
+3. Commit the data and everything it generated. Rerunning with no data change produces no diff.
+
+Don't edit between the markers in `index.html` or anything under `fix/` by hand.
+
+### Disclosure and prices
+
+Never put a price on the site, in the data or on the page. That is an Amazon Associates rule. Percent-off creator codes are fine, and dollar-off amounts stay off the page. Every Amazon link uses `rel="sponsored noopener"`, and "As an Amazon Associate I earn from qualifying purchases." sits under every kit list, under the shelves and in the footer. No Amazon product images.
+
+Photos run at full brightness: no filter, opacity, scrim or overlay. Text goes beside or below.
 
 ### Data
 
-`youtube.json` is refreshed daily by the GitHub Action in `.github/workflows/fetch-youtube.yml`:
+`youtube.json` is refreshed daily by `.github/workflows/fetch-youtube.yml`:
 
-- Channel stats (subs, video count, views)
-- Latest long-form videos (from the channel uploads playlist, Shorts filtered out)
-- Latest Shorts (from the dedicated Shorts playlist)
-- Gear links **and coupon codes** from recent long-form descriptions (`scripts/parse_gear.py` — e.g. “10% off with code HIGGPROJECTS”)
+- Video count (the only channel stat the page shows)
+- Latest long-form videos, with `publishedAt`, `duration` and `skipLatest`
+- Latest Shorts
+- Gear from `scripts/parse_gear.py`: `[{id, title, items: [{name, link}], code?, deal?}]`, newest first, max 12 videos. `name` is the text before the colon on each product-link line. Empty or generic labels (Amazon, Amazon link, Link, Buy) use the video title. Storefront lines are skipped. Tests: `python3 scripts/test_parse_gear.py`
 
-The page reads that file at load and falls back to the numbers and cards baked into the markup if the fetch fails or returns a thin list.
+The page reads that file at load. The markup holds a working fallback if the fetch fails.
 
-**Page order:** the latest video lives *inside* the hero (right column on desktop, under the copy on phones), the Ford 2N service record is the first section below it, then the video grid, proof, gear, crew, sticker.
+### Hero slot rules
 
-**Hero ("latest video") slot rules:** a video whose description contains an affiliate-style product link (`a.co`, `amzn.to`, `geni.us`, or an `amazon.com` product URL — the storefront `/shop/` link doesn't count) is automatically kept out of the featured hero slot; the newest video *without* such a link is featured instead. Those videos still appear in the video grid and get their gear-section card as usual. To force a link-carrying video into the hero anyway (e.g. you only mention a product in passing), put `#feature` (case-insensitive) anywhere in its description. If every fetched video is excluded, the newest one is featured rather than leaving the hero empty.
+The panel under the hero shows the newest video whose `skipLatest` is false. If every fetched video is flagged, it shows the newest one.
 
-**Shorts and the hero slot:** Shorts never take the hero by default — it's reserved for long-form. To make a big-deal Short the featured video, put **`#feature` in its YouTube description** (edit the description on YouTube, then re-run the fetch workflow or wait for the daily run). It holds the hero until something newer without an affiliate link is uploaded, and it never occupies a slot in the long-form grid. TL;DR: **`#feature` in a description = "put this in the hero spot", and it works for Shorts too.**
+`skipLatest` is true when the description has **`#nofeature`**, or when the video has an affiliate product link (`a.co`, `amzn.to`, `geni.us`, `amazon.com`, storefront lines don't count), runs under 480 seconds, and has no **`#feature`**. So long repair videos with links take the hero, and short product reviews stay out.
 
-**The Ford 2N "long-term project" ledger is hand-curated** — new tractor videos do *not* appear there automatically. Add a new `<li>` entry to the service-record list in `index.html` (and bump the entry number) when the saga continues.
+Shorts stay out of the hero unless the description has `#feature`. A featured Short never takes a slot in the long-form grid.
+
+The service records in `#bench` are hand-curated. New videos don't appear there on their own. Add an `<li>` to the ledger in `index.html`, then rerun `build_site.py`.
 
 ### Development
 
-No build. Open `index.html` in a browser, or serve the folder:
+Asset paths are absolute, so serve the folder rather than opening the file:
 
 ```bash
 python3 -m http.server
