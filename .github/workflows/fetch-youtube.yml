@@ -90,20 +90,27 @@ jobs:
           fi
 
           # Long-form: not a confirmed Short. Playlist order is newest-first.
-          # Hero-slot rule: a video whose description carries an affiliate-style
-          # product link (same families parse_gear.py matches: a.co / amzn.to /
-          # geni.us / amazon.com, storefront /shop/ excluded) is flagged so the
-          # site never features it as the latest video — it stays in the grid
-          # and surfaces in the gear section. Writing #feature anywhere in the
-          # description overrides that and lets the video take the hero slot
-          # (for passing-mention videos that happen to include a link).
-          # Shorts are excluded UNLESS their description carries #feature — that
-          # is the opt-in for occasionally letting a Short take the hero slot.
+          # Hero-slot rule: skipLatest keeps a video out of the featured slot
+          # while it stays in the grid. It is true when the description has
+          # #nofeature, or when the video runs under 480 seconds with an
+          # affiliate-style product link (a.co / amzn.to / geni.us / amazon.com)
+          # and no #feature. Long repair videos carry links too and belong in
+          # the hero; short product reviews do not. Storefront lines never count
+          # as product links.
+          # Shorts are excluded UNLESS their description carries #feature, the
+          # opt-in for occasionally letting a Short take the hero slot.
           # They carry isShort: true so the page keeps them out of the video grid.
           # Take 8 so the hero + grid stay full even when recent videos are flagged.
           videos=$(echo "$details" | jq --argjson short_ids "$short_ids" '[.items[] |
             (.snippet.description // "") as $d |
             ((.id as $i | $short_ids | index($i)) != null) as $isShort |
+            (.contentDetails.duration
+              | capture("^PT(?:(?<h>[0-9]+)H)?(?:(?<m>[0-9]+)M)?(?:(?<s>[0-9]+)S)?$")?
+              // {h: null, m: null, s: null}
+              | ((.h // "0") | tonumber) * 3600 + ((.m // "0") | tonumber) * 60 + ((.s // "0") | tonumber)
+            ) as $secs |
+            ($d | split("\n") | map(select(test("storefront"; "i") | not)) | join("\n")
+              | test("https?://(a\\.co|amzn\\.to|geni\\.us|www\\.amazon\\.com)/(?!shop/)"; "i")) as $hasProductLink |
             select(($isShort | not) or ($d | test("#feature"; "i"))) |
             {
               id: .id,
@@ -111,14 +118,13 @@ jobs:
               publishedAt: .snippet.publishedAt,
               duration: .contentDetails.duration,
               isShort: $isShort,
-              skipLatest: (($d | test("https?://(a\\.co|amzn\\.to|geni\\.us|www\\.amazon\\.com)/(?!shop/)"; "i"))
-                           and (($d | test("#feature"; "i")) | not))
+              skipLatest: (($d | test("#nofeature"; "i"))
+                           or ($hasProductLink and $secs < 480 and (($d | test("#feature"; "i")) | not)))
             }
           ] | .[0:8]')
 
-          # Gear: product links + coupon codes from long-form descriptions.
-          # scripts/parse_gear.py picks a.co / amzn.to / geni.us / amazon product
-          # URLs and any nearby "code HIGGPROJECTS" / "10% off" text.
+          # Gear: every named product link + coupon code from long-form descriptions.
+          # See scripts/parse_gear.py for the {id, title, items, code?, deal?} shape.
           gear=$(echo "$details" | jq --argjson short_ids "$short_ids" -c '
             {items: [.items[]
               | select(.id as $i | $short_ids | index($i) | not)
