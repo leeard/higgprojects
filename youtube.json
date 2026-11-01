@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "R7ElSTdgFOk",
+      "title": "Woody get a haircut",
+      "thumbnail": "https://i.ytimg.com/vi/R7ElSTdgFOk/hqdefault.jpg",
+      "publishedAt": "2026-10-31T23:49:03Z"
+    },
+    {
       "id": "jFi28pkHDsM",
       "title": "Side Effects of Visiting My Storefront",
       "thumbnail": "https://i.ytimg.com/vi/jFi28pkHDsM/hqdefault.jpg",
@@ -29,15 +35,17 @@
       "title": "Yukon transmission flush didn’t kill it yet!",
       "thumbnail": "https://i.ytimg.com/vi/CgOIvQ4zXnE/hqdefault.jpg",
       "publishedAt": "2026-10-04T18:26:45Z"
-    },
-    {
-      "id": "U4bTlLhQXhI",
-      "title": "I grew up playing in an arcade, now we have a machine!",
-      "thumbnail": "https://i.ytimg.com/vi/U4bTlLhQXhI/hqdefault.jpg",
-      "publishedAt": "2026-10-03T19:43:45Z"
     }
   ],
   "videos": [
+    {
+      "id": "3xwx17nQfjc",
+      "title": "Haircut Day for Woody",
+      "publishedAt": "2026-10-31T22:40:08Z",
+      "duration": "PT3M31S",
+      "isShort": false,
+      "skipLatest": false
+    },
     {
       "id": "JMYguW9HR_4",
       "title": "Half My Christmas Tree Wouldn't Light Up. One LED Was the Problem.",
@@ -93,14 +101,6 @@
       "duration": "PT19M31S",
       "isShort": false,
       "skipLatest": false
-    },
-    {
-      "id": "X67_9bXTPi8",
-      "title": "Etenwolf Vortex S7 aired up my truck tire",
-      "publishedAt": "2026-09-18T00:00:23Z",
-      "duration": "PT5M29S",
-      "isShort": false,
-      "skipLatest": true
     }
   ],
   "gear": [
@@ -237,8 +237,8 @@
   ],
   "stats": {
     "subscriberCount": "9340",
-    "videoCount": "535",
-    "viewCount": "849197",
-    "updatedAt": "2026-10-31T06:13:30Z"
+    "videoCount": "537",
+    "viewCount": "849376",
+    "updatedAt": "2026-11-01T06:14:34Z"
   }
 }
