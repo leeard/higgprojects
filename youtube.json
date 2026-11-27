@@ -1,6 +1,12 @@
 {
   "shorts": [
     {
+      "id": "N_TyB0spjMg",
+      "title": "Dude Thanksgiving: Just Me and the Boys #shorts",
+      "thumbnail": "https://i.ytimg.com/vi/N_TyB0spjMg/hqdefault.jpg",
+      "publishedAt": "2026-11-27T05:57:12Z"
+    },
+    {
       "id": "ZyqP0uzwwAg",
       "title": "While I Mowed Leaves, Higgi Wire Wheeled the Ford 2N #shorts",
       "thumbnail": "https://i.ytimg.com/vi/ZyqP0uzwwAg/hqdefault.jpg",
@@ -29,12 +35,6 @@
       "title": "Side Effects of Visiting My Storefront",
       "thumbnail": "https://i.ytimg.com/vi/jFi28pkHDsM/hqdefault.jpg",
       "publishedAt": "2026-10-20T02:33:39Z"
-    },
-    {
-      "id": "yg_Fs42ETws",
-      "title": "Don't Forget This, It's Time (Tire Pressure)",
-      "thumbnail": "https://i.ytimg.com/vi/yg_Fs42ETws/hqdefault.jpg",
-      "publishedAt": "2026-10-20T02:30:55Z"
     }
   ],
   "videos": [
@@ -223,22 +223,12 @@
           "link": "https://geni.us/4SC2N"
         }
       ]
-    },
-    {
-      "id": "egTf5WYIORk",
-      "title": "Acebeam Keylite 500 review.  Mighty little light.",
-      "items": [
-        {
-          "name": "Acebeam Keylite 500 review.  Mighty little light.",
-          "link": "https://geni.us/XNOR7"
-        }
-      ]
     }
   ],
   "stats": {
     "subscriberCount": "9340",
-    "videoCount": "541",
-    "viewCount": "864663",
-    "updatedAt": "2026-11-26T06:16:23Z"
+    "videoCount": "542",
+    "viewCount": "865368",
+    "updatedAt": "2026-11-27T06:16:16Z"
   }
 }
